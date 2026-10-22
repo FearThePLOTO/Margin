@@ -1,12 +1,17 @@
-# Movement Tools 
+# Movement Tools
 
 Four movement tools that open routes the core set (jetpack, tether, climbing spikes) cannot.
 
 **Rules**
+
 - Every real number has a source and an access date (Section 4).
+
 - Game values are design proposals, kept in separate columns, and marked `FLAGGED` until the team approves them.
+
 - Anything not found in a source is marked `UNSOURCED`.
+
 - Source conflicts are written out, not resolved by guessing.
+
 - **Power rule (all tools):** game power = game force × game speed (P = F × v).
 
 ---
@@ -196,8 +201,11 @@ Game values in this table. Real values are in the two-number tables below each r
 **Principle:** Load travels from the load point to the anchor along a path. Every element on that path (rope, beam, anchor) must carry the force passing through it, and the weakest one sets the limit.
 
 **Formulas:**
+
 - Rope tension under a steady load: T = m × g. On the Moon, g = 1.62 m/s², so a 220 kg load pulls the rope with about 356 N.
+
 - Bending moment in a simply supported beam with a load at midspan: M = F × L / 4 [12][13].
+
 - Bending stress: σ = M × y / I (at the outer fibre, y = c, so σ_max = M × c / I) [11][11b].
 
 **What the player changes:** Anchor points, their number, and where the load sits.
@@ -233,16 +241,65 @@ Game values in this table. Real values are in the two-number tables below each r
 
 ## 3. Crafting Table
 
-*Not started. To be added later.* Inputs must come from Mo3tez's Moon materials table; any input not in that table is marked `FLAGGED`, not invented. Each tool must unlock a specific shaft, gap, cargo route, or long traverse.
+**Rules**
+- Inputs come only from the material table of the body where they are found (for example, Moon: Mo3tez's table; Mars: Ahmed Walid's table). Any material not in that body's table is `FLAGGED`, not invented.
+- Each tool unlocks one specific thing: a shaft, a gap, a cargo route, or a long traverse. "Better stats" is not an unlock.
+- Values are not hard-coded to the Moon. Mass is constant across environments; weight and other environment-dependent values use factors.
+
+### 3.1 Environment factors (any celestial body)
+
+| body | g (m/s²) | g_factor = g ÷ 9.80665 | source |
+|---|---|---|---|
+| Earth | 9.80665 | 1.000 (reference) | [3] (NIST standard gravity; the NSSDC Moon sheet [1] rounds it to 9.80) |
+| Moon | 1.62 | 0.165 | [1] |
+| Mars | 3.73 (mean surface) | 0.380 | [17] |
+
+**Note:** The Moon is a natural satellite, not a planet, so this table is named by celestial body. All g values come from NASA fact sheets and use the mean surface value. For any new body, use the same type of source.
+
+Any celestial body (planet, moon, or other) is a row in this table. A new body needs only its surface gravity from a NASA fact sheet; no other values change.
+
+**Scope note:** Each body's row in 3.1 gives gravity only. Materials for each body come from that body's own material table. Until a body's table is received, its inputs stay `FLAGGED`.
+
+### 3.2 Crafting formulas
+
+- **mass_kg:** constant. Not multiplied by any environment factor.
+- **weight_N:** mass_kg × 9.80665 × g_factor. This is the only value that changes with the environment.
+- **energy_kwh:** base_energy × material_factor. `FLAGGED`, pending the body's material table.
+- **cost_usd:** base_cost × purity_factor. `FLAGGED`, pending the body's material table.
+
+**Open decision for the team:** whether base_energy and base_cost are defined on Earth or on the Moon. This sets the value the factors multiply.
+
+### 3.3 Crafting table
 
 | tool | inputs | mass_kg | energy_kwh | cost_usd | station_tier | unlocks |
 |---|---|---|---|---|---|---|
-| `tool.drone` | TBD | TBD | TBD | TBD | TBD | Long Traverse |
-| `tool.bridge` | TBD | TBD | TBD | TBD | TBD | Wide Gap |
-| `tool.ascender` | TBD | TBD | TBD | TBD | TBD | Vertical Shaft |
-| `tool.winch` | TBD | TBD | TBD | TBD | TBD | Heavy Lift Cargo |
+| `tool.drone` | FLAGGED: no body table received yet | 2.3 (game value, FLAGGED) | FLAGGED | FLAGGED | FLAGGED | Long Traverse |
+| `tool.bridge` | FLAGGED: no body table received yet | 18 (game value, FLAGGED) | FLAGGED | FLAGGED | FLAGGED | Wide Gap |
+| `tool.ascender` | FLAGGED: no body table received yet | 6.5 (game value, FLAGGED) | FLAGGED | FLAGGED | FLAGGED | Vertical Shaft |
+| `tool.winch` | FLAGGED: no body table received yet | 10 (game value, FLAGGED) | FLAGGED | FLAGGED | FLAGGED | Heavy Lift Cargo |
 
----
+**Note:** mass_kg values come from Section 1 (game values). They are constant across environments, so they do not change in this table.
+
+### 3.4 Material factors
+
+| material | source | purity_factor | status |
+|---|---|---|---|
+| (from each body's table) | Moon: Mo3tez; Mars: Ahmed Walid; other bodies: their owners | TBD | FLAGGED: table not received |
+
+Materials for any body are not listed here until that body's table is received.
+
+### 3.5 Input availability (where each input is found)
+
+Crafting happens at the station. Inputs are gathered from a body (Moon, Mars, or another body) and brought back. Each input is listed below with the body where it is found. Nothing is filled in until the matching table is received.
+
+| tool | input | found at (body) | source table | status |
+|---|---|---|---|---|
+| `tool.drone` | TBD | TBD | Body's material table | FLAGGED: table not received |
+| `tool.bridge` | TBD | TBD | Body's material table | FLAGGED: table not received |
+| `tool.ascender` | TBD | TBD | Body's material table | FLAGGED: table not received |
+| `tool.winch` | TBD | TBD | Body's material table | FLAGGED: table not received |
+
+**Rule:** An input can be listed as found on a body only if that body's material table has it. Anything else stays TBD.
 
 ## 4. Sources and Gaps
 
@@ -265,6 +322,7 @@ All sources accessed 2026-10-21.
 14. NASA NTRS 20060050772, *Haughton-Mars Project/NASA 2006 Lunar Medical Contingency Simulation* (winch, picket anchors, rotational stabilization; no anchor pull values). https://ntrs.nasa.gov/citations/20060050772
 15. NASA NTRS 20210012162, *Design and Test of an Electromechanical Rover Tether for the Exploration of Vertical Lunar Pit* (JPL preprint; 100 W, 1 Mbps, 300 m traverse; tether under load in contact with terrain). https://ntrs.nasa.gov/citations/20210012162
 16. US Patent US10985539B1, *Unmanned aerial vehicle line and cable stringing system* (concept reference only). https://patents.google.com/patent/US10985539B1/en
+17. NASA NSSDC, *Mars Fact Sheet* (mean surface gravity 3.73 m/s²; equatorial 3.69; pole 3.73). https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html?embed=true . Accessed 2026-10-21. Some other copies of the same sheet quote 3.71 m/s².
 
 
 **Not yet sourced:**
@@ -274,7 +332,12 @@ All sources accessed 2026-10-21.
 **Gaps**
 
 - Drone: endurance, operational range, flight speed, rated line-towing force, setup time, cost.
+
 - Bridge: module mass, cost.
+
 - Ascender: setup time, cost.
+
 - Winch: setup time, cost; open conflicts 1 and 2.
-- Crafting table: Section 3
+
+- Crafting table: Section 3 (not started; needs the material table of each body, starting with Mo3tez's Moon table).
+
