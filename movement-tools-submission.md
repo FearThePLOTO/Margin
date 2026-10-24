@@ -1,4 +1,4 @@
-# Movement Tools
+# Movement Tools (Raghda)
 
 Four movement tools that open routes the core set (jetpack, tether, climbing spikes) cannot.
 
@@ -13,6 +13,7 @@ Four movement tools that open routes the core set (jetpack, tether, climbing spi
 - Source conflicts are written out, not resolved by guessing.
 
 - **Power rule (all tools):** game power = game force × game speed (P = F × v).
+- **Decision needed (team):** fantasy tool. Not added (optional). Team decides whether to add one.
 
 ---
 
@@ -23,7 +24,7 @@ Game values in this table. Real values are in the two-number tables below each r
 | id | tool | mass_kg | power_w | force_n | range_m | speed_ms | setup_min | cost_usd | unlocks | weakness |
 |---|---|---|---|---|---|---|---|---|---|---|
 | `tool.drone` | Line-Laying Drone | 2.3 (FLAGGED) | 175 (FLAGGED) | 35 (FLAGGED) | 150 (FLAGGED) | 5.0 (FLAGGED) | 0.2 (FLAGGED) | 5000 (FLAGGED) | Long Traverse | Limited payload; needs suitable anchor points |
-| `tool.bridge` | Deployable Bridge | 18 (FLAGGED) | N/A | 1766 (FLAGGED) | 6 (FLAGGED) | N/A | 3 (FLAGGED) | 8000 (FLAGGED) | Wide Gap | Needs a trained team and about 6 min to deploy a 30 m span; length fixed by modules |
+| `tool.bridge` | Deployable Bridge | 18 (FLAGGED) | N/A | 1765 (FLAGGED) | 6 (FLAGGED) | N/A | 3 (FLAGGED) | 8000 (FLAGGED) | Wide Gap | Needs a trained team and about 6 min to deploy a 30 m span; length fixed by modules |
 | `tool.ascender` | Powered Ascender | 6.5 (FLAGGED) | 1440 (FLAGGED) | 1200 (FLAGGED) | 50 (FLAGGED) | 1.2 (FLAGGED) | 0.5 (FLAGGED) | 3500 (FLAGGED) | Vertical Shaft | Battery range caps shaft height per charge; needs a pre-anchored 11 mm rope |
 | `tool.winch` | Powered Winch | 10 (FLAGGED) | 300 (FLAGGED) | 10000 (FLAGGED) | 15 (FLAGGED) | 0.03 (FLAGGED) | 1.5 (FLAGGED) | 600 (FLAGGED) | Heavy Lift Cargo | Slow under heavy load; needs a flat, hard mount; rope must keep at least 5 wraps |
 
@@ -33,12 +34,19 @@ Game values in this table. Real values are in the two-number tables below each r
 
 **Gameplay role:** Flies a lightweight pilot line between two anchor points. The pilot line can then pull a heavier rope or cable across a gap. It does not carry the astronaut or cargo.
 
-**Real-world reference:** MAV Drones, *SkyStringer Wire Stringing Drone*. **Concept reference (not a product spec):** US Patent US10985539B1, *Unmanned aerial vehicle line and cable stringing system* (the drone sheds weight as line is dispensed, and the patent says dragging a lead line needs a large drone).
+**Real-world reference:** MAV Drones, *SkyStringer Wire Stringing Drone*. **Propulsion note:** The rotor drone in [2] needs air. On the Moon, the night surface pressure is about 3 × 10⁻¹⁵ bar, so it cannot fly there. The power rule (P = F × v) gives 175 W for the game drone, but that number only means something for a motor-driven design. Before the team accepts the 175 W value, it must choose a propulsion method: (a) compressed-gas thrusters, which need tank and thrust values (both UNSOURCED); or (b) a non-flying design, such as a cannon or spool, which changes the tool's name and role. Until the team chooses, the drone's power and mass values stay FLAGGED.
+
+**Decision needed (team):** choose the game propulsion method for the drone: (a) compressed-gas thrusters, or (b) a non-flying design. The drone's power and mass stay FLAGGED until this is chosen.
+
+**Concept reference (not a product spec):** US Patent US10985539B1, *Unmanned aerial vehicle line and cable stringing system* (the drone sheds weight as line is dispensed, and the patent says dragging a lead line needs a large drone). [16]
 
 | id | metric | real_value | game_value | unit | why | source |
 |---|---|---|---|---|---|---|
 | `tool.drone.mass` | Product weight | 50 | 2.3 | kg | Game value is an inventory mass; real product is much heavier | [2] |
 | `tool.drone.allup` | Maximum all-up weight | 95 | N/A | kg | Real only | [2] |
+| `tool.drone.propulsion` | Propulsion method | rotors (need air to fly) | compressed gas thrusters (TBD, see note) | type | The real drone cannot fly in near-vacuum. The game version must use a principle that works without air | [2]; UNSOURCED for game choice |
+| `tool.drone.tank` | Propellant tank mass and capacity | UNSOURCED | UNSOURCED | kg | No source found for a gas-thruster version of this drone | UNSOURCED |
+| `tool.drone.thrust` | Thrust per thruster | UNSOURCED | UNSOURCED | N | No source found | UNSOURCED |
 | `tool.drone.motor` | Motor power (manufacturer rating) | 22 | N/A | W | Real only; not used in game | [2] |
 | `tool.drone.power` | Power (F × v) | UNSOURCED | 175 (35 × 5.0) | W | Game power follows the rule; FLAGGED | Game design proposal |
 | `tool.drone.span` | Stringing span | 250–300 | 150 | m | Game value is the in-level distance; real is "250–300 m and beyond" | [2] |
@@ -66,8 +74,8 @@ Game values in this table. Real values are in the two-number tables below each r
 | `tool.bridge.setup` | Deployment time, 30 m bridge | 6 | 3 | min | Faster deploy keeps gameplay moving; FLAGGED | [4] |
 | `tool.bridge.modules` | Modules per set | 7 | N/A | count | Set also includes 1 float | [4] |
 | `tool.bridge.mass` | Module mass | UNSOURCED | 18 | kg | Page says modules "can be carried by hand"; design value, FLAGGED | UNSOURCED |
-| `tool.bridge.force.real` | Weight force of 171 kg (171 × 9.81) | 1677 | N/A | N | Real reference only; not a structural rating | [4] + calculation |
-| `tool.bridge.force.game` | Weight force of 180 kg game load (180 × 9.81) | N/A | 1766 | N | Game load reference; FLAGGED | Game design proposal |
+| `tool.bridge.force.real` | Weight force of 171 kg (171 × 9.80665) | 1677 | N/A | N | Real reference only; not a structural rating | [4] + calculation |
+| `tool.bridge.force.game` | Weight force of 180 kg game load (180 × 9.80665) | N/A | 1765 | N | Game load reference; FLAGGED | Game design proposal |
 | `tool.bridge.cost` | Acquisition cost | UNSOURCED | 8000 | game currency | Fictional balance value | UNSOURCED |
 
 **Power:** Not applicable. The bridge is deployed by people, not a motor.
@@ -84,10 +92,10 @@ Game values in this table. Real values are in the two-number tables below each r
 |---|---|---|---|---|---|---|
 | `tool.ascender.mass` | Net weight | 12.5 | 6.5 | kg | Game version lighter for inventory balance | [6] |
 | `tool.ascender.wll` | Working Load Limit | 220 | 220 | kg | Real limit used as load cap | [6] |
-| `tool.ascender.force` | WLL as weight force (220 × 9.81) | 2158 | 1200 | N | Game value limits astronaut plus equipment | [6] + calculation |
+| `tool.ascender.force` | WLL as weight force (220 × 9.80665) | 2157 | 1200 | N | Game force cap. It binds on Earth only (see cap note below) | [6] + calculation |
 | `tool.ascender.speed` | Maximum ascent rate | 0.4 (24 m/min) | 1.2 | m/s | About 3× real rate, so platforming feels responsive; FLAGGED | [6] + design proposal |
 | `tool.ascender.descent` | Maximum descent rate | 0.42 (25 m/min) | N/A | m/s | Real only | [6] |
-| `tool.ascender.power` | Power at full load (F × v) | 863 (2158 × 0.4) | 1440 (1200 × 1.2) | W | Real value calculated, not manufacturer spec; game value FLAGGED | [6] + calculation |
+| `tool.ascender.power` | Power at full load (F × v) | 863 (2157 × 0.4) | 1440 (1200 × 1.2) | W | Real value calculated, not manufacturer spec; game value FLAGGED | [6] + calculation |
 | `tool.ascender.range` | Battery range at 20 °C, 100 kg | 550 | 50 | m | Game value is designed shaft height, not battery range | [6] |
 | `tool.ascender.remote` | Remote control range | 150 | N/A | m | Real only | [6] |
 | `tool.ascender.charge` | Charging time | 90 | N/A | min | Real only | [6] |
@@ -97,6 +105,19 @@ Game values in this table. Real values are in the two-number tables below each r
 | `tool.ascender.rope` | Compatible rope diameter | 11 | N/A | mm | Real only | [6] |
 | `tool.ascender.setup` | Setup time | UNSOURCED | 0.5 | min | Game assumption, FLAGGED | UNSOURCED |
 | `tool.ascender.cost` | Acquisition cost | UNSOURCED | 3500 | game currency | Fictional balance value | UNSOURCED |
+
+**Effective load cap per body (the two caps cannot both bind everywhere):**
+- Real cap: WLL = 220 kg (mass, same on every body).
+- Game cap: 1200 N (force). On Earth it equals 1200 ÷ 9.80665 ≈ 122 kg, and on the Moon it equals 1200 ÷ 1.62 ≈ 741 kg.
+
+| body | game cap (kg) | WLL (kg) | binding cap | effective load cap |
+|---|---|---|---|---|
+| Earth | 122 | 220 | game force cap | 122 kg |
+| Moon | 741 | 220 | WLL | 220 kg |
+
+So the game force cap only matters on Earth. On the Moon the WLL binds first.
+
+**Decision needed (team):** confirm this is the intended load-cap rule for each body.
 
 **Real safety features (datasheet):** emergency stop and emergency descent are listed. The game does not use either yet.
 
@@ -111,21 +132,23 @@ Game values in this table. Real values are in the two-number tables below each r
 | id | metric | real_value | game_value | unit | why | source |
 |---|---|---|---|---|---|---|
 | `tool.winch.mass` | Winch weight including rope | 8.0 | 10.0 | kg | Game version heavier for inventory balance; FLAGGED | [7] |
-| `tool.winch.force` | Rated line pull, first layer (1814 kg × 9.81) | 17795 | 10000 | N | Game value limits cargo | [8] + calculation |
-| `tool.winch.force.layers` | Line pull, 2nd / 3rd / 4th layer | 15058 / 13057 / 11517 (from 1535 / 1331 / 1174 kg × 9.81) | N/A | N | Rating drops on later layers; kg values are from the product page [7], not the manual | [7] + calculation |
+| `tool.winch.force` | Rated line pull, first layer (1814 kg × 9.80665) | 17789 | 10000 | N | Game value limits cargo | [8] + calculation |
+| `tool.winch.force.layers` | Line pull, 2nd / 3rd / 4th layer | 15053 / 13053 / 11513 (from 1535 / 1331 / 1174 kg × 9.80665) | N/A | N | Rating drops on later layers; kg values are from the product page [7], not the manual | [7] + calculation |
 | `tool.winch.range` | Rope length | 15.2 | 15.0 | m | Rounded for level design | [8] |
 | `tool.winch.rope` | Rope diameter | 5.5 | N/A | mm | Real only | [8] |
 | `tool.winch.speed` | Line speed, full load, 12 V (2.0 m/min) | 0.033 | 0.03 | m/s | Slow hauling is the trade-off; FLAGGED | [7] + calculation |
 | `tool.winch.power.motor` | Motor rating | 800 | N/A | W | Manufacturer rating; not used in game; see conflict 1 | [7] |
-| `tool.winch.power.mech` | Mechanical output at full load (F × v) | 587 (17795 × 0.033) | N/A | W | Calculated from real values | [7][8] + calculation |
+| `tool.winch.power.mech` | Mechanical output at full load (F × v) | 587 (17789 × 0.033) | N/A | W | Calculated from real values | [7][8] + calculation |
 | `tool.winch.power` | Power (F × v) | 587 (see above) | 300 (10000 × 0.03) | W | Game value lower than real mechanical output, by design; FLAGGED | Game design proposal |
 | `tool.winch.current` | Current draw, full load, 12 V | 230 | N/A | A | Manufacturer value. Independent support not verified (see Section 4) | [7] |
 | `tool.winch.setup` | Setup time | UNSOURCED | 1.5 | min | Game value FLAGGED | UNSOURCED |
 | `tool.winch.cost` | Acquisition cost | UNSOURCED | 600 | game currency | Fictional balance value | UNSOURCED |
 
-**Open conflict 1 (motor rating vs current):** At 12 V, 230 A at full load gives about 2,760 W of electrical input, roughly 3.5× the 800 W motor rating. The source does not explain this. One possibility is that 800 W is a nominal or mechanical rating. Full-load mechanical output (587 W) is about 73% of 800 W, a plausible efficiency. The gap between 587 W mechanical and 2,760 W electrical (about 21%) is unexplained. The game uses the power rule, not 800 W.
+**Open conflict 1 (motor rating vs current):** At 12 V, 230 A at full load gives about 2,760 W of electrical input, roughly 3.5× the 800 W motor rating. The source does not explain this. One possibility is that 800 W is a nominal or mechanical rating. Full-load mechanical output (587 W) is about 73% of 800 W, a plausible efficiency. 587 W is about 21% of the 2,760 W electrical input, so about 79% of the electrical input is unexplained by the mechanical output. The game uses the power rule, not 800 W.
 
 **Open conflict 2 (rope wraps):** The manual [8] says at least 5 wraps must remain on the drum. The product page [7] says 10. This file uses the manual as primary. The team may choose 10 as the game value (more conservative).
+
+**Decision needed (team):** conflict 1 (800 W vs 230 A) and conflict 2 (5 vs 10 wraps). Choose a game value for wraps. Conflict 1 can stay open, since the game does not use 800 W.
 
 **Safety limit:** The manual states the winch is not intended for lifting or moving people.
 
@@ -157,8 +180,8 @@ Game values in this table. Real values are in the two-number tables below each r
 |---|---|---|---|
 | `tool.ascender` | Energy to climb a given height (E = mgh) | About 1/6 of Earth's value | [1]; calculation |
 | `tool.winch` | Mass lifted vertically at the same pulling force | About 6× Earth's value | [1]; calculation |
-| `tool.bridge` | Load from the same mass | 292 N on the Moon for a 180 kg game load (1766 N on Earth; 180 × 1.62 = 291.6) | [1]; calculation; FLAGGED |
-| `tool.drone` | Gravity is not the main issue; the Moon has almost no atmosphere (night surface pressure 3 × 10⁻¹⁵ bar) | Not a gravity effect | [1] (atmosphere section) |
+| `tool.bridge` | Load from the same mass | 292 N on the Moon for a 180 kg game load (1765 N on Earth; 180 × 1.62 = 291.6) | [1]; calculation; FLAGGED |
+| `tool.drone` | Propulsion. The real SkyStringer uses rotors, which need air to produce lift. The Moon has almost no atmosphere (night surface pressure 3 × 10⁻¹⁵ bar), so the real design cannot fly there. The game version needs a different propulsion (see 1.1). | Not a gravity effect. Blocker for the rotor design | [1] (atmosphere section); [2] (rotor design) |
 
 **Team note:** The drone is not covered by gravity. Its problem is the lack of atmosphere.
 
@@ -172,7 +195,7 @@ Game values in this table. Real values are in the two-number tables below each r
 
 **What the player changes:** Speed and pulling load. Raising the speed under the same load raises the power needed.
 
-**Game effect:** At full load, the real winch delivers about 587 W of mechanical output (17,795 N × 0.033 m/s). The real ascender delivers about 863 W at full load (2,158 N × 0.4 m/s). Both are calculations from manufacturer values, not rated powers. The human body also has a limit. On a 30% grade traverse, test subjects reached peak metabolic rates of about 485–512 W, converted from 1,656 and 1,747 BTU/hr [9][3]. That is energy burned by the body, not mechanical power, so the two figures must not be compared directly.
+**Game effect:** At full load, the real winch delivers about 587 W of mechanical output (17,789 N × 0.033 m/s). The real ascender delivers about 863 W at full load (2,157 N × 0.4 m/s). Both are calculations from manufacturer values, not rated powers. The human body also has a limit. On a 30% grade traverse, test subjects reached peak metabolic rates of about 485–512 W, converted from 1,656 and 1,747 BTU/hr [9][3]. That is energy burned by the body, not mechanical power, so the two figures must not be compared directly.
 
 **Trade-off:** Speed saves time but costs energy and drains the battery faster. The winch slows as the load grows, from 4.6 m/min with no load to 2.0 m/min at full load.
 
@@ -186,9 +209,9 @@ Game values in this table. Real values are in the two-number tables below each r
 
 | tool | what is affected by power | real value | game value | source |
 |---|---|---|---|---|
-| `tool.winch` | Mechanical output at full load (F × v) | 587 W (17,795 N × 0.033 m/s) | 300 W (10,000 N × 0.03 m/s) | [7][8]; calculation |
+| `tool.winch` | Mechanical output at full load (F × v) | 587 W (17,789 N × 0.033 m/s) | 300 W (10,000 N × 0.03 m/s) | [7][8]; calculation |
 | `tool.winch` | Rated motor power | 800 W | Not used in game | [7] |
-| `tool.ascender` | Power at full load (F × v) | 863 W (2,158 N × 0.4 m/s) | 1,440 W (1,200 N × 1.2 m/s) | [6]; calculation |
+| `tool.ascender` | Power at full load (F × v) | 863 W (2,157 N × 0.4 m/s) | 1,440 W (1,200 N × 1.2 m/s) | [6]; calculation |
 | `tool.drone` | Rated motor power | 22 W | 175 W (35 N × 5 m/s) | [2]; calculation |
 | `tool.bridge` | No motor; deployment is by people | 485–512 W metabolic at peak effort | Not applicable | [9]; [3] |
 
@@ -206,11 +229,11 @@ Game values in this table. Real values are in the two-number tables below each r
 
 - Bending moment in a simply supported beam with a load at midspan: M = F × L / 4 [12][13].
 
-- Bending stress: σ = M × y / I (at the outer fibre, y = c, so σ_max = M × c / I) [11][11b].
+- Bending stress (Hibbeler, 9th/11th ed., section 6.4; page to be checked in the team's copy): σ = M × y / I (at the outer fibre, y = c, so σ_max = M × c / I) [11][11b].
 
 **What the player changes:** Anchor points, their number, and where the load sits.
 
-**Game effect:** The ascender carries up to 220 kg (WLL), about 356 N on the Moon. The winch pulls 17,795 N on its first rope layer. Newton force does not change with gravity, but the mass it moves does. Pull drops on later layers, for example 1,535 kg on the second (≈ 15,058 N, product page [7]). A load at midspan gives the bridge its largest bending moment.
+**Game effect:** The ascender carries up to 220 kg (WLL), about 356 N on the Moon. The winch pulls 17,789 N on its first rope layer. Newton force does not change with gravity, but the mass it moves does. Pull drops on later layers, for example 1,535 kg on the second (≈ 15,053 N, product page [7]). A load at midspan gives the bridge its largest bending moment.
 
 **Trade-off:** One anchor is faster to set up but carries the whole load. Several anchors share it but take longer.
 
@@ -225,8 +248,8 @@ Game values in this table. Real values are in the two-number tables below each r
 | Path element | Quantity | Real value | Game value | Source |
 |---|---|---|---|---|
 | `tool.ascender` (load on rope) | Working Load Limit | 220 kg = 356 N on the Moon (220 × 1.62) | 1,200 N (≈ 741 kg on the Moon, 1200 ÷ 1.62); FLAGGED | [6]; calculation; rope under load: [15] |
-| `tool.winch` (cable) | Line pull, first layer | 17,795 N (force does not change with gravity) | 10,000 N | [8] |
-| `tool.winch` (cable) | Line pull, second layer | 15,058 N (1,535 kg × 9.81) | Not used | [7]; calculation |
+| `tool.winch` (cable) | Line pull, first layer | 17,789 N (force does not change with gravity) | 10,000 N | [8] |
+| `tool.winch` (cable) | Line pull, second layer | 15,053 N (1,535 kg × 9.80665) | Not used | [7]; calculation |
 | `tool.winch` (cable) | Rope length | 15.2 m | 15 m | [8] |
 | `tool.winch` (rope) | Rope diameter | 5.5 mm | Not used | [8] |
 | `tool.bridge` (load on bridge) | Soldier with equipment, on the Moon | 171 kg = 277 N | 180 kg = 292 N | [4]; calculation |
@@ -258,8 +281,6 @@ Game values in this table. Real values are in the two-number tables below each r
 
 Any celestial body (planet, moon, or other) is a row in this table. A new body needs only its surface gravity from a NASA fact sheet; no other values change.
 
-**Scope note:** Each body's row in 3.1 gives gravity only. Materials for each body come from that body's own material table. Until a body's table is received, its inputs stay `FLAGGED`.
-
 ### 3.2 Crafting formulas
 
 - **mass_kg:** constant. Not multiplied by any environment factor.
@@ -280,26 +301,39 @@ Any celestial body (planet, moon, or other) is a row in this table. A new body n
 
 **Note:** mass_kg values come from Section 1 (game values). They are constant across environments, so they do not change in this table.
 
+**Decision needed (team):** the Mars material list is received (Ahmed Walid's Mars research), but purity, energy, cost, tool inputs, and station tier are still missing from it. Moon materials are still pending Mo3tez's table. Any other body waits for its owner's table.
+
 ### 3.4 Material factors
 
-| material | source | purity_factor | status |
-|---|---|---|---|
-| (from each body's table) | Moon: Mo3tez; Mars: Ahmed Walid; other bodies: their owners | TBD | FLAGGED: table not received |
+**Moon materials (Mo3tez's table).** Not received yet. This table stays empty until it arrives. Inputs, purity, energy, and cost for any Moon-based item stay `FLAGGED`.
 
-Materials for any body are not listed here until that body's table is received.
+**Scope rule (applies to every body):** Each body's row in 3.1 gives gravity only. Materials for each body come only from that body's own material table. Until a body's table is received, its inputs stay `FLAGGED`.
 
-### 3.5 Input availability (where each input is found)
+**Other bodies:** add a new subsection here when a body's table is received, using the same format as Mars.
 
-Crafting happens at the station. Inputs are gathered from a body (Moon, Mars, or another body) and brought back. Each input is listed below with the body where it is found. Nothing is filled in until the matching table is received.
+**Mars materials (Ahmed Walid's Mars research).** Source numbers in the table refer to Ahmed Walid's Mars research source list, not this file's list. Purity factors are TBD. Found-at locations are from Ahmed Walid's Mars research and are not yet tied to any tool.
 
-| tool | input | found at (body) | source table | status |
-|---|---|---|---|---|
-| `tool.drone` | TBD | TBD | Body's material table | FLAGGED: table not received |
-| `tool.bridge` | TBD | TBD | Body's material table | FLAGGED: table not received |
-| `tool.ascender` | TBD | TBD | Body's material table | FLAGGED: table not received |
-| `tool.winch` | TBD | TBD | Body's material table | FLAGGED: table not received |
+| id | material | real | found at (Mars) | Mars research source | purity_factor | status |
+|---|---|---|---|---|---|---|
+| `material.regolith` | Regolith / soil | yes | Surface, varies by site | Mars research [1] | TBD | FLAGGED |
+| `material.iron_oxide` | Iron-bearing oxides | yes | Soil and rocks, site-dependent | Mars research [9], Mars research [10] | TBD | FLAGGED |
+| `material.dust` | Fine airborne dust | yes | Atmosphere and surface | Mars research [4], Mars research [20], Mars research [22] | TBD | FLAGGED |
+| `material.sulfates` | Sulfate minerals | yes | Selected soils and rocks | Mars research [9], Mars research [11] | TBD | FLAGGED |
+| `material.clays` | Clay minerals | yes | Ancient aqueous terrains | Mars research [11], Mars research [12] | TBD | FLAGGED |
+| `material.water_ice` | Water ice | yes | Polar and high-latitude subsurface (latitude-dependent) | Mars research [2], Mars research [13], Mars research [31], Mars research [32] | TBD | FLAGGED |
+| `material.co2_ice` | CO₂ ice | yes | Seasonal polar caps | Mars research [2] | TBD | FLAGGED |
+| `material.co2_atmosphere` | Atmospheric CO₂ | yes | Atmosphere (about 95.1% by volume) | Mars research [1], Mars research [3], Mars research [33] | TBD | FLAGGED |
+| `material.perchlorate` | Perchlorate salts | yes (hazard) | Multiple sites; not safe to assume | Mars research [9], Mars research [14], Mars research [34], Mars research [35] | TBD | FLAGGED |
 
-**Rule:** An input can be listed as found on a body only if that body's material table has it. Anything else stays TBD.
+**Decision needed (team, with Ahmed Walid):** perchlorate is listed as a material in Ahmed Walid's Mars research and also as a hazard. Confirm whether it is a crafting input or a hazard only.
+
+**Not included as real materials:** `material.ferric_sinter` and `material.aerogel_salt` are fictional (`real = no`) and stay out of the crafting inputs unless the team decides otherwise.
+
+**Purity factor:** `purity_factor` is not in Ahmed Walid's Mars materials table. No purity values exist for any Mars material yet, so every `purity_factor` in this section stays TBD. Values come from each body's own material table (Moon: Mo3tez; Mars: Ahmed Walid, if he adds it). Until then, `cost_usd` and `energy_kwh` cannot be scaled by purity.
+
+**GU values:** Ahmed Walid's Mars research gives crafting costs in game units (GU). They are not USD and must not go into `cost_usd` without a team decision.
+
+**Decision needed (team):** whether GU values go into `cost_usd` or stay a separate game currency.
 
 ## 4. Sources and Gaps
 
@@ -341,3 +375,4 @@ All sources accessed 2026-10-21.
 
 - Crafting table: Section 3 (not started; needs the material table of each body, starting with Mo3tez's Moon table).
 
+- Fantasy option: none added (optional).
