@@ -1,4 +1,6 @@
-# Movement Tools (Raghda)
+# Movement Tools
+
+Author: Raghda ([@raghdaa-gad](https://github.com/raghdaa-gad))
 
 Four movement tools that open routes the core set (jetpack, tether, climbing spikes) cannot.
 
