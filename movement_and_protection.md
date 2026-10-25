@@ -2,29 +2,33 @@
 
 ## 1. Movement Tools Table
 
-| id           | tool                     | mass_kg                      | power_w | force_n | range_m | acceleration_m/s^2  | setup_min | cost_usd | unlocks                   | weakness                                                           |
-| :----------- | :----------------------- | :--------------------------- | :------ | :------ | :------ | :------------------ | :-------- | :------- | :------------------------ | :----------------------------------------------------------------- |
-| tool.jetpack | Jetpack / Thruster Pack  | 153.314                      | 74.48   | 3.56    | 121.92  | 0.079248 - 0.100584 | 1.5       | 5000     | High Altitude<br>Void Gap | Propellant depletes rapidly<br>Extremely bulky in tight spaces.    |
-| tool.tether  | Tether / Grapple         | large: 0.227 <br>small: 0.01 | -       | 2602.23 | 25.9    | -                   | 0.2       | 600      | Gap Swing                 | Cannot be operated by a single.<br>Fatiguing when used frequently. |
-| tool.spikes  | Climbing Spikes / Pitons | 0.07                         | -       | 8.9     | -       | -                   | 0.5       | 400      | Vertical Wall Climb       | Very low pull-out resistance in loose regolith.                    |
+| id           | tool                     | mass_kg                      | power_w | force_n | range_m | acceleration_m/s^2 | setup_min | cost_usd | unlocks                   | weakness                                                           |
+| :----------- | :----------------------- | :--------------------------- | :------ | :------ | :------ | :----------------- | :-------- | :------- | :------------------------ | :----------------------------------------------------------------- |
+| tool.jetpack | Jetpack / Thruster Pack  | 153.314                      | 74.48   | 3.56    | 121.92  | 0.0232             | 1.5       | 5000     | High Altitude<br>Void Gap | Propellant depletes rapidly<br>Extremely bulky in tight spaces.    |
+| tool.tether  | Tether / Grapple         | large: 0.227 <br>small: 0.01 | -       | 2602.23 | 25.9    | -                  | 0.2       | 600      | Gap Swing                 | Cannot be operated by a single.<br>Fatiguing when used frequently. |
+| tool.spikes  | Climbing Spikes / Pitons | 0.07                         | -       | 8.9     | -       | -                  | 0.5       | 400      | Vertical Wall Climb       | Very low pull-out resistance in loose regolith.                    |
+
+> **Jetpack real vs game:** This row holds real, sourced values — game-tuned values are in the Jetpack Performance Metrics table below. Acceleration is recomputed from the row's own numbers, `F/m = 3.56 / 153.314 ≈ 0.0232 m/s²`; the previous `0.079–0.101 m/s²` range implied a moving mass of only ~35–45 kg (`m = F/a`) and came from a different system than the 153.314 kg unit listed here. Real cold-gas thrust (3.56 N) supports only ~2.2 kg against lunar gravity — a microgravity translation aid, not a lifter.
 
 ### Jetpack Performance Metrics
 
 | id                  | metric           | real_value | game_value | unit | why                                                                                             | source |
 | :------------------ | :--------------- | :--------- | :--------- | :--- | :---------------------------------------------------------------------------------------------- | :----- |
-| tool.jetpack.thrust | Max Thrust       | 3.56       | 250        | N    | Game value boosted, real cold-gas thrusters are too weak to lift a player in planetary gravity. | [1]    |
+| tool.jetpack.thrust | Max Thrust       | 3.56       | 600        | N    | Game boost sized to actually deliver the "High Altitude" sell: with game masses — 80 kg player (assumed; pin as project constant) + 133.8 kg suit + 15 kg jetpack (crafting mass) = 228.8 kg — lunar hover costs ~371 N, so the previous 250 N value could not even hover the system. 600 N gives a net upward acceleration of ~1.0 m/s² at full throttle (T/W ≈ 1.6) and ~140 kg of payload margin. Real cold-gas thrusters (3.56 N) cannot lift a player in planetary gravity. | [1]    |
 | tool.jetpack.isp    | Specific Impulse | 65         | 300        | s    | Game value boosted, real nitrogen gas drains too rapidly for playable flight durations.         | [2]    |
 
 ---
 
 ## 2. Protection Tools Table
 
-| id           | tool                     | mass_kg   | power_w   | insulation_w_m2k | heat_rejection_w | temp_limit_c | anchor_force_n | setup_min | cost_usd | protects                                              | weakness                                                                       |
-| :----------- | :----------------------- | :-------- | :-------- | :--------------- | :--------------- | :----------- | :------------- | :-------- | :------- | :---------------------------------------------------- | :----------------------------------------------------------------------------- |
-| tool.suit    | Pressure & Thermal Suit  | 133.8     | 150       | 0.02             | 400              | 112.8        | -              | 3.0       | 12000    | Vacuum,<br>Extreme, temperatures,<br>Micrometeoroids, | Restrictive joint mobility.<br>Gloves cause severe hand fatigue.               |
-| tool.shelter | Storm Anchor / Shelter   | UNSOURCED | -         | -                | -                | UNSOURCED    | UNSOURCED      | 1.5       | 3500     | Solar radiation,<br>Dust storms                       | Immobile.<br>Requires flat bedrock or <br>deep regolith to anchor properly.    |
-| tool.heater  | Heater / Thermal Control | .18       | 0         | -                | -                | 176.7        | -              | 0.1       | 800      | Freezing in permanent shadows                         | Significantly reduces finger dexterity.                                        |
-| tool.shield  | Dust / Radiation Shield  | UNSOURCED | UNSOURCED | -                | -                | -            | -              | 2.0       | 8500     | Galactic cosmic rays,<br>Abrasive charged dust        | Immense mass penalty if physical<br>High constant power draw if electrostatic. |
+| id           | tool                     | mass_kg   | power_w   | insulation_w_m2k | heat_rejection_w | temp_limit_c | anchor_force_n | setup_min | cost_usd | protects                                          | weakness                                                                       |
+| :----------- | :----------------------- | :-------- | :-------- | :--------------- | :--------------- | :----------- | :------------- | :-------- | :------- | :------------------------------------------------ | :----------------------------------------------------------------------------- |
+| tool.suit    | Pressure & Thermal Suit  | 133.8     | 150       | 0.02             | 400              | 112.8        | -              | 3.0       | 12000    | Vacuum<br>Extreme temperatures<br>Micrometeoroids | Restrictive joint mobility.<br>Gloves cause severe hand fatigue.               |
+| tool.shelter | Storm Anchor / Shelter   | UNSOURCED | -         | -                | -                | UNSOURCED    | UNSOURCED      | 1.5       | 3500     | Solar radiation,<br>Dust storms                   | Immobile.<br>Requires flat bedrock or <br>deep regolith to anchor properly.    |
+| tool.heater  | Heater / Thermal Control | 0.18      | UNSOURCED | -                | -                | 176.7        | -              | 0.1       | 800      | Freezing in permanent shadows                     | Significantly reduces finger dexterity.                                        |
+| tool.shield  | Dust / Radiation Shield  | UNSOURCED | UNSOURCED | -                | -                | -            | -              | 2.0       | 8500     | Galactic cosmic rays,<br>Abrasive charged dust    | Immense mass penalty if physical<br>High constant power draw if electrostatic. |
+
+> **Unit notes:** `tool.suit.temp_limit_c` (112.8 °C) and `tool.heater.temp_limit_c` (176.7 °C) are exact conversions of Fahrenheit source values — 235 °F and 350 °F respectively; the columns are correct in °C. `tool.heater` runs on a Battery Cell (see crafting inputs), so `power_w = 0` was an error — a heater that draws nothing heats nothing. Its nominal draw is flagged `UNSOURCED` pending a source.
 
 ---
 
@@ -85,3 +89,4 @@
 - `tool.spikes.anchor_force`: `UNSOURCED` (No standard lunar piton pull-out test data found).
 - `tool.shelter`: `UNSOURCED` (No standard surface storm shelter mass or temperature limit found).
 - `tool.shield`: `UNSOURCED` (No standard EVA radiation shield mass or power draw found).
+- `tool.heater.power_w`: `UNSOURCED` (Battery-powered thermal control must draw electrical power; the previous 0 W was an error, nominal draw not yet sourced).
