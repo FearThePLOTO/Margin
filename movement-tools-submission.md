@@ -25,7 +25,7 @@ Game values in this table. Real values are in the two-number tables below each r
 |---|---|---|---|---|---|---|---|---|---|---|
 | `tool.drone` | Line-Laying Drone | 2.3 (FLAGGED) | 175 (FLAGGED) | 35 (FLAGGED) | 150 (FLAGGED) | 5.0 (FLAGGED) | 0.2 (FLAGGED) | 5000 (FLAGGED) | Long Traverse | Limited payload; needs suitable anchor points |
 | `tool.bridge` | Deployable Bridge | 18 (FLAGGED) | N/A | 1765 (FLAGGED) | 6 (FLAGGED) | N/A | 3 (FLAGGED) | 8000 (FLAGGED) | Wide Gap | Needs a trained team and about 6 min to deploy a 30 m span; length fixed by modules |
-| `tool.ascender` | Powered Ascender | 6.5 (FLAGGED) | 1440 (FLAGGED) | 1200 (FLAGGED) | 50 (FLAGGED) | 1.2 (FLAGGED) | 0.5 (FLAGGED) | 3500 (FLAGGED) | Vertical Shaft | Battery range caps shaft height per charge; needs a pre-anchored 11 mm rope |
+| `tool.ascender` | Powered Ascender | 6.5 (FLAGGED) | 1440 (FLAGGED) | 1200 (FLAGGED) | 50 (FLAGGED) | 1.2 (FLAGGED) | 0.5 (FLAGGED) | 3500 (FLAGGED) | Vertical Shaft | Needs a pre-anchored 11 mm rope |
 | `tool.winch` | Powered Winch | 10 (FLAGGED) | 300 (FLAGGED) | 10000 (FLAGGED) | 15 (FLAGGED) | 0.03 (FLAGGED) | 1.5 (FLAGGED) | 600 (FLAGGED) | Heavy Lift Cargo | Slow under heavy load; needs a flat, hard mount; rope must keep at least 5 wraps |
 
 ---
