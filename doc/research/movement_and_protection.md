@@ -1,5 +1,7 @@
 # Movement and Protection Deliverable
 
+Author: Mahmoud FathAllah [(@Ma7moudEGY)](https://github.com/Ma7moudEGY)
+
 ## 1. Movement Tools Table
 
 | id           | tool                     | mass_kg                      | power_w | force_n | range_m | acceleration_m/s^2 | setup_min | cost_usd | unlocks                   | weakness                                                           | source |
