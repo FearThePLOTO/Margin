@@ -1,3 +1,7 @@
+# Mars Research
+
+Author: Ahmed Walid ([@dravdzo](https://github.com/dravdzo))
+
 ## 1. Environment table
 
 Cells hold value, unit and a short condition only. Derivations, caveats and correction history are in "Notes on Section 1" below and in Appendix A/B. The `accessed` column reads `unverified` unless the content was actually read on the stated date (see Section 7, "Access status"). Value types: **measured** (instrument/mission), **derived** (computed here), **estimated** (mission-team estimate).
