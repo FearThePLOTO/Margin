@@ -5,6 +5,10 @@ Owner: (add name / @github-handle)
 Player movement, tool behavior, protection/hazard damage, crafting, and the
 loadout budget. All values trace to `doc/research/` — keep the trace.
 
+NOTE: `player_test.tscn` instances the ui feature's `mission_hud.tscn` for
+test-bench purposes only; the mission flow (main.tscn) will own the HUD once
+the phase screens are built.
+
 ## What goes here
 
 - `scenes/` — player rig, tool scenes (jetpack, tether, spikes, …)
@@ -21,7 +25,9 @@ loadout budget. All values trace to `doc/research/` — keep the trace.
 
 ## Signals you use (src/core/autoload/event_bus.gd)
 
-- Emit: `tool_used`, `tool_equipped`, `loadout_changed`, `budget_changed`
+- Emit: `tool_used`, `tool_equipped`, `loadout_changed`, `budget_changed`,
+  `gauges_changed` (player streams live heat/chill/radiation/o2 to the mission
+  HUD every 0.1 s; `o2 = -1` means the O2 tool is not equipped)
 - Listen: `hazard_entered`, `hazard_exited`
 
 ## Notes
@@ -46,6 +52,20 @@ loadout budget. All values trace to `doc/research/` — keep the trace.
 - Hazards: listens to `hazard_entered`/`hazard_exited`, accrues heat/chill/
   radiation gauges slowly (forgiving), recovers passively outside zones.
   Gauge full → note into the Book of Books + `mission_failed`.
+- O2 (`scripts/mechanic_o2.gd`, tool `resources/tool_o2.tres`): equipped
+  loadout tool (`tool.o2`). The CAVE is its domain and the O2 bar is the ONLY
+  thing that changes there: the supply drains over time (`O2_SUPPLY_S` full
+  drain) and an empty tank inside the cave fails the mission directly — no
+  separate hazard gauge. The supply NEVER refills on its own; scattered tank
+  pickups are the only refill. Without the tool there is no supply, so
+  entering a cave fails on the spot. Its `mass_kg` is display-only like
+  tether/spikes — `total_mass_kg()` counts only the jetpack.
+- O2 tank pickups (`scenes/o2_tank.tscn`, `scripts/o2_tank.gd`): scattered
+  tank nodes the level places inside/around caves. Touching one refills a
+  fixed `O2_TANK_PICKUP` (30%) of the supply, clamped at full, and consumes
+  the tank. The ONLY way the supply goes back up. Mechanics-internal node —
+  no EventBus signals.
+- Gauges stream to the mission HUD over `gauges_changed` (see signals above).
 - Test scene: `scenes/player_test.tscn` (run it directly from the editor).
 - Input actions (project.godot): `move_left/right/up/down` (WASD/arrows),
   `jump` (Space), `jetpack_thrust` (Shift/X), `tether_fire` (F),

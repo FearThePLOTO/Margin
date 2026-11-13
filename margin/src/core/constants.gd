@@ -47,3 +47,10 @@ const HAZARD_RATES := {
 	&"RadioactiveWastes": {"radiation": 8.0},
 }
 const HAZARD_RECOVERY := {"heat": 12.0, "chill": 10.0, "radiation": 4.0}
+
+# -- O2 supply (equipped tool; the ONLY thing that changes inside a cave) --
+## Inside a cave the O2 supply drains over time — no separate hazard gauge.
+## Empty tank inside the cave fails the mission directly. Outside caves it
+## refills passively. book.life_support.o2.
+const O2_SUPPLY_S := 45.0          # seconds of full supply inside a cave
+const O2_TANK_PICKUP := 0.3        # fixed refill of every scattered O2 tank

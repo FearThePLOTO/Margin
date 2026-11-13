@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
-## Player rig: lunar movement + the core tool trio (jetpack, tether, spikes).
+## Player rig: lunar movement + the tool trio (jetpack, tether, spikes) and
+## the O2 supply (tool.o2).
 ## Thin coordinator: owns the state machine, cross-mechanic input buffering,
 ## move_and_slide() and shared helpers. Each mechanic lives in its own file
 ## (mechanic_*.gd, all RefCounted via player_mechanic.gd). Tuning is in raw
@@ -13,6 +14,11 @@ enum State { MOVE, SWING, CLIMB }
 const TOOL_JETPACK := preload("res://src/features/mechanics/resources/tool_jetpack.tres")
 const TOOL_TETHER := preload("res://src/features/mechanics/resources/tool_tether.tres")
 const TOOL_SPIKES := preload("res://src/features/mechanics/resources/tool_spikes.tres")
+const TOOL_O2 := preload("res://src/features/mechanics/resources/tool_o2.tres")
+
+## Gauges stream to the mission HUD (ui feature) over EventBus at this rate —
+## every physics tick is overkill for a display.
+const GAUGE_EMIT_S := 0.1
 
 var state: State = State.MOVE
 var mission_over := false
@@ -21,6 +27,7 @@ var mission_over := false
 var jump_buffer := 0.0
 var coyote := 0.0
 var climb_grace := 0.0  # grace after a wall jump so we don't re-cling
+var _gauge_emit := 0.0  # throttle for the HUD gauges stream
 
 # Mechanics (RefCounted, one per file), wired in _ready.
 var move: PlayerMoveMechanic
@@ -28,6 +35,7 @@ var jetpack: PlayerJetpackMechanic
 var tether: PlayerTetherMechanic
 var spikes: PlayerSpikesMechanic
 var hazards: PlayerHazardsMechanic
+var o2: PlayerO2Mechanic
 
 @onready var rope: Line2D = $TetherRope
 @onready var camera: Camera2D = $Camera2D
@@ -39,6 +47,7 @@ func _ready() -> void:
 	tether = PlayerTetherMechanic.new(self)
 	spikes = PlayerSpikesMechanic.new(self)
 	hazards = PlayerHazardsMechanic.new(self)
+	o2 = PlayerO2Mechanic.new(self)
 	jetpack.propellant = TOOL_JETPACK.propellant
 	_announce_equipped()
 
@@ -59,7 +68,9 @@ func _physics_process(delta: float) -> void:
 		State.CLIMB:
 			spikes.process(delta)
 
+	o2.process(delta)
 	hazards.process(delta)
+	_emit_gauges(delta)
 	move_and_slide()
 
 	# Post-move corrections run AFTER the slide so constraints have the last
@@ -83,6 +94,20 @@ func change_state(new_state: State) -> void:
 
 # -------------------------------------------------------------- failure ---
 
+func _emit_gauges(delta: float) -> void:
+	_gauge_emit += delta
+	if _gauge_emit < GAUGE_EMIT_S:
+		return
+	_gauge_emit = 0.0
+	EventBus.gauges_changed.emit({
+		"heat": hazards.heat,
+		"chill": hazards.chill,
+		"radiation": hazards.radiation,
+		# -1 = the O2 tool is not equipped, the HUD hides the bar.
+		"o2": o2.o2 if has_tool(&"tool.o2") else -1.0,
+	})
+
+
 func fail(entry_id: StringName, reason: String) -> void:
 	if mission_over:
 		return
@@ -91,6 +116,7 @@ func fail(entry_id: StringName, reason: String) -> void:
 		"heat": hazards.heat,
 		"chill": hazards.chill,
 		"radiation": hazards.radiation,
+		"o2": o2.o2,
 	})
 	EventBus.mission_failed.emit(entry_id, reason)
 
@@ -120,7 +146,7 @@ func has_tool(tool_id: StringName) -> bool:
 
 func _announce_equipped() -> void:
 	if GameState.loadout.is_empty():
-		for tool in [TOOL_JETPACK, TOOL_TETHER, TOOL_SPIKES]:
+		for tool in [TOOL_JETPACK, TOOL_TETHER, TOOL_SPIKES, TOOL_O2]:
 			EventBus.tool_equipped.emit(tool.tool_id)
 	else:
 		for tool_id in GameState.loadout:
