@@ -36,6 +36,7 @@ var tether: PlayerTetherMechanic
 var spikes: PlayerSpikesMechanic
 var hazards: PlayerHazardsMechanic
 var o2: PlayerO2Mechanic
+var animation: PlayerAnimationMechanic
 
 @onready var rope: Line2D = $TetherRope
 @onready var camera: Camera2D = $Camera2D
@@ -48,6 +49,7 @@ func _ready() -> void:
 	spikes = PlayerSpikesMechanic.new(self)
 	hazards = PlayerHazardsMechanic.new(self)
 	o2 = PlayerO2Mechanic.new(self)
+	animation = PlayerAnimationMechanic.new(self)
 	jetpack.propellant = TOOL_JETPACK.propellant
 	_announce_equipped()
 
@@ -86,6 +88,9 @@ func _physics_process(delta: float) -> void:
 	rope.visible = state == State.SWING
 	if rope.visible:
 		rope.points = PackedVector2Array([Vector2.ZERO, rope.to_local(tether.anchor_point)])
+
+	# Animation resolves last, after every physics correction is in.
+	animation.process(delta)
 
 
 func change_state(new_state: State) -> void:
