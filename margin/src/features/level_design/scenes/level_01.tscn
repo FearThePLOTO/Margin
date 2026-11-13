@@ -1,15 +1,10 @@
 [gd_scene format=3 uid="uid://fsiax3lpv0ay"]
 
-[ext_resource type="PackedScene" path="res://src/features/level_design/scenes/blocks/boundary_block_16.tscn" id="1_block"]
-[ext_resource type="PackedScene" path="res://src/features/mechanics/scenes/player.tscn" id="2_player"]
-[ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/falling_platform_64.tscn" id="3_fall"]
-[ext_resource type="PackedScene" path="res://src/features/mechanics/scenes/tether_anchor.tscn" id="4_anchor"]
+[ext_resource type="PackedScene" uid="uid://xw56iew608xg" path="res://src/features/mechanics/scenes/player.tscn" id="2_player"]
 [ext_resource type="Script" uid="uid://de80wr1l7fmwq" path="res://src/features/level_design/scripts/hazard_zone.gd" id="5_hazard"]
+[ext_resource type="Texture2D" uid="uid://dl50oimb6fafd" path="res://src/assets/The Cave/Cave.jpg" id="5_rr00u"]
 [ext_resource type="Script" uid="uid://b2wc388rob3ex" path="res://src/features/level_design/scripts/level_switch.gd" id="6_switch"]
 [ext_resource type="Script" uid="uid://ca2xxnx216206" path="res://src/features/level_design/scripts/level_01.gd" id="7_level"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_platform"]
-size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lava0"]
 size = Vector2(64, 32)
@@ -29,207 +24,77 @@ size = Vector2(40, 40)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
 size = Vector2(28, 48)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr00u"]
+texture = ExtResource("5_rr00u")
+texture_region_size = Vector2i(344, 384)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-173.33334, -13.333334, 172, -13, 172.61362, 191.44418, -172, 192)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-173.33334, -13.333334, 172, -13, 172.61362, 191.44418, -172, 192)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-173.33334, -13.333334, 172, -13, 172.61362, 191.44418, -172, 192)
+3:0/0 = 0
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(176, 192, 172, -16, -64, -16, -80, 4, -80, 192)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, -192, -160, -192, -160, 192)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, -192, -160, -192, -160, 192)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, -192, -160, -192, -160, 192)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-172, -192, 116, -192, -172, 100)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(176, 192, 172, -192, 160, -192, -172, 136, -172, 192)
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, 96, -172, 96, -172, 192)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, 96, -172, 96, -172, 192)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, 96, -172, 96, -172, 192)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, 192, 172, -192, 32, -192, 32, 192)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, -148, 172, -192, -172, -192, -172, -148)
+0:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(-172, 156, 172, 156, 172, 192, -172, 192)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(172, -148, 172, -192, -172, -192, -172, -148)
+1:3/0/physics_layer_0/polygon_1/points = PackedVector2Array(-172, 156, 172, 156, 172, 192, -172, 192)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(152, -12, 152, -176, -152, -176, -152, -12)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(152, -12, 152, -176, -152, -176, -152, -12)
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aui74"]
+tile_size = Vector2i(344, 384)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rr00u")
+
 [node name="Level01" type="Node2D" unique_id=713336077]
 script = ExtResource("7_level")
 rooms = Array[Rect2]([Rect2(1056, 144, 320, 180), Rect2(1376, 144, 320, 180)])
 
 [node name="Background" type="ColorRect" parent="." unique_id=1063147611]
-offset_left = 39.0
-offset_top = -253.0
-offset_right = 1847.0
-offset_bottom = 467.0
+offset_left = 33.0
+offset_top = -192.0
+offset_right = 1841.0
+offset_bottom = 528.0
 mouse_filter = 2
 color = Color(0.06, 0.05, 0.09, 1)
-
-[node name="Lava" type="Node2D" parent="." unique_id=1067496490]
-
-[node name="Lava_R1_Pit1" type="ColorRect" parent="Lava" unique_id=1313546484]
-offset_left = 448.0
-offset_top = 320.0
-offset_right = 512.0
-offset_bottom = 352.0
-mouse_filter = 2
-color = Color(0.95, 0.32, 0.08, 1)
-
-[node name="Lava_R1_Pit2" type="ColorRect" parent="Lava" unique_id=387793965]
-offset_left = 736.0
-offset_top = 320.0
-offset_right = 800.0
-offset_bottom = 352.0
-mouse_filter = 2
-color = Color(0.95, 0.32, 0.08, 1)
-
-[node name="Lava_R2" type="ColorRect" parent="Lava" unique_id=986355616]
-offset_left = 1152.0
-offset_top = 304.0
-offset_right = 1328.0
-offset_bottom = 320.0
-mouse_filter = 2
-color = Color(0.95, 0.32, 0.08, 1)
-
-[node name="Lava_R3" type="ColorRect" parent="Lava" unique_id=183706251]
-offset_left = 1440.0
-offset_top = 304.0
-offset_right = 1616.0
-offset_bottom = 320.0
-mouse_filter = 2
-color = Color(0.95, 0.32, 0.08, 1)
-
-[node name="Solids" type="Node2D" parent="." unique_id=319327200]
-
-[node name="Bounds_Top" parent="Solids" unique_id=1990707023 instance=ExtResource("1_block")]
-position = Vector2(932, -353)
-scale = Vector2(113, 2)
-
-[node name="Bounds_Bottom" parent="Solids" unique_id=1841260930 instance=ExtResource("1_block")]
-position = Vector2(936, 456)
-scale = Vector2(113, 1)
-
-[node name="Bounds_Left" parent="Solids" unique_id=1128268833 instance=ExtResource("1_block")]
-position = Vector2(40, 104)
-scale = Vector2(1, 45)
-
-[node name="Bounds_Right" parent="Solids" unique_id=531781499 instance=ExtResource("1_block")]
-position = Vector2(1832, 104)
-scale = Vector2(1, 45)
-
-[node name="Ground" parent="Solids" unique_id=1497510966 instance=ExtResource("1_block")]
-position = Vector2(179, 46)
-scale = Vector2(26, 6)
-
-[node name="GroundWall_Right" parent="Solids" unique_id=1606841606 instance=ExtResource("1_block")]
-position = Vector2(641, -40)
-scale = Vector2(1, 16)
-
-[node name="GroundRock" parent="Solids" unique_id=1803885737 instance=ExtResource("1_block")]
-position = Vector2(183, 120)
-scale = Vector2(26, 3)
-
-[node name="ShaftWall_Right" parent="Solids" unique_id=1692520033 instance=ExtResource("1_block")]
-position = Vector2(57, 120)
-scale = Vector2(1, 3)
-
-[node name="Ceiling" parent="Solids" unique_id=976366271 instance=ExtResource("1_block")]
-position = Vector2(1158, 87)
-scale = Vector2(87, 1)
-
-[node name="Floor_R1_A" parent="Solids" unique_id=1144409089 instance=ExtResource("1_block")]
-position = Vector2(304, 336)
-scale = Vector2(18, 6)
-
-[node name="Floor_R1_B" parent="Solids" unique_id=1260378856 instance=ExtResource("1_block")]
-position = Vector2(624, 336)
-scale = Vector2(14, 6)
-
-[node name="Floor_R1_C" parent="Solids" unique_id=1558871518 instance=ExtResource("1_block")]
-position = Vector2(928, 336)
-scale = Vector2(16, 6)
-
-[node name="Basin_R1_Pit1" parent="Solids" unique_id=1976807816 instance=ExtResource("1_block")]
-position = Vector2(480, 368)
-scale = Vector2(4, 2)
-
-[node name="Basin_R1_Pit2" parent="Solids" unique_id=1717189497 instance=ExtResource("1_block")]
-position = Vector2(768, 368)
-scale = Vector2(4, 2)
-
-[node name="Step_R1" parent="Solids" unique_id=927719664 instance=ExtResource("1_block")]
-position = Vector2(616, 272)
-scale = Vector2(3, 2)
-
-[node name="Floor_R2" parent="Solids" unique_id=2101857120 instance=ExtResource("1_block")]
-position = Vector2(1104, 336)
-scale = Vector2(6, 6)
-
-[node name="Basin_R2" parent="Solids" unique_id=719791769 instance=ExtResource("1_block")]
-position = Vector2(1240, 336)
-scale = Vector2(11, 2)
-
-[node name="Floor_R2_Exit" parent="Solids" unique_id=11755848 instance=ExtResource("1_block")]
-position = Vector2(1352, 336)
-scale = Vector2(3, 6)
-
-[node name="Ledge_R2_A" parent="Solids" unique_id=426979846 instance=ExtResource("1_block")]
-position = Vector2(1192, 248)
-scale = Vector2(3, 1)
-
-[node name="Ledge_R2_B" parent="Solids" unique_id=1902484690 instance=ExtResource("1_block")]
-position = Vector2(1256, 216)
-scale = Vector2(3, 1)
-
-[node name="Ledge_R2_C" parent="Solids" unique_id=1132321416 instance=ExtResource("1_block")]
-position = Vector2(1320, 248)
-scale = Vector2(3, 1)
-
-[node name="Floor_R3" parent="Solids" unique_id=1298773222 instance=ExtResource("1_block")]
-position = Vector2(1408, 336)
-scale = Vector2(4, 6)
-
-[node name="Basin_R3" parent="Solids" unique_id=1244304126 instance=ExtResource("1_block")]
-position = Vector2(1528, 336)
-scale = Vector2(11, 2)
-
-[node name="Floor_R3_Exit" parent="Solids" unique_id=545482048 instance=ExtResource("1_block")]
-position = Vector2(1656, 336)
-scale = Vector2(5, 6)
-
-[node name="HighWall" parent="Solids" unique_id=1769965050 instance=ExtResource("1_block")]
-position = Vector2(2030, 231)
-scale = Vector2(1, 6)
-
-[node name="Floor_End" parent="Solids" unique_id=2099976468 instance=ExtResource("1_block")]
-position = Vector2(1748.0001, 336)
-scale = Vector2(6, 6)
-
-[node name="Wall_End" parent="Solids" unique_id=844087075 instance=ExtResource("1_block")]
-position = Vector2(1818, 276)
-scale = Vector2(1, 13)
-
-[node name="Wall_R1_R2" parent="Solids" unique_id=1058710230 instance=ExtResource("1_block")]
-position = Vector2(1064, 200)
-scale = Vector2(1, 5)
-
-[node name="Wall_R2_R3" parent="Solids" unique_id=640099749 instance=ExtResource("1_block")]
-position = Vector2(1368, 200)
-scale = Vector2(1, 5)
-
-[node name="HighWallPlatform" type="StaticBody2D" parent="Solids" unique_id=1624952779]
-visible = false
-position = Vector2(1664, 248)
-
-[node name="Visual" type="ColorRect" parent="Solids/HighWallPlatform" unique_id=485725199]
-offset_left = -16.0
-offset_top = -8.0
-offset_right = 16.0
-offset_bottom = 8.0
-mouse_filter = 2
-color = Color(0.45, 0.4, 0.42, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Solids/HighWallPlatform" unique_id=1157227728]
-shape = SubResource("RectangleShape2D_wall_platform")
-disabled = true
-
-[node name="Platforms" type="Node2D" parent="." unique_id=418505892]
-
-[node name="FallingPlatform_R3_1" parent="Platforms" unique_id=1077972163 instance=ExtResource("3_fall")]
-position = Vector2(1488, 248)
-
-[node name="FallingPlatform_R3_2" parent="Platforms" unique_id=134152456 instance=ExtResource("3_fall")]
-position = Vector2(1584, 248)
-
-[node name="TetherAnchors" type="Node2D" parent="." unique_id=739365298]
-
-[node name="TetherAnchor_R2_A" parent="TetherAnchors" unique_id=911583593 instance=ExtResource("4_anchor")]
-position = Vector2(1184, 176)
-
-[node name="TetherAnchor_R2_B" parent="TetherAnchors" unique_id=1349378645 instance=ExtResource("4_anchor")]
-position = Vector2(1264, 176)
-
-[node name="TetherAnchor_R3_A" parent="TetherAnchors" unique_id=749394538 instance=ExtResource("4_anchor")]
-position = Vector2(1504, 176)
-
-[node name="TetherAnchor_R3_B" parent="TetherAnchors" unique_id=1414149698 instance=ExtResource("4_anchor")]
-position = Vector2(1584, 176)
 
 [node name="HazardZones" type="Node2D" parent="." unique_id=393171269]
 
@@ -270,7 +135,6 @@ shape = SubResource("RectangleShape2D_lava3")
 [node name="Switch_HighWall" type="Area2D" parent="Switches" unique_id=1551035371]
 position = Vector2(1628, 268)
 script = ExtResource("6_switch")
-target_path = NodePath("../../Solids/HighWallPlatform")
 
 [node name="Shape" type="CollisionShape2D" parent="Switches/Switch_HighWall" unique_id=754822469]
 shape = SubResource("RectangleShape2D_switch")
@@ -301,6 +165,11 @@ offset_right = 10.0
 offset_bottom = 20.0
 mouse_filter = 2
 color = Color(0.4, 0.85, 0.75, 1)
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=683063637]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray(0, 0, 1, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_aui74")
 
 [node name="Player" parent="." unique_id=1519596908 instance=ExtResource("2_player")]
 position = Vector2(144, -46)
