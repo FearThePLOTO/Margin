@@ -2,13 +2,18 @@
 
 Owner: (add name / @github-handle)
 
-Mission levels as 2D TileMap scenes, terrain tilesets, and hazard-zone areas
-(radiation, thermal, storm) matching the research environment data.
+Mission levels as 2D scenes, with hazard-zone areas (radiation, thermal, storm,
+lava) matching the research environment data.
 
 ## What goes here
 
-- `scenes/` — one `.tscn` per mission level (see `scenes/level_01.tscn`)
-- `tilesets/` — moon terrain tileset, hazard-zone tiles
+- `scenes/` — one `.tscn` per mission level (`level_01.tscn` = "The Cave")
+- `scenes/blocks/boundary_block_16.tscn` — 16×16 greybox block, scaled per wall
+- `scenes/props/` — reusable level props (falling platform)
+- `scripts/` — level props and framing only: `hazard_zone.gd`,
+  `falling_platform.gd`, `level_switch.gd`, `level_01.gd`
+- `tilesets/` — reserve for the final art pass; the greybox level uses
+  `ColorRect` visuals so nothing depends on imported textures yet
 - `resources/` — zone data resources (zone id, damage/temp rate, bounds)
 
 ## Never edit

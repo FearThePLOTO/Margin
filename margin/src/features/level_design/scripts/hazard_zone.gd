@@ -4,17 +4,27 @@ extends Area2D
 ## SolarStormZone, LooseRegolith). Emits on the EventBus only — the player
 ## (mechanics feature) listens and accrues gauges; never reference the player
 ## scene directly from here.
+##
+## Set zone_id when several pools share one hazard type (e.g. every lava pool
+## is &"LavaZone") but each node needs a unique name.
+
+@export var zone_id: StringName = &""
+
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 
+func _zone_id() -> StringName:
+	return zone_id if zone_id != &"" else StringName(name)
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(&"player"):
-		EventBus.hazard_entered.emit(StringName(name))
+		EventBus.hazard_entered.emit(_zone_id())
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group(&"player"):
-		EventBus.hazard_exited.emit(StringName(name))
+		EventBus.hazard_exited.emit(_zone_id())
