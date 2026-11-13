@@ -1,0 +1,5 @@
+# Godot build cache (generated)
+.godot/
+
+# Godot editor temp files
+*.tmp
