@@ -8,6 +8,9 @@ signal tool_equipped(tool_id: StringName)
 signal loadout_changed(loadout: Array)
 signal budget_changed(used_usd: float)
 
+# --- mechanics -> ui (live gauges for the mission HUD) ---
+signal gauges_changed(gauges: Dictionary)
+
 # --- mechanics <-> level_design ---
 signal hazard_entered(zone_id: StringName)
 signal hazard_exited(zone_id: StringName)
