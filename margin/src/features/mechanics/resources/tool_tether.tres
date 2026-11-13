@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ToolStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/features/mechanics/scripts/tool_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+tool_id = &"tool.tether"
+display_name = "Tether / Grapple"
+mass_kg = 0.23
+force_n = 2602.23
+range_m = 25.9
+cost_usd = 600.0
+unlocks = "Gap Swing"

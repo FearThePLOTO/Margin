@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anchor"]
+radius = 6.0
+
+[node name="TetherAnchor" type="Area2D" groups=["tether_anchor"]]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_anchor")
+
+[node name="Dot" type="Polygon2D" parent="."]
+color = Color(0.95, 0.75, 0.2, 1)
+polygon = PackedVector2Array(0, -5, 4, -2.5, 4, 2.5, 0, 5, -4, 2.5, -4, -2.5)
