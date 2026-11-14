@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func open() -> void:
 	get_tree().paused = true
+	Music.set_ducked(true)
 	var lvl := BookOfBooks.get_level(GameState.level_id)
 	_level.text = "LEVEL %d : %s" % [int(lvl.get("number", 1)), str(lvl.get("name", ""))] if not lvl.is_empty() else ""
 	var total := get_tree().get_nodes_in_group(&"scroll").size()
@@ -60,6 +61,7 @@ func close() -> void:
 	_options.hide()
 	hide()
 	get_tree().paused = false
+	Music.set_ducked(false)
 	resumed.emit()
 
 

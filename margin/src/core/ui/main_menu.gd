@@ -42,6 +42,7 @@ var _letters: Array[Control] = []
 
 
 func _ready() -> void:
+	Music.play(&"ui_music")
 	for c in _logo.get_children():
 		_letters.append(c as Control)
 	_menu.chosen.connect(_on_chosen)

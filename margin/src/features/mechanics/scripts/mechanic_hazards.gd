@@ -7,7 +7,11 @@ var heat := 0.0
 var chill := 0.0
 var radiation := 0.0
 
-var _active_zones: Dictionary = {}  # zone_id -> true (via EventBus.hazard_entered)
+## zone_id -> how many zones with that id the player is inside right now.
+## Counted (not true/false) because several zones can share one id: moving
+## from one RadioactiveWastes zone into a touching one fires "enter B" before
+## "exit A", and a plain flag would be wiped by the exit.
+var _active_zones: Dictionary = {}
 
 
 func _init(p: Player) -> void:
@@ -60,8 +64,12 @@ func process(delta: float) -> void:
 
 
 func _on_hazard_entered(zone_id: StringName) -> void:
-	_active_zones[zone_id] = true
+	_active_zones[zone_id] = int(_active_zones.get(zone_id, 0)) + 1
 
 
 func _on_hazard_exited(zone_id: StringName) -> void:
-	_active_zones.erase(zone_id)
+	var n := int(_active_zones.get(zone_id, 0)) - 1
+	if n > 0:
+		_active_zones[zone_id] = n
+	else:
+		_active_zones.erase(zone_id)

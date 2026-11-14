@@ -20,6 +20,7 @@ const SCROLL_TEX := preload("res://src/assets/char/scroll.png")
 
 
 func _ready() -> void:
+	Music.play(&"ui_music")
 	_menu_button.pressed.connect(func() -> void: back_requested.emit())
 	_book_button.pressed.connect(func() -> void: _book.open(_level_id))
 	_book.closed.connect(_close_book)

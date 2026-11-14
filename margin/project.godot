@@ -26,6 +26,7 @@ GameState="*res://src/core/autoload/game_state.gd"
 BookOfBooks="*res://src/core/autoload/book_of_books.gd"
 SpaceWeather="*res://src/core/autoload/space_weather.gd"
 Settings="*res://src/core/autoload/settings.gd"
+Music="*res://src/core/autoload/music.gd"
 
 [display]
 
