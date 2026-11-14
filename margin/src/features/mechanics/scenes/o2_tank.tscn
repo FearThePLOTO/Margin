@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq7v2k9x4m3t"]
+
+[ext_resource type="Script" path="res://src/features/mechanics/scripts/o2_tank.gd" id="1_tank"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 16.0
+
+[node name="O2Tank" type="Area2D"]
+script = ExtResource("1_tank")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pickup")
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -14.0
+offset_right = 10.0
+offset_bottom = 14.0
+color = Color(0.25, 0.8, 0.45, 0.9)

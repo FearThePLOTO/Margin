@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://b2ayoy5s2prh6"]
+
+[ext_resource type="PackedScene" uid="uid://xw56iew608xg" path="res://src/features/mechanics/scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://src/features/mechanics/scenes/tether_anchor.tscn" id="2_anchor"]
+[ext_resource type="Script" uid="uid://de80wr1l7fmwq" path="res://src/features/level_design/scripts/hazard_zone.gd" id="3_zone"]
+[ext_resource type="PackedScene" uid="uid://dn3p5s8y1r6t" path="res://src/features/ui/scenes/mission_hud.tscn" id="4_hud"]
+[ext_resource type="PackedScene" uid="uid://bq7v2lax4m3t" path="res://src/features/mechanics/scenes/o2_tank.tscn" id="5_tank"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1280, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(24, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_highledge"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_island"]
+size = Vector2(589, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_zone_rad"]
+size = Vector2(242, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_zone_regolith"]
+size = Vector2(128, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_zone_cave"]
+size = Vector2(256, 200)
+
+[node name="PlayerTest" type="Node2D" unique_id=625204020]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=687078584]
+position = Vector2(0, 44)
+
+[node name="Shape" type="CollisionShape2D" parent="Ground" unique_id=318814155]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Visual" type="ColorRect" parent="Ground" unique_id=1534584078]
+offset_left = -640.0
+offset_top = -16.0
+offset_right = 640.0
+offset_bottom = 16.0
+color = Color(0.27, 0.27, 0.3, 1)
+
+[node name="Ledge" type="StaticBody2D" parent="." unique_id=2117753968]
+position = Vector2(128, 16)
+
+[node name="Shape" type="CollisionShape2D" parent="Ledge" unique_id=1162253445]
+shape = SubResource("RectangleShape2D_ledge")
+
+[node name="Visual" type="ColorRect" parent="Ledge" unique_id=598805147]
+offset_left = -48.0
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 8.0
+color = Color(0.35, 0.35, 0.39, 1)
+
+[node name="ClimbWall" type="StaticBody2D" parent="." unique_id=1045362817]
+position = Vector2(320, -36)
+
+[node name="Shape" type="CollisionShape2D" parent="ClimbWall" unique_id=246208531]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Visual" type="ColorRect" parent="ClimbWall" unique_id=1106217681]
+offset_left = -12.0
+offset_top = -64.0
+offset_right = 12.0
+offset_bottom = 64.0
+color = Color(0.42, 0.39, 0.37, 1)
+
+[node name="HighLedge" type="StaticBody2D" parent="." unique_id=1785293404]
+position = Vector2(480, -140)
+
+[node name="Shape" type="CollisionShape2D" parent="HighLedge" unique_id=568797896]
+shape = SubResource("RectangleShape2D_highledge")
+
+[node name="Visual" type="ColorRect" parent="HighLedge" unique_id=915846568]
+offset_left = -64.0
+offset_top = -8.0
+offset_right = 64.0
+offset_bottom = 8.0
+color = Color(0.35, 0.35, 0.39, 1)
+
+[node name="Island" type="StaticBody2D" parent="." unique_id=1452636618]
+position = Vector2(960, 44)
+
+[node name="Shape" type="CollisionShape2D" parent="Island" unique_id=637375921]
+position = Vector2(102.5, 0)
+shape = SubResource("RectangleShape2D_island")
+
+[node name="Visual" type="ColorRect" parent="Island" unique_id=1651802922]
+offset_left = -202.0
+offset_top = -15.0
+offset_right = 424.0
+offset_bottom = 17.0
+color = Color(0.27, 0.27, 0.3, 1)
+
+[node name="RadioactiveWastes" type="Area2D" parent="." unique_id=567749864]
+position = Vector2(960, 8)
+script = ExtResource("3_zone")
+
+[node name="Shape" type="CollisionShape2D" parent="RadioactiveWastes" unique_id=803589184]
+position = Vector2(-39, 0)
+shape = SubResource("RectangleShape2D_zone_rad")
+
+[node name="Visual" type="ColorRect" parent="RadioactiveWastes" unique_id=314390691]
+offset_left = -160.0
+offset_top = -12.0
+offset_right = 77.0
+offset_bottom = 12.0
+color = Color(0.6, 0.3, 0.85, 0.25)
+
+[node name="LooseRegolith" type="Area2D" parent="." unique_id=847059189]
+position = Vector2(256, 4)
+script = ExtResource("3_zone")
+
+[node name="Shape" type="CollisionShape2D" parent="LooseRegolith" unique_id=1356946405]
+shape = SubResource("RectangleShape2D_zone_regolith")
+
+[node name="Visual" type="ColorRect" parent="LooseRegolith" unique_id=1084106091]
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 20.0
+color = Color(0.75, 0.55, 0.35, 0.3)
+
+[node name="Cave" type="Area2D" parent="." unique_id=-1340783525]
+position = Vector2(1216, -76)
+script = ExtResource("3_zone")
+
+[node name="Shape" type="CollisionShape2D" parent="Cave" unique_id=-1340783524]
+shape = SubResource("RectangleShape2D_zone_cave")
+
+[node name="Visual" type="ColorRect" parent="Cave" unique_id=-1340783523]
+offset_left = -128.0
+offset_top = -100.0
+offset_right = 128.0
+offset_bottom = 100.0
+color = Color(0.12, 0.16, 0.22, 0.45)
+
+[node name="TetherAnchorGap" parent="." unique_id=1157697699 instance=ExtResource("2_anchor")]
+position = Vector2(704, -96)
+
+[node name="TetherAnchorHigh" parent="." unique_id=1659356122 instance=ExtResource("2_anchor")]
+position = Vector2(480, -220)
+
+[node name="Player" parent="." unique_id=202818122 instance=ExtResource("1_player")]
+position = Vector2(1067, -78)
+
+[node name="MissionHud" parent="." unique_id=2139647956 instance=ExtResource("4_hud")]
+
+[node name="O2TankWest" parent="." unique_id=1517836175 instance=ExtResource("5_tank")]
+position = Vector2(1050, 10)
+
+[node name="O2TankMid" parent="." unique_id=888541991 instance=ExtResource("5_tank")]
+position = Vector2(1216, -4)
+
+[node name="O2TankEast" parent="." unique_id=1255723741 instance=ExtResource("5_tank")]
+position = Vector2(1322, 8)

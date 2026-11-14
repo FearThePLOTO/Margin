@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolStats" format=3 uid="uid://d0x7kq2m8v4w"]
+
+[ext_resource type="Script" uid="uid://igpev0ti2xjd" path="res://src/features/mechanics/scripts/tool_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+tool_id = &"tool.o2"
+display_name = "O2 Supply / Life Support"
+mass_kg = 6.0
+cost_usd = 1200.0
+unlocks = "Cave Crossings"

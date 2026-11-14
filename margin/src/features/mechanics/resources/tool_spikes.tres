@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToolStats" format=3 uid="uid://c0qgjwd6dsayb"]
+
+[ext_resource type="Script" uid="uid://igpev0ti2xjd" path="res://src/features/mechanics/scripts/tool_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+tool_id = &"tool.spikes"
+display_name = "Climbing Spikes / Pitons"
+mass_kg = 0.07
+cost_usd = 400.0
+unlocks = "Vertical Wall Climb"
