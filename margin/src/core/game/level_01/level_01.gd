@@ -11,8 +11,15 @@ extends Node2D
 
 
 @export var level_id := "level_01"
+## Music playlist for this level: tracks named <music>_<n>.ogg in
+## src/features/audio/music/ (played in random order by the Music autoload).
+@export var music: StringName = &"lava_and_cave"
 
 
 func _enter_tree() -> void:
 	GameState.loadout = loadout.duplicate()
 	GameState.level_id = level_id
+
+
+func _ready() -> void:
+	Music.play(music)
