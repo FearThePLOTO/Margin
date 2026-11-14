@@ -1,12 +1,12 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cdo0p268l5v3f"]
 
-[ext_resource type="Script" path="res://src/features/level_design/scripts/hazard_zone.gd" id="1_zone"]
+[ext_resource type="Script" uid="uid://de80wr1l7fmwq" path="res://src/features/level_design/scripts/hazard_zone.gd" id="1_zone"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_zone"]
 resource_local_to_scene = true
-size = Vector2(32, 12)
+size = Vector2(198, 12)
 
-[node name="SludgeZone" type="Area2D"]
+[node name="SludgeZone" type="Area2D" unique_id=307261365]
 collision_layer = 0
 monitorable = false
 script = ExtResource("1_zone")
@@ -14,6 +14,6 @@ zone_id = &"Sludge"
 kill_on_touch = true
 metadata/_editor_description_ = "Instant death (radioactive sludge pools). Resize the Shape (Make Unique first)."
 
-[node name="Shape" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=42266900]
 shape = SubResource("RectangleShape2D_zone")
 debug_color = Color(0.5, 1, 0.2, 0.35)

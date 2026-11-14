@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://fsiax3lpv0ay"]
 
-[ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/cave_zone.tscn" id="cave"]
 [ext_resource type="Script" uid="uid://gec3x5jgbw7" path="res://src/features/level_design/scripts/cave_lighting.gd" id="cavelight"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/dust_wind.tscn" id="dust"]
 [ext_resource type="PackedScene" path="res://src/core/game/level_exit.tscn" id="exit"]
+[ext_resource type="Script" uid="uid://de80wr1l7fmwq" path="res://src/features/level_design/scripts/hazard_zone.gd" id="hazard_script"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/hint_sign.tscn" id="hint"]
 [ext_resource type="Resource" uid="uid://ck6k7ju38nm22" path="res://src/core/game/level_01/dialogue/l1_cave_entry.tres" id="l1_cave_entry"]
 [ext_resource type="Resource" uid="uid://bte8404djr1ur" path="res://src/core/game/level_01/dialogue/l1_dark_tunnel.tres" id="l1_dark_tunnel"]
@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://3e3lrerftexx" path="res://src/core/game/level_01/dialogue/l1_og_mock.tres" id="l1_og_mock"]
 [ext_resource type="Resource" uid="uid://cidktyst6vaar" path="res://src/core/game/level_01/dialogue/l1_skylight.tres" id="l1_skylight"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/lander.tscn" id="lander"]
-[ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/lava_zone.tscn" id="lava"]
+[ext_resource type="PackedScene" uid="uid://fnasfiohm6r" path="res://src/features/level_design/scenes/props/lava_zone.tscn" id="lava"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/og_npc.tscn" id="og"]
 [ext_resource type="PackedScene" path="res://src/core/ui/mission_overlay.tscn" id="overlay"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/falling_platform_64.tscn" id="platform"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/radiation_zone.tscn" id="radiation"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/room.tscn" id="room"]
 [ext_resource type="Script" uid="uid://ym7g6gf7vwv8" path="res://src/features/level_design/scripts/room.gd" id="room_script"]
-[ext_resource type="Script" uid="uid://de80wr1l7fmwq" path="res://src/features/level_design/scripts/hazard_zone.gd" id="hazard_script"]
 [ext_resource type="Script" uid="uid://ca2xxnx216206" path="res://src/core/game/level_01/level_01.gd" id="script"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/scroll.tscn" id="scroll"]
 [ext_resource type="Texture2D" uid="uid://vfnpneqh36s" path="res://src/assets/sky/far.png" id="sky_far"]
@@ -30,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dyjyonastqcoe" path="res://src/assets/sky/near.png" id="sky_near"]
 [ext_resource type="Texture2D" uid="uid://co3iab52t1nqp" path="res://src/assets/sky/sky.png" id="sky_sky"]
 [ext_resource type="Texture2D" uid="uid://mwc66mef0xwj" path="res://src/assets/sky/stars.png" id="sky_stars"]
-[ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/sludge_zone.tscn" id="sludge"]
+[ext_resource type="PackedScene" uid="uid://cdo0p268l5v3f" path="res://src/features/level_design/scenes/props/sludge_zone.tscn" id="sludge"]
 [ext_resource type="PackedScene" path="res://src/features/level_design/scenes/props/spike_zone.tscn" id="spikes"]
 [ext_resource type="PackedScene" uid="uid://bcvfiakshvu2v" path="res://src/features/level_design/scenes/props/power_station.tscn" id="station"]
 [ext_resource type="PackedScene" uid="uid://bq7v2lax4m3t" path="res://src/features/mechanics/scenes/o2_tank.tscn" id="tank"]
@@ -47,9 +46,6 @@ size = Vector2(320, 368)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4"]
 size = Vector2(384, 192)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cave"]
-size = Vector2(2368, 560)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0s11"]
 resource_local_to_scene = true
 size = Vector2(368, 192)
@@ -57,6 +53,9 @@ size = Vector2(368, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgpvx"]
 resource_local_to_scene = true
 size = Vector2(336, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cave"]
+size = Vector2(2368, 560)
 
 [sub_resource type="Gradient" id="Gradient_glow"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -292,9 +291,11 @@ position = Vector2(1856, -122)
 
 [node name="SkylightRadiation" parent="Hazards" unique_id=75121994 instance=ExtResource("radiation")]
 position = Vector2(1512, -96)
+scale = Vector2(1.9, 1.2)
 
 [node name="SecretRoofRadiation" parent="Hazards" unique_id=837021322 instance=ExtResource("radiation")]
 position = Vector2(1504, -272)
+scale = Vector2(1.8, 1.5)
 metadata/_editor_description_ = "Secret room under the open roof: storm radiation, so move FAST."
 
 [node name="Cave" type="Area2D" parent="Hazards" unique_id=1213053984]
@@ -305,7 +306,7 @@ script = ExtResource("hazard_script")
 zone_id = &"Cave"
 metadata/_editor_description_ = "The whole cave (R1-R7 + secret roof): the world goes dark inside, so the headlamp matters."
 
-[node name="Shape" type="CollisionShape2D" parent="Hazards/Cave"]
+[node name="Shape" type="CollisionShape2D" parent="Hazards/Cave" unique_id=486134783]
 shape = SubResource("RectangleShape2D_cave")
 debug_color = Color(0.4, 0.6, 1, 0.06)
 
