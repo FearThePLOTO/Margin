@@ -27,6 +27,12 @@ func process(delta: float) -> void:
 		for key: String in zone_rates:
 			rates[key] += zone_rates[key]
 
+	# Radiation = real space weather (SpaceWeather, NASA DONKI) x suit shielding
+	# (power plan). A strong storm with no shield cells fills the meter fastest.
+	if rates.radiation > 0.0:
+		var cells: int = clampi(int(GameState.power_plan.get("shield", 1)), 0, 3)
+		rates.radiation *= SpaceWeather.radiation_multiplier * GameConstants.SHIELD_DOSE_BY_CELLS[cells]
+
 	if rates.heat > 0.0:
 		heat = minf(heat + rates.heat * delta, GameConstants.HAZARD_FAIL_THRESHOLD)
 	else:
@@ -39,6 +45,8 @@ func process(delta: float) -> void:
 		radiation = minf(radiation + rates.radiation * delta, GameConstants.HAZARD_FAIL_THRESHOLD)
 	else:
 		radiation = maxf(radiation - GameConstants.HAZARD_RECOVERY.radiation * delta, 0.0)
+
+	GameState.peak_radiation = maxf(GameState.peak_radiation, radiation)
 
 	if heat >= GameConstants.HAZARD_FAIL_THRESHOLD:
 		player.fail(&"book.thermal.control",

@@ -1,19 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq7v2k9x4m3t"]
+[gd_scene format=3 uid="uid://bq7v2lax4m3t"]
 
 [ext_resource type="Script" path="res://src/features/mechanics/scripts/o2_tank.gd" id="1_tank"]
+[ext_resource type="Texture2D" path="res://src/assets/Margin_Mars_Surface/Infrastructure/infrastructure.png" id="2_infra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
-radius = 16.0
+radius = 10.0
 
 [node name="O2Tank" type="Area2D"]
+collision_layer = 0
+monitorable = false
 script = ExtResource("1_tank")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_pickup")
 
-[node name="Visual" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -14.0
-offset_right = 10.0
-offset_bottom = 14.0
-color = Color(0.25, 0.8, 0.45, 0.9)
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("2_infra")
+region_enabled = true
+region_rect = Rect2(96, 0, 16, 16)

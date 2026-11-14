@@ -1,0 +1,136 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/features/level_design/scripts/og_npc.gd" id="1_og"]
+[ext_resource type="Texture2D" path="res://src/assets/char/og_npc_24.png" id="2_og"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og"]
+size = Vector2(56, 32)
+
+[sub_resource type="AtlasTexture" id="og_idle0"]
+atlas = ExtResource("2_og")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_idle1"]
+atlas = ExtResource("2_og")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_idle2"]
+atlas = ExtResource("2_og")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_idle3"]
+atlas = ExtResource("2_og")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_laugh0"]
+atlas = ExtResource("2_og")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_laugh1"]
+atlas = ExtResource("2_og")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_laugh2"]
+atlas = ExtResource("2_og")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_laugh3"]
+atlas = ExtResource("2_og")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_point0"]
+atlas = ExtResource("2_og")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="og_point1"]
+atlas = ExtResource("2_og")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_og"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("og_idle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_idle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_idle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_idle3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("og_laugh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_laugh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_laugh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_laugh3")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("og_point0")
+}, {
+"duration": 1.0,
+"texture": SubResource("og_point1")
+}],
+"loop": true,
+"name": &"point",
+"speed": 6.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bubble"]
+content_margin_left = 3.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 1.0
+bg_color = Color(0.055, 0.035, 0.07, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.76, 0.16, 1)
+
+[node name="OG" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_og")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_og")
+debug_color = Color(0.95, 0.76, 0.16, 0.1)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_og")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Bubble" type="Label" parent="."]
+offset_left = -4.0
+offset_top = -30.0
+offset_right = 4.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.96, 0.97, 0.98, 1)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_bubble")
+text = "HAH!"
+horizontal_alignment = 1
+vertical_alignment = 1

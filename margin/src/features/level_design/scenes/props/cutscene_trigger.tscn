@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmedvn3mwkhnt"]
+
+[ext_resource type="Script" uid="uid://co8tqc7qk68ix" path="res://src/features/level_design/scripts/cutscene_trigger.gd" id="1_s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a"]
+resource_local_to_scene = true
+size = Vector2(32, 120)
+
+[node name="CutsceneTrigger" type="Area2D" unique_id=794415915]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_s")
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=955314566]
+shape = SubResource("RectangleShape2D_a")
+debug_color = Color(0.95, 0.76, 0.16, 0.15)

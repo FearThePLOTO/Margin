@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="DialogueSequence" format=3 uid="uid://gu6bt7c8rrmt"]
+
+[ext_resource type="Script" uid="uid://brjg02gldlkxw" path="res://src/features/ui/dialogue/dialogue_sequence.gd" id="1_seq"]
+[ext_resource type="Script" uid="uid://db3qvff0ebea4" path="res://src/features/ui/dialogue/dialogue_line.gd" id="2_line"]
+[ext_resource type="Texture2D" uid="uid://ci1f6at25jm1g" path="res://src/assets/char/portraits_64.png" id="3_port"]
+[ext_resource type="AudioStream" uid="uid://debhwnodytp6f" path="res://src/features/audio/sfx/max_voice.wav" id="v_max"]
+[ext_resource type="AudioStream" uid="uid://xisi0r37xrnh" path="res://src/features/audio/sfx/mc_voice.wav" id="v_mc"]
+
+[sub_resource type="Resource" id="Line_0"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "Uplink online. Welcome to Mars, Max."
+voice = ExtResource("v_mc")
+
+[sub_resource type="AtlasTexture" id="P_max_happy"]
+atlas = ExtResource("3_port")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_1"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max_happy")
+text = "I'm on MARS! [wave amp=28.0 freq=5.0 connected=1]This is the best day ever![/wave]"
+voice = ExtResource("v_max")
+voice_pitch = 1.1
+
+[sub_resource type="Resource" id="Line_2"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "Dust storm season. Keep your helmet on."
+voice = ExtResource("v_mc")
+
+[sub_resource type="AtlasTexture" id="P_max_annoyed"]
+atlas = ExtResource("3_port")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_3"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max_annoyed")
+text = "I wasn't going to take it OFF."
+voice = ExtResource("v_max")
+voice_pitch = 0.9
+
+[resource]
+script = ExtResource("1_seq")
+lines = Array[ExtResource("2_line")]([SubResource("Line_0"), SubResource("Line_1"), SubResource("Line_2"), SubResource("Line_3")])

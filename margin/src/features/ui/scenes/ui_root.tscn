@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://src/features/ui/scenes/settings_screen.tscn" id="5_settings"]
 [ext_resource type="VideoStream" path="res://src/features/ui/assets/background/main_menu_background.ogv" id="6_video"]
 [ext_resource type="PackedScene" path="res://src/features/ui/scenes/conversation_test_screen.tscn" id="7_conversation"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/data_sources_screen.tscn" id="8_data"]
+[ext_resource type="PackedScene" path="res://src/core/ui/book_screen.tscn" id="9_book"]
 
 [node name="UIRoot" type="Control"]
 layout_mode = 3
@@ -63,3 +65,11 @@ visible = false
 [node name="ConversationTestScreen" parent="ScreenHost" instance=ExtResource("7_conversation")]
 unique_name_in_owner = true
 visible = false
+
+[node name="DataSourcesScreen" parent="ScreenHost" instance=ExtResource("8_data")]
+unique_name_in_owner = true
+visible = false
+
+[node name="BookScreen" parent="ScreenHost" instance=ExtResource("9_book")]
+unique_name_in_owner = true
+layout_mode = 1

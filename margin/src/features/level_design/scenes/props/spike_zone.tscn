@@ -1,0 +1,19 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/features/level_design/scripts/hazard_zone.gd" id="1_zone"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_zone"]
+resource_local_to_scene = true
+size = Vector2(64, 8)
+
+[node name="SpikeZone" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_zone")
+zone_id = &"Spikes"
+kill_on_touch = true
+metadata/_editor_description_ = "Instant death. Cover only the spike points. Resize the Shape (Make Unique first)."
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_zone")
+debug_color = Color(1, 0.2, 0.3, 0.35)

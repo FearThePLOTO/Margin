@@ -9,6 +9,9 @@ extends Area2D
 ## is &"LavaZone") but each node needs a unique name.
 
 @export var zone_id: StringName = &""
+## Instant-death zone (e.g. lava): entering plays the player's death effect
+## and respawns them at the checkpoint, instead of accruing a gauge.
+@export var kill_on_touch := false
 
 
 func _ready() -> void:
@@ -21,8 +24,12 @@ func _zone_id() -> StringName:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group(&"player"):
-		EventBus.hazard_entered.emit(_zone_id())
+	if not body.is_in_group(&"player"):
+		return
+	if kill_on_touch:
+		EventBus.hazard_kill.emit(_zone_id())
+		return
+	EventBus.hazard_entered.emit(_zone_id())
 
 
 func _on_body_exited(body: Node2D) -> void:

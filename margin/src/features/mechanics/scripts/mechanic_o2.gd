@@ -17,7 +17,10 @@ func process(delta: float) -> void:
 			player.fail(&"book.life_support.o2",
 					"Entered the Cave with no O2 supply — nothing down there is breathable.")
 			return
-		o2 = maxf(o2 - delta / GameConstants.O2_SUPPLY_S, 0.0)
+		# Power plan: more cells in the CO2 scrubber = the tank lasts longer.
+		var cells: int = clampi(int(GameState.power_plan.get("o2", 1)), 0, 3)
+		var drain: float = GameConstants.O2_DRAIN_BY_CELLS[cells]
+		o2 = maxf(o2 - drain * delta / GameConstants.O2_SUPPLY_S, 0.0)
 		if o2 <= 0.0:
 			player.fail(&"book.life_support.o2",
 					"Breathable O2 ran dry inside the Cave. The tank buys time, not air — grab the scattered tanks and plan the crossing.")

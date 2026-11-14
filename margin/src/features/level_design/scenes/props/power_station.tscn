@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bcvfiakshvu2v"]
+
+[ext_resource type="Script" uid="uid://du6pjpq6ghc4u" path="res://src/features/level_design/scripts/power_station.gd" id="1_s"]
+[ext_resource type="Texture2D" uid="uid://4u8224ob34uw" path="res://src/assets/Margin_Mars_Surface/Infrastructure/infrastructure.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a"]
+resource_local_to_scene = true
+size = Vector2(21, 33)
+
+[sub_resource type="AtlasTexture" id="AT_0"]
+atlas = ExtResource("2_tex")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AT_1"]
+atlas = ExtResource("2_tex")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_st"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g"]
+gradient = SubResource("Gradient_g")
+width = 96
+height = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="PowerStation" type="Area2D" unique_id=1947995165]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_s")
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=1953000111]
+position = Vector2(-1.5, -8.5)
+shape = SubResource("RectangleShape2D_a")
+debug_color = Color(0.4, 0.85, 0.75, 0.15)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2071145461]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_st")
+autoplay = "default"
+
+[node name="Glow" type="PointLight2D" parent="." unique_id=1040459160]
+position = Vector2(0, -10)
+color = Color(0.4, 0.85, 0.75, 1)
+energy = 0.8
+texture = SubResource("GradientTexture2D_g")

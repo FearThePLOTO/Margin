@@ -37,6 +37,17 @@ var spikes: PlayerSpikesMechanic
 var hazards: PlayerHazardsMechanic
 var o2: PlayerO2Mechanic
 var animation: PlayerAnimationMechanic
+var death: PlayerDeathMechanic
+
+## Falling below this y is out of bounds — plays the death effect and
+## respawns at the checkpoint. Per-level override if a level dips deeper.
+@export var kill_y := 640.0
+## Training levels: a full gauge or an empty O2 tank plays the death effect and
+## respawns at the room checkpoint instead of ending the mission.
+@export var fail_is_death := false
+
+## True during cutscenes / the power plan screen: no walking, no jumping.
+var input_locked := false
 
 @onready var rope: Line2D = $TetherRope
 @onready var camera: Camera2D = $Camera2D
@@ -50,13 +61,20 @@ func _ready() -> void:
 	hazards = PlayerHazardsMechanic.new(self)
 	o2 = PlayerO2Mechanic.new(self)
 	animation = PlayerAnimationMechanic.new(self)
+	death = PlayerDeathMechanic.new(self)
 	jetpack.propellant = TOOL_JETPACK.propellant
+	EventBus.room_entered.connect(_on_room_entered)
+	EventBus.cutscene_started.connect(_on_cutscene_started)
+	EventBus.cutscene_ended.connect(_on_cutscene_ended)
+	EventBus.power_plan_changed.connect(_on_power_plan_changed)
+	_on_power_plan_changed(GameState.power_plan)
 	_announce_equipped()
 
 
 func _physics_process(delta: float) -> void:
 	if mission_over:
 		return
+	GameState.mission_time_s += delta
 	jump_buffer = maxf(0.0, jump_buffer - delta)
 	climb_grace = maxf(0.0, climb_grace - delta)
 	if Input.is_action_just_pressed(&"jump"):
@@ -72,6 +90,7 @@ func _physics_process(delta: float) -> void:
 
 	o2.process(delta)
 	hazards.process(delta)
+	death.process(delta)
 	_emit_gauges(delta)
 	move_and_slide()
 
@@ -116,6 +135,9 @@ func _emit_gauges(delta: float) -> void:
 func fail(entry_id: StringName, reason: String) -> void:
 	if mission_over:
 		return
+	if fail_is_death:
+		death.die(_cause_of(entry_id))
+		return
 	mission_over = true
 	BookOfBooks.add_note(entry_id, reason, {
 		"heat": hazards.heat,
@@ -124,6 +146,54 @@ func fail(entry_id: StringName, reason: String) -> void:
 		"o2": o2.o2,
 	})
 	EventBus.mission_failed.emit(entry_id, reason)
+
+
+func _cause_of(entry_id: StringName) -> StringName:
+	if String(entry_id).contains("o2"):
+		return &"o2"
+	if String(entry_id).contains("radiation"):
+		return &"radiation"
+	return &"thermal"
+
+
+# ------------------------------------------------------- story / power ---
+
+## Locks stack: a warp fade and a dialogue can overlap without one freeing
+## the player while the other is still running.
+var _locks := 0
+
+
+func _on_cutscene_started() -> void:
+	_locks += 1
+	input_locked = true
+
+
+## Unlock a beat later so the key that closed the dialogue doesn't also jump.
+func _on_cutscene_ended() -> void:
+	await get_tree().create_timer(0.15).timeout
+	_locks = maxi(0, _locks - 1)
+	input_locked = _locks > 0
+
+
+## Headlamp size/brightness follow the cells given to "light".
+func _on_power_plan_changed(plan: Dictionary) -> void:
+	var lamp := get_node_or_null(^"Headlamp") as PointLight2D
+	if lamp == null:
+		return
+	var cells: int = clampi(int(plan.get("light", 1)), 0, 3)
+	lamp.texture_scale = GameConstants.LIGHT_SCALE_BY_CELLS[cells]
+	lamp.energy = GameConstants.LIGHT_ENERGY_BY_CELLS[cells]
+
+
+# --------------------------------------------------------------- camera ---
+
+## Celeste-style rooms: the camera is clamped to the room the player is in;
+## limit_smoothed on the Camera2D turns the switch into a short pan.
+func _on_room_entered(rect: Rect2) -> void:
+	camera.limit_left = int(rect.position.x)
+	camera.limit_top = int(rect.position.y)
+	camera.limit_right = int(rect.end.x)
+	camera.limit_bottom = int(rect.end.y)
 
 
 # -------------------------------------------------------------- loadout ---

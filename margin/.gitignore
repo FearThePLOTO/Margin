@@ -1,5 +1,39 @@
-# Godot build cache (generated)
+# --- Godot 4 ---------------------------------------------------------------
+# Editor/import cache (regenerated on open). Keep *.import and *.uid files:
+# Godot 4 needs them committed.
 .godot/
-
-# Godot editor temp files
 *.tmp
+*.translation
+# exported builds
+/build/
+/export/
+/exports/
+*.pck
+*.zip
+*.exe
+*.x86_64
+*.apk
+*.aab
+# C# / mono (in case anyone enables it)
+.mono/
+data_*/
+mono_crash.*.json
+
+# --- tooling (tools/tilegen, tools/chargen) --------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+# generated previews — reproducible with the generators, not game assets
+src/assets/Margin_Mars_Surface/Previews/
+src/assets/char/Previews/
+
+# --- OS / editors -----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.orig
+.vscode/
+.idea/
