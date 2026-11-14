@@ -1,0 +1,213 @@
+[gd_resource type="Theme" load_steps=16 format=3]
+
+[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Regular.ttf" id="1_body"]
+[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/PixelifySans-Variable.ttf" id="2_display"]
+[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Menu.ttf" id="3_menu"]
+[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Dialogue.ttf" id="4_dialogue"]
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+bg_color = Color(0.09, 0.05, 0.055, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.35)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="SB_button_normal"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_hover"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.55)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_pressed"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_disabled"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.03)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.12)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_focus"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_dialog_option"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxLine" id="SB_separator"]
+color = Color(1, 1, 1, 0.3)
+thickness = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_track"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12, 0.05, 0.06, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.25)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_fill"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.85)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_fill_hl"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[resource]
+default_font = ExtResource("1_body")
+default_font_size = 8
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 0.72, 0.72, 0.6)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(0.12, 0.03, 0.03, 1)
+Button/colors/font_pressed_color = Color(0.12, 0.03, 0.03, 1)
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 10
+Button/fonts/font = ExtResource("1_body")
+Button/styles/disabled = SubResource("SB_button_disabled")
+Button/styles/focus = SubResource("SB_button_focus")
+Button/styles/hover = SubResource("SB_button_hover")
+Button/styles/normal = SubResource("SB_button_normal")
+Button/styles/pressed = SubResource("SB_button_pressed")
+DialogMessage/base_type = &"Label"
+DialogMessage/colors/font_color = Color(1, 1, 1, 1)
+DialogMessage/font_sizes/font_size = 9
+DialogMessage/fonts/font = ExtResource("3_menu")
+DialogueMessage/base_type = &"Label"
+DialogueMessage/colors/font_color = Color(1, 1, 1, 1)
+DialogueMessage/font_sizes/font_size = 9
+DialogueMessage/fonts/font = ExtResource("4_dialogue")
+DialogOptionButton/base_type = &"MenuOptionButton"
+DialogOptionButton/styles/disabled = SubResource("SB_dialog_option")
+DialogOptionButton/styles/focus = SubResource("SB_dialog_option")
+DialogOptionButton/styles/hover = SubResource("SB_dialog_option")
+DialogOptionButton/styles/normal = SubResource("SB_dialog_option")
+DialogOptionButton/styles/pressed = SubResource("SB_dialog_option")
+DialogueText/base_type = &"RichTextLabel"
+DialogueText/colors/default_color = Color(1, 1, 1, 1)
+DialogueText/constants/line_separation = 0
+DialogueText/font_sizes/normal_font_size = 9
+DialogueText/fonts/normal_font = ExtResource("4_dialogue")
+HSlider/styles/grabber_area = SubResource("SB_slider_fill")
+HSlider/styles/grabber_area_highlight = SubResource("SB_slider_fill_hl")
+HSlider/styles/slider = SubResource("SB_slider_track")
+HSeparator/styles/separator = SubResource("SB_separator")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_body")
+MenuOptionButton/base_type = &"Button"
+MenuOptionButton/colors/font_color = Color(1, 1, 1, 1)
+MenuOptionButton/colors/font_disabled_color = Color(1, 0.72, 0.72, 0.6)
+MenuOptionButton/colors/font_focus_color = Color(1, 1, 1, 1)
+MenuOptionButton/colors/font_hover_color = Color(1, 1, 1, 1)
+MenuOptionButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+MenuOptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+MenuOptionButton/colors/underline_color = Color(1, 1, 1, 0.9)
+MenuOptionButton/constants/underline_center_thickness = 3
+MenuOptionButton/constants/underline_gap = 1
+MenuOptionButton/constants/underline_padding = 6
+MenuOptionButton/font_sizes/font_size = 12
+MenuOptionButton/fonts/font = ExtResource("3_menu")
+MenuOptionButton/styles/disabled = SubResource("SB_button_normal")
+MenuOptionButton/styles/focus = SubResource("SB_button_normal")
+MenuOptionButton/styles/hover = SubResource("SB_button_normal")
+MenuOptionButton/styles/normal = SubResource("SB_button_normal")
+MenuOptionButton/styles/pressed = SubResource("SB_button_normal")
+PanelContainer/styles/panel = SubResource("SB_panel")
+SupportLabel/base_type = &"Label"
+SupportLabel/colors/font_color = Color(1, 1, 1, 1)
+TitleLabel/base_type = &"Label"
+TitleLabel/colors/font_color = Color(1, 1, 1, 1)
+TitleLabel/font_sizes/font_size = 34
+TitleLabel/fonts/font = ExtResource("2_display")
+VolumeSlider/base_type = &"Control"
+VolumeSlider/colors/tick_active = Color(1, 1, 1, 0.9)
+VolumeSlider/colors/tick_inactive = Color(1, 1, 1, 0.24)
+VolumeSlider/colors/track_active = Color(1, 1, 1, 0.55)
+VolumeSlider/colors/track_inactive = Color(1, 1, 1, 0.22)
+VolumeSlider/constants/selected_alpha_boost = 0.1
+VolumeSlider/constants/tick_height = 5
+VolumeSlider/constants/track_thickness = 1
