@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://src/features/ui/scripts/ui_root.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/title_screen.tscn" id="3_title"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/main_menu.tscn" id="4_menu"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/settings_screen.tscn" id="5_settings"]
+[ext_resource type="VideoStream" path="res://src/features/ui/assets/background/main_menu_background.ogv" id="6_video"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/conversation_test_screen.tscn" id="7_conversation"]
+
+[node name="UIRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Video" type="VideoStreamPlayer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("6_video")
+autoplay = true
+loop = true
+expand = true
+
+[node name="ScreenHost" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TitleScreen" parent="ScreenHost" instance=ExtResource("3_title")]
+unique_name_in_owner = true
+
+[node name="MainMenu" parent="ScreenHost" instance=ExtResource("4_menu")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SettingsScreen" parent="ScreenHost" instance=ExtResource("5_settings")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ConversationTestScreen" parent="ScreenHost" instance=ExtResource("7_conversation")]
+unique_name_in_owner = true
+visible = false

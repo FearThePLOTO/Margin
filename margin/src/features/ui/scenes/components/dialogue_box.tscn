@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/features/ui/scripts/dialogue_box.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://src/features/ui/scripts/dialogue_continue_indicator.gd" id="3_indicator"]
+
+[node name="DialogueBox" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="FrameRoot" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -144.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 70.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Frame" type="PanelContainer" parent="FrameRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="FrameRoot/Frame"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 2
+
+[node name="Content" type="HBoxContainer" parent="FrameRoot/Frame/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="PortraitSlot" type="PanelContainer" parent="FrameRoot/Frame/Margin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="PortraitContent" type="Control" parent="FrameRoot/Frame/Margin/Content/PortraitSlot"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PortraitTexture" type="TextureRect" parent="FrameRoot/Frame/Margin/Content/PortraitSlot/PortraitContent"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PortraitPlaceholder" type="CenterContainer" parent="FrameRoot/Frame/Margin/Content/PortraitSlot/PortraitContent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PlaceholderLabel" type="Label" parent="FrameRoot/Frame/Margin/Content/PortraitSlot/PortraitContent/PortraitPlaceholder"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"SupportLabel"
+theme_override_colors/font_color = Color(1, 1, 1, 0.45)
+text = "PORTRAIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextColumn" type="VBoxContainer" parent="FrameRoot/Frame/Margin/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 1
+
+[node name="NameLabel" type="Label" parent="FrameRoot/Frame/Margin/Content/TextColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"DialogueMessage"
+text = "CHARACTER NAME"
+clip_text = true
+
+[node name="Divider" type="ColorRect" parent="FrameRoot/Frame/Margin/Content/TextColumn"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.28)
+
+[node name="DialogueText" type="RichTextLabel" parent="FrameRoot/Frame/Margin/Content/TextColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_type_variation = &"DialogueText"
+bbcode_enabled = false
+text = ""
+fit_content = false
+scroll_active = false
+scroll_following = false
+autowrap_mode = 3
+visible_characters = 0
+visible_characters_behavior = 1
+
+[node name="ContinueIndicator" type="Control" parent="FrameRoot"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -13.0
+offset_right = -7.0
+offset_bottom = -8.0
+mouse_filter = 2
+script = ExtResource("3_indicator")
