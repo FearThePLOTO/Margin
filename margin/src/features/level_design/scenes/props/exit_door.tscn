@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/features/level_design/scripts/exit_door.gd" id="1_door"]
+[ext_resource type="Texture2D" path="res://src/assets/Margin_Mars_Surface/Infrastructure/infrastructure.png" id="2_infra"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(20, 44)
+
+[sub_resource type="AtlasTexture" id="AT_closed"]
+atlas = ExtResource("2_infra")
+region = Rect2(0, 32, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AT_open"]
+atlas = ExtResource("2_infra")
+region = Rect2(32, 32, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_door"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_closed")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_open")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="ExitDoor" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_door")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_door")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_door")
+animation = &"closed"
+autoplay = "closed"

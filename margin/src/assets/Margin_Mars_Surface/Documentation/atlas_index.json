@@ -1,0 +1,5037 @@
+{
+ "terrain_rock": {
+  "png": "res://src/assets/Margin_Mars_Surface/Terrain/terrain_rock.png",
+  "terrain_set": 0,
+  "tiles": [
+   {
+    "coords": [
+     0,
+     0
+    ],
+    "mask": 255,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     0
+    ],
+    "mask": 127,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     0
+    ],
+    "mask": 223,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     0
+    ],
+    "mask": 247,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     0
+    ],
+    "mask": 253,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     0
+    ],
+    "mask": 95,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     0
+    ],
+    "mask": 119,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     0
+    ],
+    "mask": 125,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     0
+    ],
+    "mask": 215,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     0
+    ],
+    "mask": 221,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     0
+    ],
+    "mask": 245,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     0
+    ],
+    "mask": 87,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     1
+    ],
+    "mask": 93,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     1
+    ],
+    "mask": 117,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     1
+    ],
+    "mask": 213,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     1
+    ],
+    "mask": 85,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     1
+    ],
+    "mask": 124,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     1
+    ],
+    "mask": 92,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     1
+    ],
+    "mask": 116,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     1
+    ],
+    "mask": 84,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     1
+    ],
+    "mask": 241,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     1
+    ],
+    "mask": 113,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     1
+    ],
+    "mask": 209,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     1
+    ],
+    "mask": 81,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     2
+    ],
+    "mask": 199,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     2
+    ],
+    "mask": 71,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     2
+    ],
+    "mask": 197,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     2
+    ],
+    "mask": 69,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     2
+    ],
+    "mask": 31,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     2
+    ],
+    "mask": 23,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     2
+    ],
+    "mask": 29,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     2
+    ],
+    "mask": 21,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     2
+    ],
+    "mask": 112,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     2
+    ],
+    "mask": 80,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     2
+    ],
+    "mask": 68,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     2
+    ],
+    "mask": 28,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     3
+    ],
+    "mask": 20,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     3
+    ],
+    "mask": 193,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     3
+    ],
+    "mask": 65,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     3
+    ],
+    "mask": 17,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     3
+    ],
+    "mask": 7,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     3
+    ],
+    "mask": 5,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     3
+    ],
+    "mask": 64,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     3
+    ],
+    "mask": 16,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     3
+    ],
+    "mask": 4,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     3
+    ],
+    "mask": 1,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     3
+    ],
+    "mask": 0,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     1,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     2,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     3,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     4,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   }
+  ]
+ },
+ "terrain_cave": {
+  "png": "res://src/assets/Margin_Mars_Surface/Terrain/terrain_cave.png",
+  "terrain_set": 1,
+  "tiles": [
+   {
+    "coords": [
+     0,
+     0
+    ],
+    "mask": 255,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     0
+    ],
+    "mask": 127,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     0
+    ],
+    "mask": 223,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     0
+    ],
+    "mask": 247,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     0
+    ],
+    "mask": 253,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     0
+    ],
+    "mask": 95,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     0
+    ],
+    "mask": 119,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     0
+    ],
+    "mask": 125,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     0
+    ],
+    "mask": 215,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     0
+    ],
+    "mask": 221,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     0
+    ],
+    "mask": 245,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     0
+    ],
+    "mask": 87,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     1
+    ],
+    "mask": 93,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     1
+    ],
+    "mask": 117,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     1
+    ],
+    "mask": 213,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     1
+    ],
+    "mask": 85,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     1
+    ],
+    "mask": 124,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     1
+    ],
+    "mask": 92,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     1
+    ],
+    "mask": 116,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     1
+    ],
+    "mask": 84,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     1
+    ],
+    "mask": 241,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     1
+    ],
+    "mask": 113,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     1
+    ],
+    "mask": 209,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     1
+    ],
+    "mask": 81,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     2
+    ],
+    "mask": 199,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     2
+    ],
+    "mask": 71,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     2
+    ],
+    "mask": 197,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     2
+    ],
+    "mask": 69,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     2
+    ],
+    "mask": 31,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     2
+    ],
+    "mask": 23,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     2
+    ],
+    "mask": 29,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     2
+    ],
+    "mask": 21,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     2
+    ],
+    "mask": 112,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     2
+    ],
+    "mask": 80,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     2
+    ],
+    "mask": 68,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     2
+    ],
+    "mask": 28,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     3
+    ],
+    "mask": 20,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     3
+    ],
+    "mask": 193,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     3
+    ],
+    "mask": 65,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     3
+    ],
+    "mask": 17,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     3
+    ],
+    "mask": 7,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     3
+    ],
+    "mask": 5,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     3
+    ],
+    "mask": 64,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     3
+    ],
+    "mask": 16,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     3
+    ],
+    "mask": 4,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     3
+    ],
+    "mask": 1,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     3
+    ],
+    "mask": 0,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     1,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     2,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     3,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     4,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   }
+  ]
+ },
+ "terrain_sand": {
+  "png": "res://src/assets/Margin_Mars_Surface/Sand/terrain_sand.png",
+  "terrain_set": 2,
+  "tiles": [
+   {
+    "coords": [
+     0,
+     0
+    ],
+    "mask": 255,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     0
+    ],
+    "mask": 127,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     0
+    ],
+    "mask": 223,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     0
+    ],
+    "mask": 247,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     0
+    ],
+    "mask": 253,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     0
+    ],
+    "mask": 95,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     0
+    ],
+    "mask": 119,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     0
+    ],
+    "mask": 125,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     0
+    ],
+    "mask": 215,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     0
+    ],
+    "mask": 221,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     0
+    ],
+    "mask": 245,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     0
+    ],
+    "mask": 87,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     1
+    ],
+    "mask": 93,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     1
+    ],
+    "mask": 117,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     1
+    ],
+    "mask": 213,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     1
+    ],
+    "mask": 85,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     1
+    ],
+    "mask": 124,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     1
+    ],
+    "mask": 92,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     1
+    ],
+    "mask": 116,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     1
+    ],
+    "mask": 84,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     1
+    ],
+    "mask": 241,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     1
+    ],
+    "mask": 113,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     1
+    ],
+    "mask": 209,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     1
+    ],
+    "mask": 81,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     2
+    ],
+    "mask": 199,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     2
+    ],
+    "mask": 71,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     2
+    ],
+    "mask": 197,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     2
+    ],
+    "mask": 69,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     2
+    ],
+    "mask": 31,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     2
+    ],
+    "mask": 23,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     2
+    ],
+    "mask": 29,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     2
+    ],
+    "mask": 21,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     2
+    ],
+    "mask": 112,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     2
+    ],
+    "mask": 80,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     2
+    ],
+    "mask": 68,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     2
+    ],
+    "mask": 28,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     3
+    ],
+    "mask": 20,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     3
+    ],
+    "mask": 193,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     3
+    ],
+    "mask": 65,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     3
+    ],
+    "mask": 17,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     3
+    ],
+    "mask": 7,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     3
+    ],
+    "mask": 5,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     3
+    ],
+    "mask": 64,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     3
+    ],
+    "mask": 16,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     3
+    ],
+    "mask": 4,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     3
+    ],
+    "mask": 1,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     3
+    ],
+    "mask": 0,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     1,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     2,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     3,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     4,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   }
+  ]
+ },
+ "terrain_sandy_rock": {
+  "png": "res://src/assets/Margin_Mars_Surface/Terrain/terrain_sandy_rock.png",
+  "terrain_set": 3,
+  "tiles": [
+   {
+    "coords": [
+     0,
+     0
+    ],
+    "mask": 255,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     0
+    ],
+    "mask": 127,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     0
+    ],
+    "mask": 223,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     0
+    ],
+    "mask": 247,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     0
+    ],
+    "mask": 253,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     0
+    ],
+    "mask": 95,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     0
+    ],
+    "mask": 119,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     0
+    ],
+    "mask": 125,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     0
+    ],
+    "mask": 215,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     0
+    ],
+    "mask": 221,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     0
+    ],
+    "mask": 245,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     0
+    ],
+    "mask": 87,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     1
+    ],
+    "mask": 93,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     1
+    ],
+    "mask": 117,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     1
+    ],
+    "mask": 213,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     1
+    ],
+    "mask": 85,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     1
+    ],
+    "mask": 124,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     1
+    ],
+    "mask": 92,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     1
+    ],
+    "mask": 116,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     1
+    ],
+    "mask": 84,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     1
+    ],
+    "mask": 241,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     1
+    ],
+    "mask": 113,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     1
+    ],
+    "mask": 209,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     1
+    ],
+    "mask": 81,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     2
+    ],
+    "mask": 199,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     2
+    ],
+    "mask": 71,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     2
+    ],
+    "mask": 197,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     2
+    ],
+    "mask": 69,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     2
+    ],
+    "mask": 31,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     2
+    ],
+    "mask": 23,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     2
+    ],
+    "mask": 29,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     2
+    ],
+    "mask": 21,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     2
+    ],
+    "mask": 112,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     2
+    ],
+    "mask": 80,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     2
+    ],
+    "mask": 68,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     2
+    ],
+    "mask": 28,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     3
+    ],
+    "mask": 20,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     3
+    ],
+    "mask": 193,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     3
+    ],
+    "mask": 65,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     3
+    ],
+    "mask": 17,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     3
+    ],
+    "mask": 7,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     3
+    ],
+    "mask": 5,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     3
+    ],
+    "mask": 64,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     3
+    ],
+    "mask": 16,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     3
+    ],
+    "mask": 4,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     3
+    ],
+    "mask": 1,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     3
+    ],
+    "mask": 0,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     1,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     2,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     3,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     4,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   }
+  ]
+ },
+ "terrain_frost": {
+  "png": "res://src/assets/Margin_Mars_Surface/Terrain/terrain_frost.png",
+  "terrain_set": 4,
+  "tiles": [
+   {
+    "coords": [
+     0,
+     0
+    ],
+    "mask": 255,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     0
+    ],
+    "mask": 127,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     0
+    ],
+    "mask": 223,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     0
+    ],
+    "mask": 247,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     0
+    ],
+    "mask": 253,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     0
+    ],
+    "mask": 95,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     0
+    ],
+    "mask": 119,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     0
+    ],
+    "mask": 125,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     0
+    ],
+    "mask": 215,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     0
+    ],
+    "mask": 221,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     0
+    ],
+    "mask": 245,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     0
+    ],
+    "mask": 87,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     1
+    ],
+    "mask": 93,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     1
+    ],
+    "mask": 117,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     1
+    ],
+    "mask": 213,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     1
+    ],
+    "mask": 85,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     1
+    ],
+    "mask": 124,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     1
+    ],
+    "mask": 92,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     1
+    ],
+    "mask": 116,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     1
+    ],
+    "mask": 84,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     1
+    ],
+    "mask": 241,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     1
+    ],
+    "mask": 113,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     1
+    ],
+    "mask": 209,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     1
+    ],
+    "mask": 81,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     2
+    ],
+    "mask": 199,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     2
+    ],
+    "mask": 71,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     2
+    ],
+    "mask": 197,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     2
+    ],
+    "mask": 69,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     2
+    ],
+    "mask": 31,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     2
+    ],
+    "mask": 23,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     2
+    ],
+    "mask": 29,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     2
+    ],
+    "mask": 21,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     2
+    ],
+    "mask": 112,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     2
+    ],
+    "mask": 80,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     2
+    ],
+    "mask": 68,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     11,
+     2
+    ],
+    "mask": 28,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     3
+    ],
+    "mask": 20,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     1,
+     3
+    ],
+    "mask": 193,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     2,
+     3
+    ],
+    "mask": 65,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     3,
+     3
+    ],
+    "mask": 17,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     4,
+     3
+    ],
+    "mask": 7,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     5,
+     3
+    ],
+    "mask": 5,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     6,
+     3
+    ],
+    "mask": 64,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     7,
+     3
+    ],
+    "mask": 16,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     8,
+     3
+    ],
+    "mask": 4,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     9,
+     3
+    ],
+    "mask": 1,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     10,
+     3
+    ],
+    "mask": 0,
+    "probability": 1.0
+   },
+   {
+    "coords": [
+     0,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     1,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     2,
+     4
+    ],
+    "mask": 255,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     3,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   },
+   {
+    "coords": [
+     4,
+     4
+    ],
+    "mask": 124,
+    "probability": 0.35
+   }
+  ]
+ },
+ "slopes": {
+  "png": "res://src/assets/Margin_Mars_Surface/Terrain/slopes.png",
+  "tiles": [
+   {
+    "name": "rock_floor_45_R_0",
+    "coords": [
+     0,
+     0
+    ]
+   },
+   {
+    "name": "rock_floor_45_L_0",
+    "coords": [
+     1,
+     0
+    ]
+   },
+   {
+    "name": "rock_floor_22_R_0",
+    "coords": [
+     2,
+     0
+    ]
+   },
+   {
+    "name": "rock_floor_22_R_1",
+    "coords": [
+     3,
+     0
+    ]
+   },
+   {
+    "name": "rock_floor_22_L_0",
+    "coords": [
+     4,
+     0
+    ]
+   },
+   {
+    "name": "rock_floor_22_L_1",
+    "coords": [
+     5,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_45_R_0",
+    "coords": [
+     6,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_45_L_0",
+    "coords": [
+     7,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_22_R_0",
+    "coords": [
+     8,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_22_R_1",
+    "coords": [
+     9,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_22_L_0",
+    "coords": [
+     10,
+     0
+    ]
+   },
+   {
+    "name": "rock_ceil_22_L_1",
+    "coords": [
+     11,
+     0
+    ]
+   },
+   {
+    "name": "cave_floor_45_R_0",
+    "coords": [
+     0,
+     1
+    ]
+   },
+   {
+    "name": "cave_floor_45_L_0",
+    "coords": [
+     1,
+     1
+    ]
+   },
+   {
+    "name": "cave_floor_22_R_0",
+    "coords": [
+     2,
+     1
+    ]
+   },
+   {
+    "name": "cave_floor_22_R_1",
+    "coords": [
+     3,
+     1
+    ]
+   },
+   {
+    "name": "cave_floor_22_L_0",
+    "coords": [
+     4,
+     1
+    ]
+   },
+   {
+    "name": "cave_floor_22_L_1",
+    "coords": [
+     5,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_45_R_0",
+    "coords": [
+     6,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_45_L_0",
+    "coords": [
+     7,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_22_R_0",
+    "coords": [
+     8,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_22_R_1",
+    "coords": [
+     9,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_22_L_0",
+    "coords": [
+     10,
+     1
+    ]
+   },
+   {
+    "name": "cave_ceil_22_L_1",
+    "coords": [
+     11,
+     1
+    ]
+   },
+   {
+    "name": "sand_floor_45_R_0",
+    "coords": [
+     0,
+     2
+    ]
+   },
+   {
+    "name": "sand_floor_45_L_0",
+    "coords": [
+     1,
+     2
+    ]
+   },
+   {
+    "name": "sand_floor_22_R_0",
+    "coords": [
+     2,
+     2
+    ]
+   },
+   {
+    "name": "sand_floor_22_R_1",
+    "coords": [
+     3,
+     2
+    ]
+   },
+   {
+    "name": "sand_floor_22_L_0",
+    "coords": [
+     4,
+     2
+    ]
+   },
+   {
+    "name": "sand_floor_22_L_1",
+    "coords": [
+     5,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_45_R_0",
+    "coords": [
+     6,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_45_L_0",
+    "coords": [
+     7,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_22_R_0",
+    "coords": [
+     8,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_22_R_1",
+    "coords": [
+     9,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_22_L_0",
+    "coords": [
+     10,
+     2
+    ]
+   },
+   {
+    "name": "sand_ceil_22_L_1",
+    "coords": [
+     11,
+     2
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_45_R_0",
+    "coords": [
+     0,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_45_L_0",
+    "coords": [
+     1,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_22_R_0",
+    "coords": [
+     2,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_22_R_1",
+    "coords": [
+     3,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_22_L_0",
+    "coords": [
+     4,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_floor_22_L_1",
+    "coords": [
+     5,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_45_R_0",
+    "coords": [
+     6,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_45_L_0",
+    "coords": [
+     7,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_22_R_0",
+    "coords": [
+     8,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_22_R_1",
+    "coords": [
+     9,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_22_L_0",
+    "coords": [
+     10,
+     3
+    ]
+   },
+   {
+    "name": "sandy_rock_ceil_22_L_1",
+    "coords": [
+     11,
+     3
+    ]
+   },
+   {
+    "name": "frost_floor_45_R_0",
+    "coords": [
+     0,
+     4
+    ]
+   },
+   {
+    "name": "frost_floor_45_L_0",
+    "coords": [
+     1,
+     4
+    ]
+   },
+   {
+    "name": "frost_floor_22_R_0",
+    "coords": [
+     2,
+     4
+    ]
+   },
+   {
+    "name": "frost_floor_22_R_1",
+    "coords": [
+     3,
+     4
+    ]
+   },
+   {
+    "name": "frost_floor_22_L_0",
+    "coords": [
+     4,
+     4
+    ]
+   },
+   {
+    "name": "frost_floor_22_L_1",
+    "coords": [
+     5,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_45_R_0",
+    "coords": [
+     6,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_45_L_0",
+    "coords": [
+     7,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_22_R_0",
+    "coords": [
+     8,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_22_R_1",
+    "coords": [
+     9,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_22_L_0",
+    "coords": [
+     10,
+     4
+    ]
+   },
+   {
+    "name": "frost_ceil_22_L_1",
+    "coords": [
+     11,
+     4
+    ]
+   }
+  ]
+ },
+ "platforms": {
+  "png": "res://src/assets/Margin_Mars_Surface/Platforms/platforms.png",
+  "tiles": [
+   {
+    "name": "ledge_rock_L",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_rock_M",
+    "coords": [
+     1,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_rock_R",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_rock_single",
+    "coords": [
+     3,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_cave_L",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_cave_M",
+    "coords": [
+     5,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_cave_R",
+    "coords": [
+     6,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ledge_cave_single",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "grate_L",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "grate_M",
+    "coords": [
+     9,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "grate_R",
+    "coords": [
+     10,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "grate_single",
+    "coords": [
+     11,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": true,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "float_rock_rock",
+    "coords": [
+     12,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_2w_r0c0",
+    "coords": [
+     13,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_2w_r0c1",
+    "coords": [
+     14,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_2w_r1c0",
+    "coords": [
+     15,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_2w_r1c1",
+    "coords": [
+     0,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r0c0",
+    "coords": [
+     1,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r0c1",
+    "coords": [
+     2,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r0c2",
+    "coords": [
+     3,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r1c0",
+    "coords": [
+     4,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r1c1",
+    "coords": [
+     5,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_rock_3w_r1c2",
+    "coords": [
+     6,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "float_rock_cave",
+    "coords": [
+     7,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_2w_r0c0",
+    "coords": [
+     8,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_2w_r0c1",
+    "coords": [
+     9,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_2w_r1c0",
+    "coords": [
+     10,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_2w_r1c1",
+    "coords": [
+     11,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r0c0",
+    "coords": [
+     12,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r0c1",
+    "coords": [
+     13,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r0c2",
+    "coords": [
+     14,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r1c0",
+    "coords": [
+     15,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r1c1",
+    "coords": [
+     0,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "island_cave_3w_r1c2",
+    "coords": [
+     1,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crumble_rock_intact",
+    "coords": [
+     2,
+     2
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   },
+   {
+    "name": "crumble_rock_cracked",
+    "coords": [
+     6,
+     2
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   },
+   {
+    "name": "crumble_rock_crumbling",
+    "coords": [
+     10,
+     2
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   },
+   {
+    "name": "crumble_cave_intact",
+    "coords": [
+     0,
+     3
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   },
+   {
+    "name": "crumble_cave_cracked",
+    "coords": [
+     4,
+     3
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   },
+   {
+    "name": "crumble_cave_crumbling",
+    "coords": [
+     8,
+     3
+    ],
+    "size": [
+     4,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "64x16 strip, matches falling_platform_64.tscn"
+   }
+  ]
+ },
+ "geology": {
+  "png": "res://src/assets/Margin_Mars_Surface/Geological/geology.png",
+  "tiles": [
+   {
+    "name": "boulder_small",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "boulder_medium",
+    "coords": [
+     1,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "boulder_large",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     2,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "boulder_cave",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "boulder_cave_large",
+    "coords": [
+     5,
+     0
+    ],
+    "size": [
+     2,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "rock_cluster",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pebbles_a",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pebbles_b",
+    "coords": [
+     9,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pebbles_cave",
+    "coords": [
+     10,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crack_decal_0",
+    "coords": [
+     11,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "crack_decal_1",
+    "coords": [
+     12,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "crack_decal_2",
+    "coords": [
+     13,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "mineral_hematite",
+    "coords": [
+     14,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "mineral_sulfate",
+    "coords": [
+     15,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "mineral_iron",
+    "coords": [
+     0,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "mineral_ore",
+    "coords": [
+     1,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain"
+   },
+   {
+    "name": "stalactite_small",
+    "coords": [
+     2,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "stalactite_large",
+    "coords": [
+     3,
+     2
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "stalagmite_small",
+    "coords": [
+     4,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "stalagmite_large",
+    "coords": [
+     5,
+     2
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crystal_magenta_small",
+    "coords": [
+     6,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crystal_magenta_large",
+    "coords": [
+     7,
+     2
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crystal_teal",
+    "coords": [
+     8,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crystal_magenta_ceiling",
+    "coords": [
+     9,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r0c0",
+    "coords": [
+     10,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r0c1",
+    "coords": [
+     11,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r0c2",
+    "coords": [
+     12,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r0c3",
+    "coords": [
+     13,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r1c0",
+    "coords": [
+     14,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r1c1",
+    "coords": [
+     15,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r1c2",
+    "coords": [
+     0,
+     4
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_4x2_r1c3",
+    "coords": [
+     1,
+     4
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_2x1_r0c0",
+    "coords": [
+     2,
+     4
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "crater_2x1_r0c1",
+    "coords": [
+     3,
+     4
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   }
+  ]
+ },
+ "vegetation": {
+  "png": "res://src/assets/Margin_Mars_Surface/Vegetation/vegetation.png",
+  "tiles": [
+   {
+    "name": "lichen_patch",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "glow_stalks",
+    "coords": [
+     1,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "fungus_caps",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "spore_pod",
+    "coords": [
+     3,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "tube_worms",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "dry_shrub",
+    "coords": [
+     5,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "hanging_vines",
+    "coords": [
+     6,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "crystal_moss",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   }
+  ]
+ },
+ "parkour": {
+  "png": "res://src/assets/Margin_Mars_Surface/Parkour/parkour.png",
+  "tiles": [
+   {
+    "name": "tether_anchor",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "frame0 idle, frame1 hooked"
+   },
+   {
+    "name": "tether_anchor_ceiling",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "jump_pad",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 3,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "climb_wall_rock",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "spikes grip"
+   },
+   {
+    "name": "climb_wall_regolith",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": "LooseRegolith",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "grip_metal",
+    "coords": [
+     9,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on wall"
+   },
+   {
+    "name": "grip_natural",
+    "coords": [
+     10,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on wall"
+   }
+  ]
+ },
+ "infrastructure": {
+  "png": "res://src/assets/Margin_Mars_Surface/Infrastructure/infrastructure.png",
+  "tiles": [
+   {
+    "name": "solar_panel",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     2,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "o2_station",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "checkpoint",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "frame0 inactive, frame1 active (do not loop)"
+   },
+   {
+    "name": "o2_tank",
+    "coords": [
+     6,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "matches o2_tank.tscn pickup"
+   },
+   {
+    "name": "antenna",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "weather_sensor",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "drill_rig",
+    "coords": [
+     9,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "supply_crate",
+    "coords": [
+     10,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sample_canister",
+    "coords": [
+     11,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "lamp_post",
+    "coords": [
+     12,
+     0
+    ],
+    "size": [
+     1,
+     2
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "airlock_door",
+    "coords": [
+     0,
+     2
+    ],
+    "size": [
+     2,
+     3
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "frame0 closed, frame1 open"
+   },
+   {
+    "name": "lever",
+    "coords": [
+     4,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 2,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "frame0 off, frame1 on"
+   },
+   {
+    "name": "pipe_h",
+    "coords": [
+     6,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pipe_v",
+    "coords": [
+     7,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pipe_ne",
+    "coords": [
+     8,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pipe_nw",
+    "coords": [
+     9,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pipe_se",
+    "coords": [
+     10,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "pipe_sw",
+    "coords": [
+     11,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "truss_x",
+    "coords": [
+     12,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "truss_v",
+    "coords": [
+     13,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "truss_h",
+    "coords": [
+     14,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "panel_plain",
+    "coords": [
+     15,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "panel_vent",
+    "coords": [
+     0,
+     5
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "panel_stripe",
+    "coords": [
+     1,
+     5
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "panel_window",
+    "coords": [
+     2,
+     5
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "panel_light",
+    "coords": [
+     3,
+     5
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": true,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   }
+  ]
+ },
+ "hazards": {
+  "png": "res://src/assets/Margin_Mars_Surface/Hazards/hazards.png",
+  "tiles": [
+   {
+    "name": "lava_top",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 4,
+    "collision": false,
+    "one_way": false,
+    "hazard": "LavaZone",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "lava_body",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 4,
+    "collision": false,
+    "one_way": false,
+    "hazard": "LavaZone",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sludge_top",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 4,
+    "collision": false,
+    "one_way": false,
+    "hazard": "radiation",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sludge_body",
+    "coords": [
+     12,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 4,
+    "collision": false,
+    "one_way": false,
+    "hazard": "radiation",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "magma_rock",
+    "coords": [
+     0,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 2,
+    "collision": true,
+    "one_way": false,
+    "hazard": "heat",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "heat_vent",
+    "coords": [
+     2,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 3,
+    "collision": false,
+    "one_way": false,
+    "hazard": "heat",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "cryo_vent",
+    "coords": [
+     5,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 3,
+    "collision": false,
+    "one_way": false,
+    "hazard": "chill",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "spikes_rock_up",
+    "coords": [
+     8,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "spikes_rock_down",
+    "coords": [
+     9,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "spikes_metal_up",
+    "coords": [
+     10,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "spikes_metal_down",
+    "coords": [
+     11,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "top",
+    "note": ""
+   },
+   {
+    "name": "spikes_metal_left_wall",
+    "coords": [
+     12,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "spikes_metal_right_wall",
+    "coords": [
+     13,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "Spikes",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "ice_crystals",
+    "coords": [
+     14,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "chill",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "frost_rime",
+    "coords": [
+     15,
+     1
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on terrain top"
+   },
+   {
+    "name": "radiation_ore",
+    "coords": [
+     0,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "radiation",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "radioactive_barrel",
+    "coords": [
+     1,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": "radiation",
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sign_heat",
+    "coords": [
+     2,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sign_cold",
+    "coords": [
+     3,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sign_radiation",
+    "coords": [
+     4,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sign_o2",
+    "coords": [
+     5,
+     2
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   }
+  ]
+ },
+ "sand_decals": {
+  "png": "res://src/assets/Margin_Mars_Surface/Sand/sand_decals.png",
+  "tiles": [
+   {
+    "name": "sand_drift_L",
+    "coords": [
+     0,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sand_drift_M",
+    "coords": [
+     1,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sand_drift_R",
+    "coords": [
+     2,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sand_mound",
+    "coords": [
+     3,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": ""
+   },
+   {
+    "name": "sand_cover_L",
+    "coords": [
+     4,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on rock top"
+   },
+   {
+    "name": "sand_cover_M",
+    "coords": [
+     5,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on rock top"
+   },
+   {
+    "name": "sand_cover_R",
+    "coords": [
+     6,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on rock top"
+   },
+   {
+    "name": "sand_spill_edge",
+    "coords": [
+     7,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on left wall top; flip_h for right"
+   },
+   {
+    "name": "sand_ripples",
+    "coords": [
+     8,
+     0
+    ],
+    "size": [
+     1,
+     1
+    ],
+    "frames": 1,
+    "collision": false,
+    "one_way": false,
+    "hazard": null,
+    "anchor": "bottom",
+    "note": "overlay on sand body"
+   }
+  ]
+ }
+}

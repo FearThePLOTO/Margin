@@ -1,64 +1,9 @@
-[gd_resource type="Theme" load_steps=16 format=3]
+[gd_resource type="Theme" format=3 uid="uid://d16kse514jk5l"]
 
-[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Regular.ttf" id="1_body"]
-[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/PixelifySans-Variable.ttf" id="2_display"]
-[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Menu.ttf" id="3_menu"]
-[ext_resource type="FontFile" path="res://src/features/ui/assets/fonts/Silkscreen-Dialogue.ttf" id="4_dialogue"]
-
-[sub_resource type="StyleBoxFlat" id="SB_panel"]
-bg_color = Color(0.09, 0.05, 0.055, 0.97)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.35)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="SB_button_normal"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(1, 1, 1, 0)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="SB_button_hover"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(1, 1, 1, 0.1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.55)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="SB_button_pressed"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(1, 1, 1, 0.92)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[ext_resource type="FontFile" uid="uid://c0gb368fv0cm7" path="res://src/features/ui/assets/fonts/Silkscreen-Regular.ttf" id="1_body"]
+[ext_resource type="FontFile" uid="uid://dd3x2k26yusf8" path="res://src/features/ui/assets/fonts/PixelifySans-Variable.ttf" id="2_display"]
+[ext_resource type="FontFile" uid="uid://mwsx0keun1c1" path="res://src/features/ui/assets/fonts/Silkscreen-Menu.ttf" id="3_menu"]
+[ext_resource type="FontFile" uid="uid://c8ywbthejmqr" path="res://src/features/ui/assets/fonts/Silkscreen-Dialogue.ttf" id="4_dialogue"]
 
 [sub_resource type="StyleBoxFlat" id="SB_button_disabled"]
 content_margin_left = 6.0
@@ -92,6 +37,49 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="SB_button_hover"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.55)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_normal"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="SB_button_pressed"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [sub_resource type="StyleBoxFlat" id="SB_dialog_option"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -101,21 +89,6 @@ bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxLine" id="SB_separator"]
 color = Color(1, 1, 1, 0.3)
-thickness = 1
-
-[sub_resource type="StyleBoxFlat" id="SB_slider_track"]
-content_margin_top = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.12, 0.05, 0.06, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.25)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxFlat" id="SB_slider_fill"]
 content_margin_top = 2.0
@@ -134,6 +107,32 @@ corner_radius_top_left = 1
 corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_slider_track"]
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.12, 0.05, 0.06, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.25)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+bg_color = Color(0.09, 0.05, 0.055, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.35)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [resource]
 default_font = ExtResource("1_body")
@@ -156,25 +155,25 @@ DialogMessage/base_type = &"Label"
 DialogMessage/colors/font_color = Color(1, 1, 1, 1)
 DialogMessage/font_sizes/font_size = 9
 DialogMessage/fonts/font = ExtResource("3_menu")
-DialogueMessage/base_type = &"Label"
-DialogueMessage/colors/font_color = Color(1, 1, 1, 1)
-DialogueMessage/font_sizes/font_size = 9
-DialogueMessage/fonts/font = ExtResource("4_dialogue")
 DialogOptionButton/base_type = &"MenuOptionButton"
 DialogOptionButton/styles/disabled = SubResource("SB_dialog_option")
 DialogOptionButton/styles/focus = SubResource("SB_dialog_option")
 DialogOptionButton/styles/hover = SubResource("SB_dialog_option")
 DialogOptionButton/styles/normal = SubResource("SB_dialog_option")
 DialogOptionButton/styles/pressed = SubResource("SB_dialog_option")
+DialogueMessage/base_type = &"Label"
+DialogueMessage/colors/font_color = Color(1, 1, 1, 1)
+DialogueMessage/font_sizes/font_size = 9
+DialogueMessage/fonts/font = ExtResource("4_dialogue")
 DialogueText/base_type = &"RichTextLabel"
 DialogueText/colors/default_color = Color(1, 1, 1, 1)
 DialogueText/constants/line_separation = 0
 DialogueText/font_sizes/normal_font_size = 9
 DialogueText/fonts/normal_font = ExtResource("4_dialogue")
+HSeparator/styles/separator = SubResource("SB_separator")
 HSlider/styles/grabber_area = SubResource("SB_slider_fill")
 HSlider/styles/grabber_area_highlight = SubResource("SB_slider_fill_hl")
 HSlider/styles/slider = SubResource("SB_slider_track")
-HSeparator/styles/separator = SubResource("SB_separator")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("1_body")
@@ -208,6 +207,6 @@ VolumeSlider/colors/tick_active = Color(1, 1, 1, 0.9)
 VolumeSlider/colors/tick_inactive = Color(1, 1, 1, 0.24)
 VolumeSlider/colors/track_active = Color(1, 1, 1, 0.55)
 VolumeSlider/colors/track_inactive = Color(1, 1, 1, 0.22)
-VolumeSlider/constants/selected_alpha_boost = 0.1
+VolumeSlider/constants/selected_alpha_boost = 0
 VolumeSlider/constants/tick_height = 5
 VolumeSlider/constants/track_thickness = 1

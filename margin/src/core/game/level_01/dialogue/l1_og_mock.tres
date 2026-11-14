@@ -1,0 +1,97 @@
+[gd_resource type="Resource" script_class="DialogueSequence" format=3 uid="uid://3e3lrerftexx"]
+
+[ext_resource type="Script" uid="uid://brjg02gldlkxw" path="res://src/features/ui/dialogue/dialogue_sequence.gd" id="1_seq"]
+[ext_resource type="Script" uid="uid://db3qvff0ebea4" path="res://src/features/ui/dialogue/dialogue_line.gd" id="2_line"]
+[ext_resource type="Texture2D" uid="uid://ci1f6at25jm1g" path="res://src/assets/char/portraits_64.png" id="3_port"]
+[ext_resource type="AudioStream" uid="uid://bjlt3sq7keljh" path="res://src/features/audio/sfx/og_laugh.wav" id="sfx_laugh"]
+[ext_resource type="AudioStream" uid="uid://debhwnodytp6f" path="res://src/features/audio/sfx/max_voice.wav" id="v_max"]
+[ext_resource type="AudioStream" uid="uid://xisi0r37xrnh" path="res://src/features/audio/sfx/mc_voice.wav" id="v_mc"]
+[ext_resource type="AudioStream" uid="uid://bcoyguaod65id" path="res://src/features/audio/sfx/og_voice.wav" id="v_og"]
+
+[sub_resource type="AtlasTexture" id="P_og_laugh"]
+atlas = ExtResource("3_port")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_0"]
+script = ExtResource("2_line")
+speaker_name = "OG"
+portrait = SubResource("P_og_laugh")
+portrait_on_right = true
+text = "[shake rate=22.0 level=7 connected=1]HEHEHE... HAHAHAHA![/shake]"
+voice = ExtResource("v_og")
+voice_pitch = 1.15
+sfx = ExtResource("sfx_laugh")
+shake_box = true
+
+[sub_resource type="AtlasTexture" id="P_max_scared"]
+atlas = ExtResource("3_port")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_1"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max_scared")
+text = "[shake rate=22.0 level=7 connected=1]AAAH![/shake] Who are you?!"
+voice = ExtResource("v_max")
+voice_pitch = 1.25
+
+[sub_resource type="AtlasTexture" id="P_og"]
+atlas = ExtResource("3_port")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_2"]
+script = ExtResource("2_line")
+speaker_name = "OG"
+portrait = SubResource("P_og")
+portrait_on_right = true
+text = "Just an old wizard. Or a rock. [wave amp=28.0 freq=5.0 connected=1]Who knows?[/wave]"
+voice = ExtResource("v_og")
+
+[sub_resource type="Resource" id="Line_3"]
+script = ExtResource("2_line")
+speaker_name = "OG"
+portrait = SubResource("P_og_laugh")
+portrait_on_right = true
+text = "Nice fishbowl, kid! [shake rate=22.0 level=7 connected=1]HAHAHA![/shake]"
+voice = ExtResource("v_og")
+voice_pitch = 1.15
+sfx = ExtResource("sfx_laugh")
+
+[sub_resource type="AtlasTexture" id="P_max_annoyed"]
+atlas = ExtResource("3_port")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_4"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max_annoyed")
+text = "...It's a SPACE helmet."
+voice = ExtResource("v_max")
+voice_pitch = 0.9
+
+[sub_resource type="Resource" id="Line_5"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "[shake rate=22.0 level=7 connected=1]ALERT:[/shake] {storm_level} solar storm incoming!"
+voice = ExtResource("v_mc")
+shake_box = true
+
+[sub_resource type="Resource" id="Line_6"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "{storm_source} Get underground. NOW."
+voice = ExtResource("v_mc")
+
+[sub_resource type="Resource" id="Line_7"]
+script = ExtResource("2_line")
+speaker_name = "OG"
+portrait = SubResource("P_og_laugh")
+portrait_on_right = true
+text = "Run, fishbowl, run! [shake rate=22.0 level=7 connected=1]HEHEHE![/shake]"
+voice = ExtResource("v_og")
+voice_pitch = 1.15
+sfx = ExtResource("sfx_laugh")
+
+[resource]
+script = ExtResource("1_seq")
+lines = Array[ExtResource("2_line")]([SubResource("Line_0"), SubResource("Line_1"), SubResource("Line_2"), SubResource("Line_3"), SubResource("Line_4"), SubResource("Line_5"), SubResource("Line_6"), SubResource("Line_7")])

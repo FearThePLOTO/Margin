@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/core/game/level_exit.gd" id="1_s"]
+[ext_resource type="Texture2D" path="res://src/assets/char/info_sign.png" id="2_sign"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="3_theme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
+size = Vector2(12, 48)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sign"]
+content_margin_left = 3.0
+content_margin_top = 1.0
+content_margin_right = 3.0
+content_margin_bottom = 1.0
+bg_color = Color(0.055, 0.035, 0.07, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.85, 0.75, 1)
+
+[node name="LevelExit" type="Area2D"]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_s")
+metadata/_editor_description_ = "Place in the exit opening (centre of a 3-tile-tall gap). The sign sits 1.5 tiles to the left."
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_exit")
+debug_color = Color(0.4, 0.85, 0.75, 0.2)
+
+[node name="Sign" type="Sprite2D" parent="."]
+position = Vector2(-24, 16)
+texture = ExtResource("2_sign")
+
+[node name="SignText" type="Label" parent="Sign"]
+offset_left = -4.0
+offset_top = -22.0
+offset_right = 4.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_theme")
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_sign")
+text = "OUT ->"
+horizontal_alignment = 1

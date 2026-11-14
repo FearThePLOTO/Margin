@@ -1,0 +1,13 @@
+OK  Terrain/slopes.png                          192x80   12x5  cells  22 colours  
+OK  Terrain/terrain_cave.png                    192x80   12x5  cells  13 colours  
+OK  Terrain/terrain_frost.png                   192x80   12x5  cells   8 colours  
+OK  Terrain/terrain_rock.png                    192x80   12x5  cells   8 colours  
+OK  Terrain/terrain_sandy_rock.png              192x80   12x5  cells   9 colours  
+OK  Sand/sand_decals.png                        256x16   16x1  cells   4 colours  
+OK  Sand/terrain_sand.png                       192x80   12x5  cells   6 colours  
+OK  Platforms/platforms.png                     256x64   16x4  cells  19 colours  
+OK  Geological/geology.png                      256x80   16x5  cells  27 colours  
+OK  Vegetation/vegetation.png                   256x32   16x2  cells  19 colours  
+OK  Parkour/parkour.png                         256x16   16x1  cells  20 colours  
+OK  Infrastructure/infrastructure.png           256x96   16x6  cells  20 colours  
+OK  Hazards/hazards.png                         256x48   16x3  cells  29 colours  

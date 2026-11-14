@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/features/ui/scripts/data_sources_screen.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.055, 0.035, 0.07, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.45, 0.12, 1)
+
+[node name="DataSourcesScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.02, 0.05, 0.6)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p")
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.45, 0.12, 1)
+text = "NASA DATA"
+horizontal_alignment = 1
+
+[node name="SourcesText" type="RichTextLabel" parent="Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+text = "[color=#f2731f]REAL NASA DATA IN MARGIN[/color]\n\n[color=#66d9c0]NASA DONKI - Space Weather Database[/color]\nSolar radiation storms (SEP events) set how strong the storm is. At start the game asks DONKI (api.nasa.gov) for the last 30 days. If no storm is happening, it uses one of 16 REAL storms measured by GOES satellites (May 2024 - Nov 2025) and says so. Stored data is never shown as live.\nStrong = GOES >100 MeV, medium = GOES >10 MeV.\n\n[color=#66d9c0]Curiosity rover RAD (Mars Science Laboratory)[/color]\nAbout 0.67 mSv of radiation per day on the surface of Mars. Hassler et al., Science, 2014.\n\n[color=#66d9c0]NASA Human Research Program + OSDR[/color]\nAstronauts' weight-bearing bones lose about 1-1.5% of their mineral density per month in space. NASA's Open Science Data Repository (OSDR) archives this kind of space biology research. OSDR RadLab holds real ISS radiation dosimeter readings.\n\n[color=#66d9c0]NASA life support data (BVAD)[/color]\nAn astronaut uses about 0.8 kg of oxygen per day.\n\n[color=#66d9c0]NASA Veggie + CSA food production[/color]\nISS crews have grown and eaten lettuce. The Canadian Space Agency studies food production on the Moon.\n\n[color=#66d9c0]NASA Mars facts[/color]\nMars air is mostly carbon dioxide and very thin. Gravity is about 38% of Earth's. A day (sol) is 24 h 39 min.\n\n[color=#66d9c0]Lava tube research[/color]\nScientists propose lava tubes as radiation shelters. In Earth test caves, radiation was about 82% lower inside.\n\n[color=#f2731f]FACT vs GAME[/color]\n- Real Mars lava tubes are cold and ancient. Hot lava is a game challenge.\n- Meter speeds and power effects are tuned for play, but every effect goes the real direction: more shield = less dose, more power to the scrubber = longer air.\n- OG is fictional (and rude).\n\n[color=#f2731f]CREDITS[/color]\nPixel art and sounds made for Margin. Character proportions follow Eris Esra's Character Template. Fonts: Silkscreen, Pixelify Sans (OFL)."
+scroll_following = false
+
+[node name="Hint" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "UP/DOWN scroll"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"

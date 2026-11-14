@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="DialogueSequence" format=3 uid="uid://ck6k7ju38nm22"]
+
+[ext_resource type="Script" uid="uid://brjg02gldlkxw" path="res://src/features/ui/dialogue/dialogue_sequence.gd" id="1_seq"]
+[ext_resource type="Script" uid="uid://db3qvff0ebea4" path="res://src/features/ui/dialogue/dialogue_line.gd" id="2_line"]
+[ext_resource type="Texture2D" uid="uid://ci1f6at25jm1g" path="res://src/assets/char/portraits_64.png" id="3_port"]
+[ext_resource type="AudioStream" uid="uid://debhwnodytp6f" path="res://src/features/audio/sfx/max_voice.wav" id="v_max"]
+[ext_resource type="AudioStream" uid="uid://xisi0r37xrnh" path="res://src/features/audio/sfx/mc_voice.wav" id="v_mc"]
+
+[sub_resource type="AtlasTexture" id="P_max"]
+atlas = ExtResource("3_port")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_0"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max")
+text = "Phew. Rock above me. Storm can't reach me here."
+voice = ExtResource("v_max")
+
+[sub_resource type="Resource" id="Line_1"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "Suit battery: 3 cells. AIR, SHIELD, LIGHT."
+voice = ExtResource("v_mc")
+
+[sub_resource type="Resource" id="Line_2"]
+script = ExtResource("2_line")
+speaker_name = "NASA UPLINK"
+text = "You can't max them all. Choose wisely."
+voice = ExtResource("v_mc")
+
+[sub_resource type="AtlasTexture" id="P_max_annoyed"]
+atlas = ExtResource("3_port")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="Resource" id="Line_3"]
+script = ExtResource("2_line")
+speaker_name = "MAX"
+portrait = SubResource("P_max_annoyed")
+text = "No pressure. Ha. Ha."
+voice = ExtResource("v_max")
+voice_pitch = 0.9
+
+[resource]
+script = ExtResource("1_seq")
+lines = Array[ExtResource("2_line")]([SubResource("Line_0"), SubResource("Line_1"), SubResource("Line_2"), SubResource("Line_3")])

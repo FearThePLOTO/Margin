@@ -20,6 +20,29 @@ const TERMINAL_FALL_PXS := 320.0
 ## Kid-friendly input grace (coyote time + jump buffering).
 const COYOTE_TIME_S := 0.12
 const JUMP_BUFFER_S := 0.12
+## Celeste-style feel (game-tuned on top of the research numbers above):
+## releasing jump while rising cuts the arc (short hops), falls are heavier
+## than rises, and the apex floats briefly while jump is held.
+const JUMP_CUT_MULT := 0.45          # vy multiplier when jump is released early
+const FALL_GRAVITY_MULT := 1.6       # gravity multiplier while falling
+const APEX_HANG_PXS := 32.0          # |vy| under this counts as the apex...
+const APEX_GRAVITY_MULT := 0.5       # ...where gravity halves while jump is held
+const GROUND_DECEL_PXS := 900.0      # stop faster than you start (snappy)
+const CORNER_CORRECT_PX := 4         # head-bonk nudge around ceiling corners
+## Training levels respawn with at least this much O2 so a room is never lost.
+const RESPAWN_O2_FLOOR := 0.5
+
+# -- Junior Astronaut trade-offs: power cells -> system effect ----------------
+## Index = cells given to that system (0..3). Game-tuned multipliers; the
+## direction of every effect mirrors real suit/outpost engineering:
+## more power to the CO2 scrubber = O2 lasts longer; more power to the active
+## shield = less dose; more power to the headlamp = you can see and do science.
+const O2_DRAIN_BY_CELLS := [1.45, 1.0, 0.72, 0.55]       # x O2 drain rate
+const SHIELD_DOSE_BY_CELLS := [1.6, 1.0, 0.6, 0.35]      # x radiation fill rate
+const LIGHT_SCALE_BY_CELLS := [0.3, 0.9, 1.4, 1.9]       # headlamp size (0 = a tiny glow)
+const LIGHT_ENERGY_BY_CELLS := [0.3, 1.0, 1.25, 1.45]    # headlamp brightness
+## Science scanners need at least this many headlamp cells to read a sample.
+const SCAN_MIN_LIGHT_CELLS := 1
 
 # -- tether --
 const TETHER_MAX_ROPE_PXS := 1657.6

@@ -1,17 +1,19 @@
 extends Control
-## Main menu for the UI prototype.
-## START GAME opens the temporary Conversation Module test until gameplay
-## exists. SETTINGS opens the local audio settings screen. Local signals mark
-## the future integration points.
+## Main menu. START GAME starts the mission (src/core/main.gd swaps in Level 1),
+## SETTINGS opens audio settings, NASA DATA lists the real datasets used.
 
 signal start_game_requested
 signal settings_requested
+signal data_requested
+signal book_requested
 
-const _STATUS_START := "CONVERSATION TEST CONNECTED."
+const _STATUS_START := "LAUNCHING MISSION..."
 
 @onready var _start_button: Button = %StartButton
 @onready var _settings_button: Button = %SettingsButton
 @onready var _quit_button: Button = %QuitButton
+@onready var _data_button: Button = %DataButton
+@onready var _book_button: Button = %BookButton
 @onready var _status: Label = %Status
 @onready var _quit_dialog = %QuitConfirmDialog
 @onready var _selection_underline = %SelectionUnderline
@@ -30,6 +32,8 @@ func _ready() -> void:
 	_start_button.pressed.connect(_on_start_pressed)
 	_settings_button.pressed.connect(_on_settings_pressed)
 	_quit_button.pressed.connect(_on_quit_pressed)
+	_data_button.pressed.connect(_on_data_pressed)
+	_book_button.pressed.connect(_on_book_pressed)
 	_quit_dialog.closed.connect(_on_quit_closed)
 	if is_visible_in_tree():
 		_start_button.grab_focus()
@@ -60,6 +64,20 @@ func _on_settings_pressed() -> void:
 	_selection_underline.hide_indicator()
 	settings_requested.emit()
 
+func focus_book() -> void:
+	_book_button.grab_focus()
+
+func _on_book_pressed() -> void:
+	_selection_underline.hide_indicator()
+	book_requested.emit()
+
+func focus_data() -> void:
+	_data_button.grab_focus()
+
+func _on_data_pressed() -> void:
+	_selection_underline.hide_indicator()
+	data_requested.emit()
+
 func _on_quit_pressed() -> void:
 	_selection_underline.hide_indicator()
 	_set_buttons_focusable(false)
@@ -76,3 +94,5 @@ func _set_buttons_focusable(enabled: bool) -> void:
 	_start_button.focus_mode = mode
 	_settings_button.focus_mode = mode
 	_quit_button.focus_mode = mode
+	_data_button.focus_mode = mode
+	_book_button.focus_mode = mode

@@ -1,0 +1,10 @@
+# Repo-level junk (the Godot project has its own margin/.gitignore)
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]

@@ -72,3 +72,17 @@ the phase screens are built.
   `spikes_deploy` (E).
 - NOTE: `hazard_zone.gd` was added under `level_design/scripts/` — it is the
   zone→EventBus contract that README describes, needed by the test scene.
+
+## Movement feel + animation (Celeste-style pass)
+
+- `mechanic_move.gd`: variable jump height (release to cut, `JUMP_CUT_MULT`),
+  heavier falls (`FALL_GRAVITY_MULT`), apex hang while jump is held, snappy
+  ground stop (`GROUND_DECEL_PXS`), ceiling corner correction. Base gravity /
+  jump speed are unchanged (research-traced).
+- Sprite: `src/assets/char/astronaut_24.png` (24×24 cells, faces right; made by
+  `tools/chargen/gen_char.py`). Clips in `player.tscn` SpriteFrames: idle,
+  walk, takeoff, rise, apex, fall, land, thrust, slide (slide has art but no
+  mechanic yet). `mechanic_animation.gd` resolves them.
+- `player.gd`: `fail_is_death` export (training levels), camera locks to rooms
+  via `room_entered`. `mechanic_death.gd` listens to `checkpoint_reached`,
+  emits `player_died` / `player_respawned`, restores checkpoint O2.

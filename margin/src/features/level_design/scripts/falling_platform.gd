@@ -15,15 +15,40 @@ var _t := 0.0
 @onready var _trigger: Area2D = $Trigger
 
 
+## Optional art: an "Intact" sprite swapped for a "Cracked" one while it shakes.
+@onready var _intact: CanvasItem = get_node_or_null(^"Intact")
+@onready var _cracked: CanvasItem = get_node_or_null(^"Cracked")
+
+
 func _ready() -> void:
 	_home = position
 	_trigger.body_entered.connect(_on_trigger)
+	EventBus.player_respawned.connect(_reset)
+	_set_cracked(false)
+
+
+func _set_cracked(on: bool) -> void:
+	if _intact:
+		_intact.visible = not on
+	if _cracked:
+		_cracked.visible = on
+
+
+## Dying puts every platform back at once (Celeste-style room reset).
+func _reset() -> void:
+	position = _home
+	show()
+	_shape.set_deferred("disabled", false)
+	_set_cracked(false)
+	_state = 0
+	_t = 0.0
 
 
 func _on_trigger(body: Node2D) -> void:
 	if _state == 0 and body.is_in_group(&"player"):
 		_state = 1
 		_t = 0.0
+		_set_cracked(true)
 
 
 func _physics_process(delta: float) -> void:
@@ -46,7 +71,9 @@ func _physics_process(delta: float) -> void:
 				position = _home
 				show()
 				_shape.set_deferred("disabled", false)
+				_set_cracked(false)
 				_state = 0
 				_t = 0.0
 				if _trigger.has_overlapping_bodies():
 					_state = 1
+					_set_cracked(true)

@@ -1,173 +1,308 @@
-[gd_scene format=3 uid="uid://xw56iew608xg"]
+[gd_scene format=3 uid="uid://cagyajtuiw3vw"]
 
 [ext_resource type="Script" uid="uid://c0ovtcsojtt63" path="res://src/features/mechanics/scripts/player.gd" id="1_player"]
-[ext_resource type="Texture2D" uid="uid://drg28oliq65ao" path="res://src/features/mechanics/assets/blue_walk1.png" id="2_ma5dg"]
-[ext_resource type="Texture2D" uid="uid://car0dadgqih2a" path="res://src/features/mechanics/assets/blue_crouch.png" id="3_5ue8r"]
-[ext_resource type="Texture2D" uid="uid://bjx7tchhdcu2f" path="res://src/features/mechanics/assets/blue_walk2.png" id="3_h3ql6"]
-[ext_resource type="Texture2D" uid="uid://kh2i053tsy4w" path="res://src/features/mechanics/assets/blue_hurt.png" id="3_xyyht"]
-[ext_resource type="Texture2D" uid="uid://chm0drafq6end" path="res://src/features/mechanics/assets/blue_jump.png" id="4_5ue8r"]
-[ext_resource type="Texture2D" uid="uid://hqwlt4f68a8x" path="res://src/features/mechanics/assets/blue_walk3.png" id="4_tdtm1"]
-[ext_resource type="Texture2D" uid="uid://dnafwxq4gcfki" path="res://src/features/mechanics/assets/blue_run1.png" id="5_6tu5k"]
-[ext_resource type="Texture2D" uid="uid://deqviv6wtbuyr" path="res://src/features/mechanics/assets/blue_run2.png" id="6_qxilo"]
-[ext_resource type="Texture2D" uid="uid://b28m5y0vj37nk" path="res://src/features/mechanics/assets/blue_run3.png" id="7_yu1wx"]
-[ext_resource type="Texture2D" uid="uid://bdxclpccovy31" path="res://src/features/mechanics/assets/blue_run4.png" id="8_6k3eh"]
-[ext_resource type="Texture2D" path="res://src/features/mechanics/assets/blue_fall.png" id="9_fall"]
-[ext_resource type="Texture2D" path="res://src/features/mechanics/assets/blue_idle.png" id="10_idle"]
+[ext_resource type="Texture2D" path="res://src/assets/char/astronaut_24.png" id="15_sheet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
 size = Vector2(11, 15)
 
-[sub_resource type="Animation" id="Animation_hni1u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_ma5dg")]
-}
+[sub_resource type="AtlasTexture" id="astro_idle0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="Animation" id="Animation_6tu5k"]
-resource_name = "crouch"
-length = 0.1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_5ue8r")]
-}
+[sub_resource type="AtlasTexture" id="astro_idle1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="Animation" id="Animation_gevb4"]
-resource_name = "hurt"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_xyyht")]
-}
+[sub_resource type="AtlasTexture" id="astro_idle2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 0, 24, 24)
 
-[sub_resource type="Animation" id="Animation_3r40j"]
-resource_name = "idle"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("10_idle")]
-}
+[sub_resource type="AtlasTexture" id="astro_idle3"]
+atlas = ExtResource("15_sheet")
+region = Rect2(72, 0, 24, 24)
 
-[sub_resource type="Animation" id="Animation_025py"]
-resource_name = "jump"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_5ue8r")]
-}
+[sub_resource type="AtlasTexture" id="astro_walk0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="Animation" id="Animation_tdtm1"]
-resource_name = "run"
-length = 0.4
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("5_6tu5k"), ExtResource("6_qxilo"), ExtResource("7_yu1wx"), ExtResource("8_6k3eh")]
-}
+[sub_resource type="AtlasTexture" id="astro_walk1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="Animation" id="Animation_h3ql6"]
-resource_name = "walk"
-length = 0.3
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ma5dg"), ExtResource("3_h3ql6"), ExtResource("4_tdtm1")]
-}
+[sub_resource type="AtlasTexture" id="astro_walk2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="Animation" id="Animation_fall"]
-resource_name = "fall"
-length = 0.1
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("9_fall")]
-}
+[sub_resource type="AtlasTexture" id="astro_walk3"]
+atlas = ExtResource("15_sheet")
+region = Rect2(72, 24, 24, 24)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ma5dg"]
-_data = {
-&"RESET": SubResource("Animation_hni1u"),
-&"crouch": SubResource("Animation_6tu5k"),
-&"fall": SubResource("Animation_fall"),
-&"hurt": SubResource("Animation_gevb4"),
-&"idle": SubResource("Animation_3r40j"),
-&"jump": SubResource("Animation_025py"),
-&"run": SubResource("Animation_tdtm1"),
-&"walk": SubResource("Animation_h3ql6")
-}
+[sub_resource type="AtlasTexture" id="astro_walk4"]
+atlas = ExtResource("15_sheet")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_walk5"]
+atlas = ExtResource("15_sheet")
+region = Rect2(120, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_takeoff0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_takeoff1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_takeoff2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_rise0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_rise1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_rise2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_apex0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_apex1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_fall0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_fall1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_fall2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 120, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_land0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_land1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_land2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_thrust0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 168, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_thrust1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 168, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_thrust2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 168, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_thrust3"]
+atlas = ExtResource("15_sheet")
+region = Rect2(72, 168, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_thrust4"]
+atlas = ExtResource("15_sheet")
+region = Rect2(96, 168, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_slide0"]
+atlas = ExtResource("15_sheet")
+region = Rect2(0, 192, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_slide1"]
+atlas = ExtResource("15_sheet")
+region = Rect2(24, 192, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_slide2"]
+atlas = ExtResource("15_sheet")
+region = Rect2(48, 192, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_slide3"]
+atlas = ExtResource("15_sheet")
+region = Rect2(72, 192, 24, 24)
+
+[sub_resource type="AtlasTexture" id="astro_slide4"]
+atlas = ExtResource("15_sheet")
+region = Rect2(96, 192, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_astro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_idle0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_idle1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_idle2")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_idle3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_walk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_walk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_walk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_walk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_walk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_walk5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_takeoff0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_takeoff1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_takeoff2")
+}],
+"loop": false,
+"name": &"takeoff",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_rise0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_rise1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_rise2")
+}],
+"loop": true,
+"name": &"rise",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_apex0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_apex1")
+}],
+"loop": true,
+"name": &"apex",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_fall0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_fall1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_fall2")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_land0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_land1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_land2")
+}],
+"loop": false,
+"name": &"land",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_thrust0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_thrust1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_thrust2")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_thrust3")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_thrust4")
+}],
+"loop": true,
+"name": &"thrust",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("astro_slide0")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_slide1")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_slide2")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_slide3")
+}, {
+"duration": 1.0,
+"texture": SubResource("astro_slide4")
+}],
+"loop": false,
+"name": &"slide",
+"speed": 14.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_lamp"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.45, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lamp"]
+gradient = SubResource("Gradient_lamp")
+width = 160
+height = 160
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=1138749954 groups=["player"]]
 script = ExtResource("1_player")
@@ -182,12 +317,19 @@ width = 1.5
 default_color = Color(0.85, 0.85, 0.85, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=959111881]
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=758156671]
-libraries/ = SubResource("AnimationLibrary_ma5dg")
-autoplay = &"idle"
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=980010091]
+position = Vector2(0, 8)
+offset = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_astro")
+animation = &"idle"
+autoplay = "idle"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=980010091]
-texture = ExtResource("2_ma5dg")
+[node name="Headlamp" type="PointLight2D" parent="."]
+position = Vector2(0, -4)
+color = Color(1, 0.94, 0.82, 1)
+texture = SubResource("GradientTexture2D_lamp")
+metadata/_editor_description_ = "Suit headlamp. Size/brightness follow GameState.power_plan.light (player.gd)."

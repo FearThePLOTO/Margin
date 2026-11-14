@@ -1,0 +1,749 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/core/ui/mission_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/components/dialogue_box.tscn" id="3_dialogue"]
+[ext_resource type="Texture2D" path="res://src/assets/char/ui_icons.png" id="4_icons"]
+[ext_resource type="Texture2D" path="res://src/assets/char/scroll.png" id="5_scroll"]
+[ext_resource type="PackedScene" path="res://src/core/ui/book_screen.tscn" id="6_book"]
+[ext_resource type="PackedScene" path="res://src/core/ui/pause_menu.tscn" id="7_pause"]
+
+[sub_resource type="AtlasTexture" id="AT_air"]
+atlas = ExtResource("4_icons")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_rad"]
+atlas = ExtResource("4_icons")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_storm"]
+atlas = ExtResource("4_icons")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_shield"]
+atlas = ExtResource("4_icons")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_lamp"]
+atlas = ExtResource("4_icons")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_sample"]
+atlas = ExtResource("4_icons")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_cell_on"]
+atlas = ExtResource("4_icons")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AT_cell_off"]
+atlas = ExtResource("4_icons")
+region = Rect2(56, 0, 8, 8)
+
+[sub_resource type="StyleBoxFlat" id="SB_hud"]
+content_margin_left = 3.0
+content_margin_top = 2.0
+content_margin_right = 3.0
+content_margin_bottom = 2.0
+bg_color = Color(0.055, 0.035, 0.07, 0.82)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.15)
+
+[sub_resource type="StyleBoxFlat" id="SB_hint"]
+content_margin_left = 4.0
+content_margin_top = 1.0
+content_margin_right = 4.0
+content_margin_bottom = 1.0
+bg_color = Color(0.055, 0.035, 0.07, 0.92)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.85, 0.75, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_panel"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.055, 0.035, 0.07, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.95, 0.45, 0.12, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_card"]
+content_margin_left = 6.0
+content_margin_top = 4.0
+content_margin_right = 6.0
+content_margin_bottom = 4.0
+bg_color = Color(0.04, 0.09, 0.1, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.85, 0.75, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_bar_bg"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.07, 0.13, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_fill_air"]
+bg_color = Color(0.4, 0.85, 0.75, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_fill_rad"]
+bg_color = Color(0.72, 0.95, 0.25, 1)
+
+[node name="MissionOverlay" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Hud" type="Control" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Gauges" type="PanelContainer" parent="Root/Hud"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -30.0
+offset_right = 72.0
+offset_bottom = -4.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_hud")
+
+[node name="VBox" type="VBoxContainer" parent="Root/Hud/Gauges"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="AirRow" type="HBoxContainer" parent="Root/Hud/Gauges/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="Root/Hud/Gauges/VBox/AirRow"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_air")
+stretch_mode = 3
+
+[node name="Word" type="Label" parent="Root/Hud/Gauges/VBox/AirRow"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+theme_override_font_sizes/font_size = 8
+text = "AIR"
+
+[node name="AirBar" type="ProgressBar" parent="Root/Hud/Gauges/VBox/AirRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 5)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("SB_bar_bg")
+theme_override_styles/fill = SubResource("SB_fill_air")
+value = 100.0
+show_percentage = false
+
+[node name="RadRow" type="HBoxContainer" parent="Root/Hud/Gauges/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="Root/Hud/Gauges/VBox/RadRow"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_rad")
+stretch_mode = 3
+
+[node name="Word" type="Label" parent="Root/Hud/Gauges/VBox/RadRow"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.95, 0.25, 1)
+theme_override_font_sizes/font_size = 8
+text = "RAD"
+
+[node name="RadBar" type="ProgressBar" parent="Root/Hud/Gauges/VBox/RadRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(34, 5)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("SB_bar_bg")
+theme_override_styles/fill = SubResource("SB_fill_rad")
+value = 0.0
+show_percentage = false
+
+[node name="Power" type="PanelContainer" parent="Root/Hud"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -34.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_hud")
+
+[node name="VBox" type="VBoxContainer" parent="Root/Hud/Power"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="RPipsO2" type="HBoxContainer" parent="Root/Hud/Power/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsO2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_air")
+stretch_mode = 3
+
+[node name="PipsO2" type="HBoxContainer" parent="Root/Hud/Power/VBox/RPipsO2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsO2/PipsO2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsO2/PipsO2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsO2/PipsO2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="RPipsShield" type="HBoxContainer" parent="Root/Hud/Power/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsShield"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_shield")
+stretch_mode = 3
+
+[node name="PipsShield" type="HBoxContainer" parent="Root/Hud/Power/VBox/RPipsShield"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsShield/PipsShield"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsShield/PipsShield"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsShield/PipsShield"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="RPipsLight" type="HBoxContainer" parent="Root/Hud/Power/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsLight"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_lamp")
+stretch_mode = 3
+
+[node name="PipsLight" type="HBoxContainer" parent="Root/Hud/Power/VBox/RPipsLight"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsLight/PipsLight"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsLight/PipsLight"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/Hud/Power/VBox/RPipsLight/PipsLight"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="Info" type="PanelContainer" parent="Root/Hud"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -18.0
+offset_right = 4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("SB_hud")
+
+[node name="Row" type="HBoxContainer" parent="Root/Hud/Info"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="StormIcon" type="TextureRect" parent="Root/Hud/Info/Row"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_storm")
+stretch_mode = 3
+
+[node name="StormLabel" type="Label" parent="Root/Hud/Info/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75, 0.3, 1)
+theme_override_font_sizes/font_size = 8
+text = "STORM"
+
+[node name="SampleIcon" type="TextureRect" parent="Root/Hud/Info/Row"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_sample")
+stretch_mode = 3
+
+[node name="SamplesLabel" type="Label" parent="Root/Hud/Info/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+theme_override_font_sizes/font_size = 8
+text = "0/0"
+
+[node name="BarTop" type="ColorRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BarBottom" type="ColorRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Hint" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4.0
+offset_top = 8.0
+offset_right = 4.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("SB_hint")
+text = "hint"
+horizontal_alignment = 1
+
+[node name="DialogueBox" parent="Root" instance=ExtResource("3_dialogue")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="PowerPlan" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -60.0
+offset_right = 122.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Root/PowerPlan"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="PlanTitle" type="Label" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.95, 0.45, 0.12, 1)
+horizontal_alignment = 1
+text = "POWER PLAN"
+
+[node name="PlanStorm" type="Label" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 0.75, 0.3, 1)
+custom_minimum_size = Vector2(232, 0)
+autowrap_mode = 3
+text = "storm"
+
+[node name="Explain" type="Label" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+horizontal_alignment = 1
+text = "3 battery cells. Give one, lose one!"
+
+[node name="RowO2" type="HBoxContainer" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="TextureRect" parent="Root/PowerPlan/VBox/RowO2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_air")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Root/PowerPlan/VBox/RowO2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+custom_minimum_size = Vector2(38, 0)
+text = "NAME"
+
+[node name="Minus" type="Button" parent="Root/PowerPlan/VBox/RowO2"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "-"
+
+[node name="Pips" type="HBoxContainer" parent="Root/PowerPlan/VBox/RowO2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/PowerPlan/VBox/RowO2/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/PowerPlan/VBox/RowO2/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/PowerPlan/VBox/RowO2/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="Plus" type="Button" parent="Root/PowerPlan/VBox/RowO2"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "+"
+
+[node name="Effect" type="Label" parent="Root/PowerPlan/VBox/RowO2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+size_flags_horizontal = 3
+text = "effect"
+
+[node name="RowShield" type="HBoxContainer" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="TextureRect" parent="Root/PowerPlan/VBox/RowShield"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_shield")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Root/PowerPlan/VBox/RowShield"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+custom_minimum_size = Vector2(38, 0)
+text = "NAME"
+
+[node name="Minus" type="Button" parent="Root/PowerPlan/VBox/RowShield"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "-"
+
+[node name="Pips" type="HBoxContainer" parent="Root/PowerPlan/VBox/RowShield"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/PowerPlan/VBox/RowShield/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/PowerPlan/VBox/RowShield/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/PowerPlan/VBox/RowShield/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="Plus" type="Button" parent="Root/PowerPlan/VBox/RowShield"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "+"
+
+[node name="Effect" type="Label" parent="Root/PowerPlan/VBox/RowShield"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+size_flags_horizontal = 3
+text = "effect"
+
+[node name="RowLight" type="HBoxContainer" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Icon" type="TextureRect" parent="Root/PowerPlan/VBox/RowLight"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_lamp")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Root/PowerPlan/VBox/RowLight"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+custom_minimum_size = Vector2(38, 0)
+text = "NAME"
+
+[node name="Minus" type="Button" parent="Root/PowerPlan/VBox/RowLight"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "-"
+
+[node name="Pips" type="HBoxContainer" parent="Root/PowerPlan/VBox/RowLight"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="P0" type="TextureRect" parent="Root/PowerPlan/VBox/RowLight/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P1" type="TextureRect" parent="Root/PowerPlan/VBox/RowLight/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="P2" type="TextureRect" parent="Root/PowerPlan/VBox/RowLight/Pips"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AT_cell_off")
+stretch_mode = 3
+
+[node name="Plus" type="Button" parent="Root/PowerPlan/VBox/RowLight"]
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 8
+text = "+"
+
+[node name="Effect" type="Label" parent="Root/PowerPlan/VBox/RowLight"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+size_flags_horizontal = 3
+text = "effect"
+
+[node name="PlanFree" type="Label" parent="Root/PowerPlan/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+text = "CELLS LEFT"
+
+[node name="Footer" type="HBoxContainer" parent="Root/PowerPlan/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 8
+
+[node name="Controls" type="Label" parent="Root/PowerPlan/VBox/Footer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+text = "ARROWS + SPACE"
+
+[node name="Confirm" type="Button" parent="Root/PowerPlan/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "GO!"
+
+[node name="Toast" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 34.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("SB_card")
+
+[node name="HBox" type="HBoxContainer" parent="Root/Toast"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ScrollIcon" type="TextureRect" parent="Root/Toast/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_scroll")
+stretch_mode = 3
+
+[node name="VBox" type="VBoxContainer" parent="Root/Toast/HBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Label" parent="Root/Toast/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.75, 0.3, 1)
+text = "NEW CHAPTER UNLOCKED!"
+
+[node name="ToastTitle" type="Label" parent="Root/Toast/HBox/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Book of Books"
+
+[node name="ToastKey" type="Label" parent="Root/Toast/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 0.85, 0.75, 1)
+text = "B: READ NOW"
+
+[node name="PauseMenu" parent="Root" instance=ExtResource("7_pause")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="BookScreen" parent="Root" instance=ExtResource("6_book")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"

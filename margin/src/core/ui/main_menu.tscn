@@ -1,0 +1,281 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/core/ui/main_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://src/core/ui/storm_background.gd" id="3_storm"]
+[ext_resource type="Texture2D" path="res://src/assets/ui/logo.png" id="4_logo"]
+[ext_resource type="Script" path="res://src/core/ui/pixel_menu.gd" id="5_menu"]
+[ext_resource type="PackedScene" path="res://src/core/ui/settings_panel.tscn" id="6_options"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/data_sources_screen.tscn" id="7_data"]
+
+[sub_resource type="AtlasTexture" id="AT_L0"]
+atlas = ExtResource("4_logo")
+region = Rect2(0, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AT_L1"]
+atlas = ExtResource("4_logo")
+region = Rect2(48, 0, 36, 60)
+
+[sub_resource type="AtlasTexture" id="AT_L2"]
+atlas = ExtResource("4_logo")
+region = Rect2(84, 0, 36, 60)
+
+[sub_resource type="AtlasTexture" id="AT_L3"]
+atlas = ExtResource("4_logo")
+region = Rect2(120, 0, 36, 60)
+
+[sub_resource type="AtlasTexture" id="AT_L4"]
+atlas = ExtResource("4_logo")
+region = Rect2(156, 0, 27, 60)
+
+[sub_resource type="AtlasTexture" id="AT_L5"]
+atlas = ExtResource("4_logo")
+region = Rect2(183, 0, 49, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_confirm"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.055, 0.035, 0.07, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.98, 0.94, 0.87, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Storm" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_storm")
+
+[node name="Logo" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 44.0
+offset_right = 116.0
+offset_bottom = 104.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="L0" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 0.0
+offset_right = 48.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L0")
+
+[node name="L1" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 84.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L1")
+
+[node name="L2" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 84.0
+offset_right = 120.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L2")
+
+[node name="L3" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 156.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L3")
+
+[node name="L4" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 156.0
+offset_right = 183.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L4")
+
+[node name="L5" type="TextureRect" parent="Logo"]
+layout_mode = 0
+offset_left = 183.0
+offset_right = 232.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = SubResource("AT_L5")
+
+[node name="Tagline" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 108.0
+offset_bottom = 132.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.906, 0.78, 0.643, 1)
+theme_override_colors/font_shadow_color = Color(0.04, 0.024, 0.024, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+theme_override_constants/line_spacing = 3
+text = "IN DEEP SPACE, SURVIVAL ISN'T MAGIC.\nIT'S KNOWING YOUR MARGINS."
+horizontal_alignment = 1
+
+[node name="Prompt" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 146.0
+offset_bottom = 156.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.6, 0.64, 0.71, 1)
+theme_override_colors/font_shadow_color = Color(0.04, 0.024, 0.024, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+text = "PRESS ENTER TO CONTINUE"
+horizontal_alignment = 1
+
+[node name="MainList" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 86.0
+offset_right = 90.0
+offset_bottom = 150.0
+grow_horizontal = 2
+script = ExtResource("5_menu")
+options = PackedStringArray("START NEW GAME", "CONTINUE", "OPTIONS", "EXIT")
+active = false
+
+[node name="Footer" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.6, 0.64, 0.71, 1)
+theme_override_colors/font_shadow_color = Color(0.04, 0.024, 0.024, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 8
+text = "ARROWS: MOVE     ENTER: SELECT"
+horizontal_alignment = 1
+
+[node name="Options" parent="." instance=ExtResource("6_options")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="DataSources" parent="." instance=ExtResource("7_data")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Confirm" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Confirm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.02, 0.05, 0.5)
+
+[node name="Panel" type="PanelContainer" parent="Confirm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -38.0
+offset_right = 112.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_confirm")
+
+[node name="VBox" type="VBoxContainer" parent="Confirm/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Question" type="Label" parent="Confirm/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.69, 0.23, 1)
+theme_override_font_sizes/font_size = 8
+text = "START A NEW GAME?"
+horizontal_alignment = 1
+
+[node name="Warning" type="Label" parent="Confirm/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.7, 0.66, 1)
+theme_override_font_sizes/font_size = 8
+text = "ALL SCROLLS AND SAVES WILL BE LOST."
+horizontal_alignment = 1
+
+[node name="ConfirmList" type="VBoxContainer" parent="Confirm/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("5_menu")
+options = PackedStringArray("YES, START OVER", "NO")
+active = false
+
+[node name="Fade" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
