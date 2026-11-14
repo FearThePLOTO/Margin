@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://src/features/ui/scripts/conversation_test_screen.gd" id="1_script"]
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://src/features/ui/scenes/components/dialogue_box.tscn" id="3_dialogue"]
+
+[node name="ConversationTestScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_dialogue")]
+unique_name_in_owner = true
+
+[node name="CompletedPanel" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layout" type="VBoxContainer" parent="CompletedPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="CompletedPanel/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "CONVERSATION COMPLETE"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="CompletedPanel/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.6)
+text = "TEST INTEGRATION ONLY"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CompletedPanel/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"MenuOptionButton"
+text = "BACK TO MENU"

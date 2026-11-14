@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://src/features/ui/themes/ui_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://src/features/ui/scripts/volume_slider.gd" id="2_script"]
+
+[node name="VolumeSlider" type="Control"]
+custom_minimum_size = Vector2(80, 22)
+layout_mode = 3
+anchors_preset = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_theme")
+theme_type_variation = &"VolumeSlider"
+script = ExtResource("2_script")
