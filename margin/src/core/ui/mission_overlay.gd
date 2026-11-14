@@ -52,6 +52,7 @@ var _bonus := false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_sfx.bus = &"SFX"   # set in code: the export strips the scene's bus value
 	_cell_on = _icon(6)
 	_cell_off = _icon(7)
 	_plan_panel.hide()

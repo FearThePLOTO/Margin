@@ -43,6 +43,10 @@ var _letters: Array[Control] = []
 
 func _ready() -> void:
 	Music.play(&"ui_music")
+	# Set in code, not only in the .tscn: Godot 4.7's export strips these
+	# PackedStringArray values from the scene, which left the menu empty.
+	_menu.options = PackedStringArray(["START NEW GAME", "CONTINUE", "OPTIONS", "EXIT"])
+	_confirm_list.options = PackedStringArray(["YES, START OVER", "NO"])
 	for c in _logo.get_children():
 		_letters.append(c as Control)
 	_menu.chosen.connect(_on_chosen)

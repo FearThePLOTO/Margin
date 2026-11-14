@@ -1,0 +1,177 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Margin: Project Description</title>
+<style>
+@page { size: A4; margin: 18mm 17mm 18mm 17mm; }
+* { box-sizing: border-box; }
+body { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 10pt; line-height: 1.45; color: #1d1a22; }
+h1 { font-size: 24pt; margin: 0 0 2px; letter-spacing: .06em; color: #7a2e1b; }
+.subtitle { font-size: 11pt; color: #555; margin: 0 0 12px; }
+h2 { font-size: 13.5pt; color: #7a2e1b; border-bottom: 2px solid #e2c6b4; padding-bottom: 3px; margin: 20px 0 8px; page-break-after: avoid; }
+h3 { font-size: 11pt; margin: 12px 0 4px; color: #2d2a33; page-break-after: avoid; }
+p { margin: 0 0 7px; }
+ul, ol { margin: 0 0 8px; padding-left: 18px; }
+li { margin: 0 0 3px; }
+table { width: 100%; border-collapse: collapse; margin: 4px 0 10px; font-size: 9.2pt; page-break-inside: auto; }
+th, td { border: 1px solid #d9cfc8; padding: 5px 7px; text-align: left; vertical-align: top; }
+th { background: #f4ebe5; }
+tr { page-break-inside: avoid; }
+.info td:first-child { width: 30%; font-weight: bold; background: #faf6f3; }
+.box { border: 1px solid #d9cfc8; background: #faf6f3; border-radius: 4px; padding: 8px 11px; margin: 6px 0 10px; }
+.label { display: inline-block; font-size: 8pt; font-weight: bold; letter-spacing: .05em; padding: 1px 6px; border-radius: 3px; margin-right: 4px; color: #fff; }
+.ok { background: #2f7d4f; } .lim { background: #a35a12; } .fut { background: #3f5a9e; }
+.todo { background: #fff07a; padding: 0 3px; font-weight: bold; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.8pt; background: #f1ece8; padding: 0 3px; border-radius: 2px; }
+a { color: #2b55a8; text-decoration: none; word-break: break-all; }
+.small { font-size: 8.8pt; color: #555; }
+</style></head><body>
+
+<h1>MARGIN</h1>
+<p class="subtitle">A Mars survival platformer that trains junior astronauts to plan with limited power, air and protection.</p>
+
+<table class="info">
+<tr><td>Project name</td><td>Margin</td></tr>
+<tr><td>Team name</td><td>Ape-ollo 11</td></tr>
+<tr><td>Event</td><td>NASA Space Apps Challenge 2026, Cairo</td></tr>
+<tr><td>Challenge</td><td>Build a Junior Astronaut Mission Trainer</td></tr>
+<tr><td>NASA Project page</td><td><a href="https://www.spaceappschallenge.org/2026/find-a-team/cosmoholics/?tab=project">https://www.spaceappschallenge.org/2026/find-a-team/cosmoholics/?tab=project</a></td></tr>
+<tr><td>Demo</td><td><a href="https://drive.google.com/drive/folders/1ySRO2H9PQ2--0YvnNxVgVHD1UlV0VeTg">https://drive.google.com/drive/folders/1ySRO2H9PQ2--0YvnNxVgVHD1UlV0VeTg</a></td></tr>
+<tr><td>Project source</td><td><a href="https://github.com/FearThePLOTO/Margin">https://github.com/FearThePLOTO/Margin</a></td></tr>
+<tr><td>Playable builds</td><td><a href="https://feartheploto.itch.io/margin">https://feartheploto.itch.io/margin</a> (Windows, Linux and web browser)</td></tr>
+</table>
+
+<h2>1. High-Level Summary</h2>
+<p>Margin is a 2D pixel-art platformer, made in Godot, that teaches children aged 7 to 12 how astronauts survive. The player is Max, a young astronaut who lands on Mars. A solar radiation storm forces him into a lava tube cave with no breathable air.</p>
+<p>To get through, players share a small suit battery between Air, Shield and Light. Every cell given to one system is taken from another, so each choice has a cost. Power stations add new cells and forecast the area ahead, so kids plan the way real mission planners balance power, oxygen and radiation protection.</p>
+<p>The danger comes from real NASA data. At startup, the game checks NASA's DONKI database for recent solar particle storms. If none happened, it uses a real stored storm and says so. Hidden scrolls unlock short, kid-friendly science chapters with their NASA sources, such as Curiosity's radiation readings and astronaut oxygen needs.</p>
+<p>This matters because space science often feels distant to children. Margin turns it into decisions they make with their own hands, where failing is gentle and trying a new plan is part of the fun.</p>
+
+<h2>2. Project Details</h2>
+
+<h3>Main use</h3>
+<p>A child plays one complete mission, Level 1 "The Cave", and learns by doing: resources in space are limited, every choice has a cost, and radiation, air and visibility are survival problems you plan for ahead of time. The game can be played alone or used in a classroom or club, where students compare the power plans they chose and how those plans turned out.</p>
+
+<h3>How it works</h3>
+<p><b>The power trade-off (core mechanic).</b> The suit starts with 3 battery cells. At each Power Station the player gets one new cell, picks which system receives it (up to 3 per system), then can move all cells around.</p>
+<table>
+<tr><th>System</th><th>More cells</th><th>Fewer cells</th></tr>
+<tr><td>Air (CO2 scrubber)</td><td>Oxygen drains slower (0.55 times as fast with 3 cells)</td><td>Oxygen drains faster (1.45 times as fast with 0 cells)</td></tr>
+<tr><td>Shield</td><td>Radiation meter fills slower (0.35 times)</td><td>Radiation meter fills faster (1.6 times)</td></tr>
+<tr><td>Light (headlamp)</td><td>Bigger, brighter light: lava, spikes and secrets are visible</td><td>The cave is close to black</td></tr>
+</table>
+<p>Each station shows a forecast of the next area (lava and air drain, a radiation skylight, a dark spike tunnel), so players plan ahead instead of reacting.</p>
+<p><b>Real space weather drives the danger.</b> At startup the game asks NASA's DONKI database for Solar Energetic Particle (SEP) events from the last 30 days. A GOES-measured storm above 100 MeV is "strong" (radiation builds 1.7 times faster); above 10 MeV is "medium" (1.3 times). If there was no storm, or the device is offline, the game uses one of 16 real GOES-measured SEP events (May 2024 to November 2025) and says so. Stored data is never presented as live. The storm level and date appear in the story cutscene, on the HUD, at Power Stations and on the results screen.</p>
+<p><b>Learning through the Book of Books.</b> Level 1 hides 3 scrolls: one easy to find, one in a secret room that needs fast moves under radiation, and one tucked into a room. Each unlocks a chapter with its source: The Red Planet, Solar Storms and Living in Space. The book also records deaths and scrolls per level and is saved between sessions.</p>
+<p><b>Kid-friendly design.</b> Three resources named in plain words; short, funny dialogue; a NASA mission-control terminal that briefs Max; an annoying old wizard, OG, who laughs at the player. Failure is gentle: Max respawns at the start of the room with at least half a tank of air. A different real storm on each run makes it worth replaying.</p>
+
+<h3>Benefits and intended impact</h3>
+<ul>
+<li>Children feel the trade-off between air, radiation and light instead of reading about it.</li>
+<li>Real storms change between runs, so the same plan can work once and fail the next time: conditions must be checked, not assumed.</li>
+<li>Every fact cites its source, and an in-game NASA Data screen separates real science from game invention.</li>
+<li>Our aim: children understand that astronaut survival is about planning and trade-offs, and become curious about real space science and NASA data.</li>
+</ul>
+
+<h3>Features, limitations and future plans</h3>
+<div class="box">
+<p><span class="label ok">WORKING</span> Delivered and playable in the project:</p>
+<ul>
+<li>Main menu (start new game, continue from last checkpoint, options, exit) over an animated Martian dust storm; Level 1; results screen.</li>
+<li>Level 1: landing cutscene and movement tutorial, the OG story cutscene, and 7 cave rooms with falling platforms, lava, a vertical climb, a risky oxygen tank, a radiation skylight, a secret room and a dark tunnel.</li>
+<li>3 Power Stations, each adding a new cell before the player re-plans.</li>
+<li>Live DONKI SEP query with fallback to stored real events, source shown on screen.</li>
+<li>Book of Books (3 chapters), saved between sessions.</li>
+<li>Pause menu (resume, retry checkpoint, restart level, book, options, main menu); options for music, sound and fullscreen, saved; randomised music playlists.</li>
+<li>Exported builds for Windows, Linux and web browser.</li>
+</ul>
+<p class="small">Where to look in the source: Level 1 in <code>src/core/game/level_01/</code>; data logic in <code>src/core/autoload/space_weather.gd</code>; power values in <code>src/core/constants.gd</code>; book content in <code>src/core/autoload/book_of_books.gd</code>.</p>
+</div>
+<div class="box">
+<p><span class="label lim">LIMITATIONS</span></p>
+<ul>
+<li>Only Level 1 is playable; Level 2 appears in the book as "Coming soon".</li>
+<li>Game values are tuned for fun, not true to scale. Every effect points the same way as in real life, and the game says so.</li>
+<li>Hot lava is fiction: real Martian lava tubes are cold and ancient. The NASA Data screen states this.</li>
+<li>The live query uses NASA's shared DEMO_KEY, which has hourly and daily request limits; when a limit is hit or the device is offline, the game uses stored real events.</li>
+<li>Only SEP events change gameplay; other sources are used in the educational text, not loaded live. Storm strength is grouped into two levels, not a full radiation model.</li>
+<li>Keyboard play on desktop or browser (mouse works in menus). English only.</li>
+</ul>
+</div>
+<div class="box">
+<p><span class="label fut">FUTURE PLANS</span> Not built yet:</p>
+<ul>
+<li>More levels, each focused on a different survival system.</li>
+<li>More live NASA data, such as solar flares and CMEs from DONKI.</li>
+<li>Controller and touch support; Arabic translation.</li>
+<li>A teacher view that compares students' power plans.</li>
+</ul>
+</div>
+
+<h3>Tools, languages, hardware and software</h3>
+<ul>
+<li>Game engine: Godot 4.7, programmed in GDScript.</li>
+<li>Art and sound: our own Python 3 scripts (Pillow, NumPy) that generate the pixel art, tilesets, characters, portraits, logo and sound effects (written with SI assistance, see Section 5).</li>
+<li>Data: NASA DONKI API (api.nasa.gov), NASA CCMC.</li>
+<li>Fonts: Silkscreen and Pixelify Sans (SIL Open Font License).</li>
+<li>Version control: Git and GitHub. Hardware: developed and played on desktop PCs.</li>
+</ul>
+
+<h3>Creativity and design factors</h3>
+<p>Margin mixes a tight, fast platformer with a strategy layer about resource planning. Live space weather means real events on the Sun change the game. Humour comes from OG, a rude old wizard who laughs at Max, and collectible scrolls reward exploration with real science instead of points. We designed for ages 7 to 12 (short dialogue, big readable pixel text, three plain-word resources), honesty (stored data never shown as live, sources cited, fiction labelled), reliability (works offline or when the API limit is hit), replayability, and no NASA logos or mission insignia in the artwork.</p>
+
+<h2>3. NASA Data and Resources</h2>
+<table>
+<tr><th style="width:26%">Resource and link</th><th>Product, period and processing</th><th style="width:28%">Role in the game</th></tr>
+<tr><td><b>DONKI</b> (Space Weather Database Of Notifications, Knowledge, Information)<br><a href="https://kauai.ccmc.gsfc.nasa.gov/DONKI/">kauai.ccmc.gsfc.nasa.gov/DONKI/</a><br>API: <a href="https://api.nasa.gov/">api.nasa.gov</a> (DONKI/SEP)</td>
+<td>SEP event records from NASA CCMC, detected by GOES particle instruments (SEISS, &gt;10 MeV and &gt;100 MeV channels). Live: last 30 days at each launch. Stored: 16 real events, May 2024 to November 2025, fetched from the same API. Processing: keep GOES events, take the most recent, set strength from the channel (&gt;100 MeV strong 1.7 times, &gt;10 MeV medium 1.3 times), keep event ID, time and CCMC link.</td>
+<td>Sets how fast radiation builds in the storm zones each run. Strength and date shown in cutscene, HUD, Power Stations and results. Live vs stored always stated.</td></tr>
+<tr><td><b>Curiosity rover RAD</b> (Mars Science Laboratory)<br>Hassler et al. (2014), Science 343<br><a href="https://doi.org/10.1126/science.1244797">doi.org/10.1126/science.1244797</a></td>
+<td>RAD surface dose in Gale Crater, August 2012 to June 2013. Published average of about 0.67 mSv per day, used unchanged.</td>
+<td>Solar Storms chapter; justifies Shield as a survival system.</td></tr>
+<tr><td><b>NASA OSDR and RadLab</b><br><a href="https://osdr.nasa.gov/">osdr.nasa.gov</a><br><a href="https://visualization.osdr.nasa.gov/radlab/">visualization.osdr.nasa.gov/radlab/</a></td>
+<td>Background research on ISS radiation dosimetry and space biology. Not loaded live.</td>
+<td>Informed the design; named on the NASA Data screen.</td></tr>
+<tr><td><b>NASA Human Research Program</b><br><a href="https://www.nasa.gov/hrp/">nasa.gov/hrp/</a></td>
+<td>Bone mineral density loss of about 1 to 1.5 percent per month in microgravity, used unchanged.</td>
+<td>Living in Space chapter.</td></tr>
+<tr><td><b>NASA Life Support Baseline Values and Assumptions Document (BVAD)</b><br><a href="https://ntrs.nasa.gov/">ntrs.nasa.gov</a></td>
+<td>About 0.8 kg of oxygen per crew member per day, used unchanged.</td>
+<td>Basis of the Air system; Living in Space chapter.</td></tr>
+<tr><td><b>NASA Mars facts</b><br><a href="https://science.nasa.gov/mars/facts/">science.nasa.gov/mars/facts/</a></td>
+<td>Thin, mostly CO2 air under 1 percent of Earth's pressure; 38 percent gravity; 24 h 39 min sol; moons Phobos and Deimos. Used unchanged.</td>
+<td>Story (why Max needs a suit), skies with both moons, The Red Planet chapter.</td></tr>
+<tr><td><b>NASA Veggie</b> (Vegetable Production System, ISS)<br><a href="https://www.nasa.gov/">nasa.gov</a></td>
+<td>ISS crews have grown and eaten lettuce. Used unchanged.</td>
+<td>Living in Space chapter: air, food and light compete for power.</td></tr>
+</table>
+
+<h2>4. Partner and Other Data, Tools and References</h2>
+<table>
+<tr><th style="width:28%">Source</th><th>How it was used</th><th style="width:30%">Licence / attribution</th></tr>
+<tr><td>Canadian Space Agency (partner agency): food production research<br><a href="https://www.asc-csa.gc.ca/">asc-csa.gc.ca</a></td><td>Context for the Living in Space chapter. No CSA data, text or images copied.</td><td>Cited as a reference.</td></tr>
+<tr><td>Lava tube shelter research</td><td>Lava tubes proposed as radiation shelters; in Earth analog caves radiation was about 82 percent lower inside. Reason Max shelters in a cave.</td><td>Background research (not a NASA dataset).</td></tr>
+<tr><td>Godot Engine 4.7<br><a href="https://godotengine.org/">godotengine.org</a></td><td>Game engine; GDScript.</td><td>MIT License, Godot Engine contributors.</td></tr>
+<tr><td>Python 3, Pillow, NumPy<br><a href="https://www.python.org/">python.org</a>, <a href="https://python-pillow.org/">python-pillow.org</a>, <a href="https://numpy.org/">numpy.org</a></td><td>Our asset and sound generator scripts.</td><td>PSF License; MIT-CMU; BSD 3-Clause.</td></tr>
+<tr><td>Silkscreen font<br><a href="https://github.com/google/fonts/tree/main/ofl/silkscreen">github.com/google/fonts/.../silkscreen</a></td><td>Main UI, HUD, dialogue and book font.</td><td>SIL OFL 1.1, Copyright 2001 The Silkscreen Project Authors. Licence included in the project.</td></tr>
+<tr><td>Pixelify Sans font<br><a href="https://github.com/google/fonts/tree/main/ofl/pixelifysans">github.com/google/fonts/.../pixelifysans</a></td><td>Display font in the UI theme.</td><td>SIL OFL 1.1, Copyright 2021 The Pixelify Sans Project Authors. Licence included.</td></tr>
+<tr><td>Eris Esra's Character Template 4.1</td><td>Proportion guide for Max (24 by 24 canvas, 16 px body). No pixels copied.</td><td>Proportion reference only.</td></tr>
+<tr><td>Celeste (Maddy Makes Games / Extremely OK Games)<br><a href="https://www.celestegame.com/">celestegame.com</a></td><td>Style inspiration only: jump feel, top dialogue box, portraits, shaking text. No Celeste code, art, sound, text or levels included.</td><td>Reference only.</td></tr>
+<tr><td>Music tracks (ui_music, lava_and_cave)</td><td>Menu and Level 1 music.</td><td>Original music produced by a team member for Margin.</td></tr>
+<tr><td>Sound effects</td><td>Voice blips, OG's laugh, station sounds.</td><td>Synthesized by our own script (tools/sfxgen). No third-party audio.</td></tr>
+<tr><td>Git and GitHub</td><td>Version control and collaboration.</td><td>Tools.</td></tr>
+</table>
+
+<h2>5. AI / SI Use</h2>
+<p><b>Tool:</b> Claude Code (Anthropic, Claude Opus model), a large language model coding assistant used in our editor and project folder.</p>
+<p><b>Idea:</b> our team created the core concept (Margin, a Mars survival platformer about "knowing your margins") before using SI. When adapting the game to this challenge, we asked Claude to suggest and implement gameplay mechanics; it proposed the suit power split between Air, Shield and Light and the use of live DONKI storm data. The team chose, tested and refined these.</p>
+<table>
+<tr><th style="width:22%">Area</th><th>Use and affected parts</th></tr>
+<tr><td>Code</td><td>Wrote and debugged most game code under team direction and review: main flow and menus (<code>src/core/main.gd</code>, <code>src/core/ui/</code>), game systems (<code>src/core/autoload/</code>: state and saving, Book of Books, DONKI loader, settings, music), Level 1 scripts, and changes to shared scripts in <code>src/features/</code>.</td></tr>
+<tr><td>Level layout</td><td>First version of <code>level_01.tscn</code> built by a script Claude wrote; since edited by the team in Godot.</td></tr>
+<tr><td>Images</td><td>Generated by Python scripts written by Claude (no image-generation model): tilesets, characters, portraits, lander, icons, sky layers, Book of Books art, logo, app icon and menu storm.</td></tr>
+<tr><td>Audio</td><td>Sound effects synthesized by a Python script written by Claude (<code>tools/sfxgen/gen_sfx.py</code>). No audio-generation model.</td></tr>
+<tr><td>Text</td><td>Drafted dialogue, Book of Books chapters, the NASA Data screen, documentation and parts of this description; reviewed and edited by the team.</td></tr>
+</table>
+<p class="small">No generated image or sound uses NASA logos, flags or mission insignia. NASA is named only in text: data citations and the mission-control dialogue label. Generated content is acknowledged in this section.</p>
+
+</body></html>
